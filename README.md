@@ -1,3 +1,2 @@
 # Cybersecurity OSINT
 
-Welcome ... tbc
