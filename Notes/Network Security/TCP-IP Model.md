@@ -1,5 +1,4 @@
 # TCP-IP Model
-## Description
 .
 ## Process
 .

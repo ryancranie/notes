@@ -1,21 +1,14 @@
 # OSI Model
-## Description
-The OSI (Open Systems Interconnection)
-## Process
+The OSI (Open Systems Interconnection) 
+## 7 Layer Architecture
 The OSI Model follows a layered architecture
-1. **Physical Layer**:
-2. **Data Link Layer**:
-3. **Network Layer**:
-4. **Transport Layer**:
-5. **Session Layer**:
-6. **Presentation Layer**:
 7. **Application Layer**:
-## Status
-.
-### Capabilities
-The OSI Model 
-### Limitations
-.
+6. **Presentation Layer**:
+5. **Session Layer**:
+4. **Transport Layer**:
+3. **Network Layer**:
+2. **Data Link Layer**:
+1. **Physical Layer**:
 ## Links
 ### Policies
 .
