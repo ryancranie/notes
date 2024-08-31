@@ -39,4 +39,6 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 001: 2024-08-31 - INITIALIZE
 
 ---
-[Landing](README.md)
+<font size=3>[$U.TOPIC CONTENTS](-%20$TOPIC%20Contents.md)
+[README](README.md)
+[LICENSE](LICENSE)<font>
