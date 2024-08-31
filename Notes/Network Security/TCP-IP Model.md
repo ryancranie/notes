@@ -1,14 +1,13 @@
 # TCP-IP Model
-
+.
 ## Links
 ### Policies
-$POLICIES
+.
 ### Notes
-$LINKS
+.
 ### Revision History
 001: 2024-08-31 - INITIALIZE
-
 ---
-<font size=3>[NETWORK SECURITY CONTENTS](-%20Network Security%20Contents.md)
+<font size=3>[NETWORK SECURITY CONTENTS](-%20Network%20Security%20Contents.md)
 [README](README.md)
 [LICENSE](LICENSE)<font>
