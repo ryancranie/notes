@@ -1,5 +1,5 @@
 # OSI Model
-The OSI (Open Systems Interconnection) 
+
 ## 7 Layer Architecture
 The OSI Model follows a layered architecture
 7. **Application Layer**:
@@ -21,7 +21,12 @@ The OSI Model follows a layered architecture
 | 1     | Physical     |             |
 
 ## The OSI Model & TCP/IP Model
-.
+TCP-IP Model
+TCP-IP Model
+OSI Model
+WWWS
+SNMP SNMP SNMP
+SNMP
 
 ## Links
 ### Policies
@@ -32,6 +37,6 @@ The OSI Model follows a layered architecture
 001: XXXX-XX-XX - INITIALIZE
 
 ---
-<font size=3>[$U.TOPIC CONTENTS](-%20$TOPIC%20Contents.md)
+<font size=3>[NETWORK SECURITY CONTENTS](-%20Network Security%20Contents.md)
 [README](README.md)
 [LICENSE](LICENSE)<font>
