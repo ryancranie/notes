@@ -1,21 +1,15 @@
-MIT License
+License
 
-Copyright (c) 2024 Ryan
+This documentation is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license. By contributing to or using this documentation, you agree to the following terms:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+    Attribution: You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+    Use and Distribution: You are free to share (copy and redistribute) and adapt (remix, transform, and build upon) the material for any purpose, even commercially, as long as you give proper attribution to the original content.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+    Inclusion of Third-Party Content: While I have compiled these notes myself, some content may be inspired by or adapted from other sources. Efforts have been made to avoid directly copying substantial portions of third-party content. However, users should be aware that the content may reflect ideas or knowledge from various sources.
+
+    No Additional Restrictions: You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+    Disclaimer of Warranties: This documentation is provided "as is" without warranty of any kind, either express or implied, including but not limited to the implied warranties of merchantability, fitness for a particular purpose, or non-infringement. If you find any inaccuracies, you are encouraged to create a GitHub issue to suggest corrections.
+	
+For more details about this license, visit Creative Commons Attribution 4.0 International (CC BY 4.0).
