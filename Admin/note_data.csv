@@ -1,6 +1,7 @@
 note name,alias,alias ignore,references
 OSI Model,,,
-TCP-IP Model,TCP/IP Model,,
 Common Protocols,,,
 Protocols,,,
 SNMP,,,
+TCP,Transmission Control Protocol,TCP-IP:TCP/IP,
+TCP-IP Model,TCP/IP Model,,
