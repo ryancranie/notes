@@ -21,12 +21,11 @@ The OSI Model follows a layered architecture
 [TCP/IP Model](TCP-IP%20Model.md) TCP-IP Model
 TCP-IP Model
 
-
+[Common Protocols](Common%20Protocols.md)
 
 ## Links
 
 ### Revision History
-
 001: XXXX-XX-XX - INITIALIZE
 
 ---

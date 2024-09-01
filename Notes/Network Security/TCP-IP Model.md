@@ -1,14 +1,13 @@
 # TCP-IP Model
 .
 ## Links
-### Policies
-.
-### Notes
-.
+### Network Security
+- [OSI Model](OSI%20Model.md)
 ### Revision History
-001: 2024-09-01 - INITIALIZE
+001 - fixed and things
 
 ---
-<font size=3>[NETWORK SECURITY CONTENTS](-%20Network%20Security%20Contents.md)
-[README](README.md)
-[LICENSE](LICENSE)<font>
+stuff
+all
+the
+things
