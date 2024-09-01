@@ -1,13 +1,14 @@
 # SNMP
 
 TCP/IP
-soooo this Transmission Control Protocol and fr.
+soooo this [Transmission Control Protocol](TCP.md) and fr.
 TCP
-TCP/IP Model
+[TCP/IP Model](TCP-IP%20Model.md)
 TCP-IP Model
 frfrf whaata look at these Protocols wow
-Common Protocols wooow omg omg ommg omg omg
+[Common Protocols](Common%20Protocols.md) wooow omg omg ommg omg omg
 
+Common [Protocols](Protocols.md)
 ## Links
 ### Policies
 .

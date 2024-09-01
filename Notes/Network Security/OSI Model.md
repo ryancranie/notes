@@ -1,8 +1,8 @@
 # OSI Model
 ## 7 Layer Architecture
-[](TCP.md)The OSI Model follows a layered architecture
+The OSI Model follows a layered architecture
 7. **Application Layer**:
-6. **Presentation Layer**:
+[]()6. **Presentation Layer**:
 5. **Session Layer**:
 4. **Transport Layer**:
 3. **Network Layer**:
@@ -22,11 +22,9 @@
 TCP-IP Model
 
 
+
 ## Links
-### Policies
-.
-### Notes
-.
+
 ### Revision History
 
 001: XXXX-XX-XX - INITIALIZE
