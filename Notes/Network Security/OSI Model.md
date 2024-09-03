@@ -1,6 +1,6 @@
 # OSI Model
 
-Protocols
+so [Protocols](Protocols.md) exist
 ## 7 Layer Architecture
 The OSI Model follows a layered architecture
 7. **Application Layer**:
@@ -24,3 +24,9 @@ The [TCP/IP Model](TCP-IP%20Model.md) is similar
 
 ## Links
 ### Revision History
+001: 2024-09-01 - INITIALIZE
+
+---
+<font size=3>[NETWORK SECURITY CONTENTS](-%20Network%20Security%20Contents.md)
+[README](README.md)
+[LICENSE](LICENSE)<font>

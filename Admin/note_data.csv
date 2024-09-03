@@ -1,7 +1,7 @@
 note name,alias,alias ignore,references
-OSI Model,,,
-Common Protocols,,,
-Protocols,,,
-SNMP,,,
-TCP,Transmission Control Protocol,TCP-IP:TCP/IP,
-TCP-IP Model,TCP/IP Model,,
+OSI Model,osi model,,
+Protocols,Protocol:protocol:protocols,Common:common,
+TCP,Transmission Control Protocol:transmission control protocol:tcp,/IP:/ip:-IP:-ip,
+TCP-IP Model,TCP/IP Model:tcp/ip model:tcp-ip model,,
+HTTPS,https,www.,
+Common Protocols,common protocols,,
