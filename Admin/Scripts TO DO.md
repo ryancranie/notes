@@ -1,3 +1,10 @@
+---
+title: Scripts TO DO
+tags:
+created: 2024-09-02 17:05:54
+modified: 2024-09-02 17:19:32
+---
+# Scripts TO DO
 1. wiki_overhaul.py
 	- A note to bypass a lot of manual entries
 		- automates referencing new notes in all of the wiki
