@@ -1,4 +1,6 @@
 # OSI Model
+
+Protocols
 ## 7 Layer Architecture
 The OSI Model follows a layered architecture
 7. **Application Layer**:
@@ -18,17 +20,7 @@ The OSI Model follows a layered architecture
 | 2     | Data Link    |             |
 | 1     | Physical     |             |
 ## The OSI Model & TCP/IP Model
-[TCP/IP Model](TCP-IP%20Model.md) TCP-IP Model
-TCP-IP Model
-
-[Common Protocols](Common%20Protocols.md)
+The [TCP/IP Model](TCP-IP%20Model.md) is similar 
 
 ## Links
-
 ### Revision History
-001: XXXX-XX-XX - INITIALIZE
-
----
-<font size=3>[NETWORK SECURITY CONTENTS](-%20Network%20Security%20Contents.md)
-[README](README.md)
-[LICENSE](LICENSE)<font>
