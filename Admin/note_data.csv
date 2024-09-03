@@ -1,7 +1,7 @@
-note name,alias,alias ignore,references
-OSI Model,osi model,,
-Protocols,Protocol:protocol:protocols,Common:common,
-TCP,Transmission Control Protocol:transmission control protocol:tcp,/IP:/ip:-IP:-ip,
-TCP-IP Model,TCP/IP Model:tcp/ip model:tcp-ip model,,
-HTTPS,https,www.,
-Common Protocols,common protocols,,
+note name,alias,alias ignore,references,sub_dir
+OSI Model,osi model,,,
+Protocols,Protocol:protocol:protocols,Common:common,,
+TCP,Transmission Control Protocol:transmission control protocol:tcp,/IP:/ip:-IP:-ip,,
+TCP-IP Model,TCP/IP Model:tcp/ip model:tcp-ip model,,,
+HTTPS,https,www.:github,,
+Common Protocols,common protocols,,,
