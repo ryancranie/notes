@@ -31,6 +31,6 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 001: 2024-09-01 - INITIALIZE
 
 ---
-<font size=3>[NETWORK TECHNOLOGIES CONTENTS](-%20Network%20Technologies%20Contents.md)
-[README](README.md)
-[LICENSE](LICENSE)<font>
+<font size=3>[NETWORK TECHNOLOGIES CONTENTS](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Network%20Technologies%20Contents.md)
+[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)
+[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)<font>
