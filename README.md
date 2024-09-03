@@ -8,4 +8,4 @@ Hi, welcome to my Cyber Security OSINT page. ...tbm.
 - [Cybersecurity Frameworks](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Cybersecurity%20Frameworks%20Contents.md)
 - [Advanced Switching and Routing](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Advanced%20Switching%20and%20Routing%20Contents.md)
 ---
-[LICENSE](LICENSE)
+<font size=3><b>[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
