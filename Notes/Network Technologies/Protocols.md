@@ -27,7 +27,8 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 ## Links
 ### Network Security
 - [TCP-IP Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/TCP-IP%20Model.md)
-- [OSI Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/OSI%20Model.md)
+### Network Technologies
+- [OSPF](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/OSPF.md)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 

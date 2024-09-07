@@ -1,5 +1,6 @@
 # Network Technologies Contents
 - [Common Protocols](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Common%20Protocols.md)
+- [OSPF](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/OSPF.md)
 - [Protocols](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md)
 
 ---

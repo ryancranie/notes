@@ -1,6 +1,6 @@
 # OSI Model
 
-so [Protocols](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md) exist
+so Protocols exist
 
 ## 7 Layer Architecture
 The OSI Model follows a layered architecture
