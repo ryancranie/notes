@@ -1,10 +1,10 @@
 # TCP-IP Model
-OSI Model
-Protocols
+[OSI Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/OSI%20Model.md)
+[Protocols](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md)
 
 ## Links
 ### Network Security
-- [OSI Model](OSI%20Model.md)
+- [OSI Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/OSI%20Model.md)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 

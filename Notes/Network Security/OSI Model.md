@@ -1,10 +1,11 @@
 # OSI Model
 
-so [Protocols](Protocols.md) exist
+so [Protocols](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md) exist
+
 ## 7 Layer Architecture
 The OSI Model follows a layered architecture
 7. **Application Layer**:
-[]()6. **Presentation Layer**:
+6. **Presentation Layer**:
 5. **Session Layer**:
 4. **Transport Layer**:
 3. **Network Layer**:
@@ -20,9 +21,11 @@ The OSI Model follows a layered architecture
 | 2     | Data Link    |             |
 | 1     | Physical     |             |
 ## The OSI Model & TCP/IP Model
-The [TCP/IP Model](TCP-IP%20Model.md) is similar 
+The [TCP/IP Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/TCP-IP%20Model.md) is similar 
 
 ## Links
+### Network Security
+- [TCP-IP Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/TCP-IP%20Model.md)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 
