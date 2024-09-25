@@ -1,0 +1,52 @@
+# Ciphers
+
+A cipher is a secret or disguised way of writing code.
+
+Cryptographic algorithms and digital keys allow you to encrypt and decrypt information.
+
+Algorithms are public information and keys are usually secrets.
+
+## Types of Ciphers
+
+1. **Substitution Cipher Type**
+	- Ceaser's Cipher:
+		- The number of letter-shifts is the secret/key
+		- The method of shifting is the cipher algorithm
+2. **Transpositional Cipher Type**
+	- rearranging letters
+	- Rail fence method
+		- plaintext message wrote in a zigzag form between 3 rows
+			- receiver of cipher would have to know the no. of rows (this is the shared secret/key)
+3. **The One-Time Pad Cipher Type**
+	- introduces randomness to the substitution method
+		- randomness is powerful because it ensures that there is an equal chance of converting all letters: no repetitive patterns
+	- each letter has a random value (1-26) so it knows how much to shift itself by
+	- the shared secret is used only once, and pads of paper were needed to decrypt it, hence the name One-Time Pad
+
+## Ciphers Used by Computers
+
+1. **Stream Cipher**
+	- encrypts a stream of plaintext data one bit/byte at a time
+		- **FISH**
+		- **RC4**
+	- faster than block ciphers
+1. **Block Cipher**
+	- breaks plaintext into blocks for encryption
+		- Data Encryption Standard (**DES**)
+		- **3DES1**
+		- Advanced Encryption Standard (**AES**)
+		- Blowfish
+	- size of block is dependant on the size of the key
+		- if key = 256 bits: blocks will also be 256 bits
+			- if messages is 1 megabyte, message would be split into blocks of 256 bits
+
+## Links
+### Cryptography and the Public Key Infrastructure
+- [Keys and Cryptographic Algorithms](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Keys%20and%20Cryptographic%20Algorithms.md)
+### Revision History
+001: 2024-09-25 - INITIALIZE
+
+---
+<font size=3><b>[CRYPTOGRAPHY AND THE PUBLIC KEY INFRASTRUCTURE CONTENTS](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Cryptography%20and%20the%20Public%20Key%20Infrastructure%20Contents.md)<br>
+[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)<br>
+[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
