@@ -1,6 +1,6 @@
-note name,alias,alias ignore,subfolder
-OSI Model,osi model,,Network Security
-TCP-IP Model,tcp-ip model:TCP/IP Model:tcp/ip model,,Network Security
-Common Protocols,common protocols,,Network Technologies
-Protocols,protocols:Protocol:protocol,,Network Technologies
-OSPF,ospf,,Network Technologies
+note name,alias,alias ignore,subfolder,order
+OSI Model,osi model,,Network Security,1.0
+TCP-IP Model,tcp-ip model:TCP/IP Model:tcp/ip model,,Network Security,2.0
+Common Protocols,common protocols,,Network Technologies,1.0
+Protocols,protocols:Protocol:protocol,,Network Technologies,2.0
+DHCP,dhcp,,Network Technologies,3.0

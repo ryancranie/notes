@@ -1,7 +1,5 @@
 # OSI Model
 
-so Protocols exist
-
 ## 7 Layer Architecture
 The OSI Model follows a layered architecture
 7. **Application Layer**:
@@ -11,6 +9,7 @@ The OSI Model follows a layered architecture
 3. **Network Layer**:
 2. **Data Link Layer**:
 1. **Physical Layer**:
+
 | Layer | Name         | Description |
 | ----- | ------------ | ----------- |
 | 7     | Application  |             |
@@ -24,8 +23,6 @@ The OSI Model follows a layered architecture
 The [TCP/IP Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/TCP-IP%20Model.md) is similar 
 
 ## Links
-### Network Security
-- [TCP-IP Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/TCP-IP%20Model.md)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 
