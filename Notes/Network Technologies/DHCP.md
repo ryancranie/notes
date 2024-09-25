@@ -53,7 +53,7 @@ The `service dhcp` command enables the DHCP service on the router. It is usually
 
 The `ip helper-address 10.1.1.2` command specifies the IP address of the DHCP server. If the wrong IP address is specified, the DHCP messages are relayed to the wrong device. In addition, the `ip helper-address` command must be configured *on the interface that is receiving the **DHCPDISCOVER** messages from the clients*.
 
-As a DHCP relay agent, the router relays a few other broadcast types in addition to a DHCP message. Other [protocols](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md)that are forwarded by a DHCP relay agent include the following: 
+As a DHCP relay agent, the router relays a few other broadcast types in addition to a DHCP message. Other [protocols](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md) that are forwarded by a DHCP relay agent include the following: 
 - TFTP 
 - Domain Name System (DNS) 
 - Internet Time Service (ITS) 
