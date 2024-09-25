@@ -11,7 +11,6 @@ DHCP allows a DHCP client to obtain an
 - DNS server IP address 
 - other types of IP addressing information
 from a DHCP server
-
 ## DORA Process
 1. Discover
 2. Offer
@@ -20,7 +19,7 @@ from a DHCP server
 
 DORA defines the exchange of messages that occurs as a DHCP client obtains IP addressing information from a DHCP server.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924200041.png
+![Pasted image 20240924200041.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924200041.png)
 
 ### Discover
 When a DHCP client initially boots, it has no
@@ -49,13 +48,13 @@ You use the `ip helper-address {ip_address}` interface configuration mode comman
 
 Here, the DHCP client belongs to the `172.16.1.0/24` network, whereas the DHCP server belongs to the `10.1.1.0/24` network. Router R1 is configured as a DHCP relay agent, using the syntax shown in Example 1-3
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924201101.png
+![Pasted image 20240924201101.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924201101.png)
 
 The `service dhcp` command enables the DHCP service on the router. It is usually not required because the DHCP service is enabled by default.
 
 The `ip helper-address 10.1.1.2` command specifies the IP address of the DHCP server. If the wrong IP address is specified, the DHCP messages are relayed to the wrong device. In addition, the `ip helper-address` command must be configured *on the interface that is receiving the **DHCPDISCOVER** messages from the clients*.
 
-As a DHCP relay agent, the router relays a few other broadcast types in addition to a DHCP message. Other [protocols](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md) that are forwarded by a DHCP relay agent include the following: 
+As a DHCP relay agent, the router relays a few other broadcast types in addition to a DHCP message. Other protocols that are forwarded by a DHCP relay agent include the following: 
 - TFTP 
 - Domain Name System (DNS) 
 - Internet Time Service (ITS) 
@@ -127,15 +126,15 @@ The output indicates a duplicate `172.16.1.3` IP address on the network, which t
 
 Example 1-6 shows the `show ip dhcp binding` command. The output indicates that IP address `10.1.1.10` was assigned to a DHCP client. You can release this DHCP lease with the clear `ip dhcp binding 10.1.1.10` command.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924203342.png
+![Pasted image 20240924203342.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924203342.png)
 
 Example 1-7 shows sample output from the `debug ip dhcp server events` command. The output shows updates to the DHCP database.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924203415.png
+![Pasted image 20240924203415.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924203415.png)
 
 Example 1-8 shows sample output from the `debug ip dhcp server packet` command. The output shows a DHCPRELEASE message being received when a DHCP client with IP address 10.1.1.3 is shut down. 
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924203604.png
+![Pasted image 20240924203604.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924203604.png)
 
 You can also see the four-step process of a DHCP client obtaining IP address `10.1.1.4` with the following messages:
 
@@ -165,7 +164,7 @@ Windows PCs automatically have SLAAC enabled and generate their own IPv6 address
 
 On Cisco routers, if you want to take advantage of SLAAC, you need to **enable it manually** on an interface with the `ipv6 address autoconfig` command.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924203951.png
+![Pasted image 20240924203951.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924203951.png)
 
 When a PC and router interface are enabled for SLAAC, they send a **Router Solicitation (RS)** message to *determine whether there are any routers connected to the local link*.
 
@@ -175,7 +174,7 @@ They use that prefix information to generate their own IPv6 address in the same 
 
 The router uses **EUI-64** for the **interface ID**, and the PC randomly generates the interface ID unless it is configured to use EUI-64. In addition, the PC uses the *IPv6 link-local address of the device that sent the RA as the default gateway address*.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924204201.png
+![Pasted image 20240924204201.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924204201.png)
 
 The source IPv6 address is the Gig0/0 link-local address, and the source MAC address is the MAC of Gig0/0. The destination IPv6 address is the *all-nodes link-local multicast IPv6 address* `FF02::1`. The destination MAC address is the all-nodes destination MAC address `33:33:00:00:00:01`. *By default, all IPv6-enabled interfaces listen for packets and frames destined for these two addresses*.
 
@@ -183,7 +182,7 @@ To verify an IPv6 address generated by SLAAC on a router interface, use the `sho
 
 As shown in Example 1-16, the *global unicast address* was generated using SLAAC. Also notice at the bottom of the example that the default router is listed as the link-local address of R1. However, note that this occurs only if IPv6 unicast routing was not enabled on router R1 and, as a result, the router is acting as an end device.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924204425.png
+![Pasted image 20240924204425.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240924204425.png)
 
 ## Router Advertisements (RA)
 
@@ -198,7 +197,7 @@ Therefore, if SLAAC is not working, check the following:
 3. The router interface advertising RAs has a /64 prefix (SLAAC works only if the router is using a /64 prefix.). 
 4. That RAs are not being suppressed on the interface, as shown in Example 1-18.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925054537.png
+![Pasted image 20240925054537.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925054537.png)
 
 ## Stateful DHCPv6
 
@@ -214,7 +213,7 @@ To hand out the IPv6 addressing information along with all optional information,
 
 Example 1-21 provides a sample DHCPv6 configuration on R1 and the ipv6 dhcp server interface command necessary to enable the interface to use the DHCP pool for handing out IPv6 addressing information.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925054809.png
+![Pasted image 20240925054809.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925054809.png)
 
 Although it is not pictured in Example 1-21 the `ipv6 nd managed-config-flag` interface configuration command on interface GigabitEthernet 0/0 ensures that the **RA** from router R1 *informs the client to contact a DHCPv6 server* for all 
 - IPv6 network addressing
@@ -238,7 +237,7 @@ To accomplish this, ensure that the `ipv6 nd other-config-flag` interface config
 
 In Example 1-23, the output of `show ipv6 interface gigabitEthernet 0/0` states that hosts obtain IPv6 addressing from stateless autoconfig and other information from a DHCP server
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925055346.png
+![Pasted image 20240925055346.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925055346.png)
 
 ## DHCPv6 Operation
 
@@ -277,7 +276,7 @@ To relay the DHCPv6 messages to a DHCPv6 server in another network, the local ro
 
 Example 1-24 shows interface Gigabit Ethernet 0/0 configured with the command `ipv6 dhcp relay destination 2001:db8:a:b::7`, which is used to *forward **SOLICIT** messages to a DHCPv6 server* at the address listed.
 
-https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925060643.png
+![Pasted image 20240925060643.png](https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925060643.png)
 
 
 ## Links
