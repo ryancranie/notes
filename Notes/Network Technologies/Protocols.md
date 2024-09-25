@@ -25,6 +25,8 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 ### Synchronization
 .
 ## Links
+### Introduction to the Threat Landscape
+- [The Threat Landscape](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Introduction%20to%20the%20Threat%20Landscape/The%20Threat%20Landscape.md)
 ### Network Technologies
 - [DHCP](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/DHCP.md)
 ### Revision History
