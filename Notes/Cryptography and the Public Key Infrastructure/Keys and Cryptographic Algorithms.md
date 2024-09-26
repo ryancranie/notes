@@ -16,7 +16,7 @@ A digital key is a value, that can be expressed alphanumerically, that is used t
 Keys have a lifetime, which can be set from years to seconds, depending on the task.
 
 Keys can be private/secret, but can also be public:
-- Public keys are often used for digital signatures
+- Public keys are often used for [digital signatures](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures.md)
 
 Key Lengths and Strengths
 
@@ -142,6 +142,10 @@ DECRYPTION:
 	- = plaintext!!
 
 ## Links
+### Cryptography and the Public Key Infrastructure
+- [PKI](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/PKI.md)
+- [Cryptography Overview](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Cryptography%20Overview.md)
+- [Hashing and Digital Signatures](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures.md)
 ### Revision History
 001: 2024-09-25 - INITIALIZE
 

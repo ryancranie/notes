@@ -25,10 +25,15 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 ### Synchronization
 .
 ## Links
+### Cryptography and the Public Key Infrastructure
+- [PKI](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/PKI.md)
 ### Introduction to the Threat Landscape
 - [The Threat Landscape](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Introduction%20to%20the%20Threat%20Landscape/The%20Threat%20Landscape.md)
 ### Network Technologies
 - [DHCP](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/DHCP.md)
+### Secure Network
+- [Centralized Network Security Management](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Secure%20Network/Centralized%20Network%20Security%20Management.md)
+- [Secure Perimeter](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Secure%20Network/Secure%20Perimeter.md)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 

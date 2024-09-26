@@ -15,7 +15,7 @@
 	- cannot reproduce the input by using output
 	- denies the bad actor access to input value with hash value
 
-Hashing and asymmetric cryptography are needed to produce a digital signature
+Hashing and asymmetric [cryptography](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Keys%20and%20Cryptographic%20Algorithms.md) are needed to produce a digital signature
 Digital signatures ensure:
 - Integrity
 - Authentication
@@ -66,6 +66,10 @@ The **Verifying Process**
 			- add salt value to key
 
 ## Links
+### Cryptography and the Public Key Infrastructure
+- [Keys and Cryptographic Algorithms](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Keys%20and%20Cryptographic%20Algorithms.md)
+### Introduction to the Threat Landscape
+- [The Threat Landscape](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Introduction%20to%20the%20Threat%20Landscape/The%20Threat%20Landscape.md)
 ### Revision History
 001: 2024-09-25 - INITIALIZE
 

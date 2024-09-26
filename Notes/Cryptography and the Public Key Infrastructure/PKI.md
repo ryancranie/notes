@@ -1,4 +1,4 @@
-# Public Key Infrastructure (PKI)
+# PKI
 
 Public Key Infrastructure (**PKI**) is an ecosystem comprised of
 - Policies
@@ -25,7 +25,7 @@ A digital certificate is revoked when it is no longer trusted
 4. End Entity
 
 ## Digital Certificates
-In cryptography, a **digital certificate** is an electronic document issued, and signed by a trusted entity, such as a CA.
+In [cryptography](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Keys%20and%20Cryptographic%20Algorithms.md), a **digital certificate** is an electronic document issued, and signed by a trusted entity, such as a CA.
 - It contains the name of the certificate holder, and may/may not contain a public key
 - if the certificate has been issued to a specific person, device or application:
 	- -> it binds the entity's identity to the public key by way of a digital signature
@@ -158,7 +158,7 @@ There are two ways to be the recipient of a certificate
 
 PKI standards anticipate that end entities would retrieve certificates from an **X.500** and Lightweight Directory Access Protocol (**LDAP**) compliant directory server.
 
-**LDAP** is an open, vendor-neutral, industry-standard application protocol for accessing and maintaining **distributed directory information services** over an IP network.
+**LDAP** is an open, vendor-neutral, industry-standard application [protocol](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md) for accessing and maintaining **distributed directory information services** over an IP network.
 
 The Directory Server stores
 - User Certificates
@@ -218,6 +218,8 @@ At the endpoint, the user needs a cryptographic application to
 5. All these entities carry out their functions in accordance with policy, which is prescribed by PKI authorities
 
 ## Links
+### Cryptography and the Public Key Infrastructure
+- [Cryptography Overview](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Cryptography%20Overview.md)
 ### Revision History
 001: 2024-09-25 - INITIALIZE
 

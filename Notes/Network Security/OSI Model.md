@@ -23,6 +23,8 @@ The OSI Model follows a layered architecture
 The [TCP/IP Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/TCP-IP%20Model.md) is similar 
 
 ## Links
+### Secure Network
+- [Secure Perimeter](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Secure%20Network/Secure%20Perimeter.md)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 

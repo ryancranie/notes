@@ -71,7 +71,7 @@ Attack Vector Categories
 
 Pre-exploit stage
 Birthday Attack
-- attacks weaknesses in some password hashing algorithms. The weakness is that the same input value produces the same output value.
+- attacks weaknesses in some password [hashing](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures.md) algorithms. The weakness is that the same input value produces the same output value.
 Brute Force
 - relies on individual having weaker password
 Counters to these attacks:

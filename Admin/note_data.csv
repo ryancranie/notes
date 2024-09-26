@@ -3,13 +3,19 @@ OSI Model,osi model,,Network Security,1.0
 TCP-IP Model,tcp-ip model:TCP/IP Model:tcp/ip model,,Network Security,2.0
 Common Protocols,common protocols,,Network Technologies,1.0
 Protocols,protocols:Protocol:protocol,,Network Technologies,2.0
-DHCP,dhcp,,Network Technologies,3.0
+DHCP,dhcp:dynamic host configuration protocol,,Network Technologies,3.0
 Introduction to Cybersecurity,introduction to cybersecurity,,Introduction to the Threat Landscape,1.0
 Malware,malware,,Introduction to the Threat Landscape,4.0
 Social Engineering,social engineering,,Introduction to the Threat Landscape,3.0
 The Threat Landscape,the threat landscape,,Introduction to the Threat Landscape,2.0
 Ciphers,ciphers,,Cryptography and the Public Key Infrastructure,2.0
 Cryptography Overview,cryptography overview,,Cryptography and the Public Key Infrastructure,1.0
-Hashing and Digital Signatures,hashing and digital signatures,,Cryptography and the Public Key Infrastructure,4.0
-Keys and Cryptographic Algorithms,keys and cryptographic algorithms,,Cryptography and the Public Key Infrastructure,3.0
-Public Key Infrastructure (PKI),public key infrastructure (pki):PKI:pki,,Cryptography and the Public Key Infrastructure,5.0
+Hashing and Digital Signatures,hashing and digital signatures:hashing:digital signatures,,Cryptography and the Public Key Infrastructure,4.0
+Keys and Cryptographic Algorithms,keys and cryptographic algorithms:cryptography,,Cryptography and the Public Key Infrastructure,3.0
+PKI,public key infrastructure:PKI:pki,,Cryptography and the Public Key Infrastructure,5.0
+Centralized Network Security Management,centralized network security management,,Secure Network,3.0
+Network Segmentation,network segmentation,,Secure Network,6.0
+SASE,sase,,Secure Network,5.0
+SD-WAN,sd-wan,,Secure Network,4.0
+Secure Perimeter,secure perimeter,,Secure Network,1.0
+Zero Trust Principles,zero trust principles,,Secure Network,2.0
