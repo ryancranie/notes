@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # Secure Perimeter
 
 A **secure perimeter** is a form of protection that consists of devices or techniques added to the edge of a managed network. 
