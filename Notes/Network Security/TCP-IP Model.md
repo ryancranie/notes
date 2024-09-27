@@ -1,5 +1,7 @@
 # TCP-IP Model
 
+{Content to be added}
+
 ## Links
 ### Revision History
 001: 2024-09-01 - Initialized TCP-IP Model.md

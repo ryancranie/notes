@@ -1,5 +1,7 @@
 # OSI Model
 
+{Content to be added}
+
 ## 7 Layer Architecture
 The OSI Model follows a layered architecture
 7. **Application Layer**:
@@ -19,6 +21,7 @@ The OSI Model follows a layered architecture
 | 3     | Network      |             |
 | 2     | Data Link    |             |
 | 1     | Physical     |             |
+
 ## The OSI Model & TCP/IP Model
 The is similar 
 

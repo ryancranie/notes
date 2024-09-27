@@ -8,4 +8,12 @@ Hi, welcome to my Cyber Security OSINT page. ...tbm.
 - [Network Technologies](https://notes.ryancranie.com/Contents/Network%20Technologies%20Contents) (3)
 
 ---
-<font size=3><b>[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
+Note Count: XXX
+Word Count: XXX
+
+<img src="http://ghchart.rshah.org/ryancranie" alt="GitHub Chart" />
+
+License
+[Ryan Cranie](https://www.ryancranie.com)
+
+
