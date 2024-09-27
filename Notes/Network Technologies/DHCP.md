@@ -10,6 +10,7 @@ DHCP allows a DHCP client to obtain an
 - DNS server IP address 
 - other types of IP addressing information
 from a DHCP server
+
 ## DORA Process
 1. Discover
 2. Offer
@@ -27,6 +28,7 @@ When a DHCP client initially boots, it has no
 - other configuration information
 
 Therefore, the way a DHCP client initially communicates is by sending a **broadcast DHCPDISCOVER** message to destination IP `255.255.255.255` and destination MAC `FFFF:FFFF:FFFF` attempting to discover a DHCP server. The source IP is `0.0.0.0`, and the source MAC is the MAC address of the sending device.
+
 ### Offer
 When a DHCP server receives a **DHCPDISCOVER** message, it can respond with a **DHCPOFFER** message with 
 - an unleased IP address
@@ -40,6 +42,7 @@ The DHCP client communicates with the selected server by sending a broadcasted *
 
 ### Acknowledge
 Finally, the DHCP server responds to the client with a **DHCPACK** message indicating that the IP address is leased to the client and includes any additional DHCP options that might be needed at this point, such as the lease duration.
+
 ## DHCP Relay Agent
 The **DHCPDISCOVER** message is sent as a broadcast but it cannot cross the router boundary. Therefore, if a client resides on a different network from the DHCP server, *you need to configure the default gateway of the client as a DHCP relay agent* to forward the broadcast packets as unicast packets to the server.
 
