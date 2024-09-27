@@ -111,6 +111,7 @@ Certificate templates specify the attributes that will be in different certifica
 		- low-assurance CAs might not implement all of the security elements of a high-assurance CA
 			- they do not have the same rigorous legal requirements
 		- high-assurance CA can prove in court their CA's key pair was created in a secure manner
+
 ## PKI Organization
 In a PKI implementation, multiple CAs can be organized in different ways.
 - In a **hierarchical structure** there would be one **root CA**, and one or more **subordinate CAs**.

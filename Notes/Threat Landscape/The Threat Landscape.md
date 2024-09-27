@@ -179,6 +179,7 @@ This Attack Framework classifies and describes cyberattacks and intrusions.
 - The Matrix is organized into a series of "techniques".
 - Techniques are grouped into categories based on the type of attack or activity being performed.
 	- Framework provides tactics, techniques and procedures (**TTPs**) used by attackers.
+
 ## Links
 ### Revision History
 001: 2024-09-25 - Initialized The Threat Landscape.md

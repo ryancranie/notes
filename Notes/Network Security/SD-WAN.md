@@ -28,6 +28,7 @@ Disadvantages include
 	- because of demand to host applications in the cloud
 		- known as Software as a Service (**SaaS**)
 	- greater reliance on voice and video conferencing.
+
 ## SD-WAN First Generation
 Businesses began to augment their connectivity by employing multiple providers, or seeking more affordable means of internet connectivity. The trend towards hybrid connections, and the growth of cloud applications, led to the first generation of SD-WAN.
 

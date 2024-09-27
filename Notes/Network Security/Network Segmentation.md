@@ -60,6 +60,7 @@ Another way to access segmented networks is via a **Bastion Host**
 - Attacks are limited to a specific segment
 - Vulnerable devices are given greater protection
 - Compliance affects a smaller scope.
+
 ## Links
 ### Revision History
 001: 2024-09-26 - Initialized Network Segmentation.md

@@ -1,5 +1,6 @@
 # Common Protocols
 
+{Content to be added}
 ## Links
 ### Revision History
 001: 2024-09-03 - Initialized Common Protocols.md

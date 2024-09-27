@@ -18,13 +18,14 @@ Keys have a lifetime, which can be set from years to seconds, depending on the t
 Keys can be private/secret, but can also be public:
 - Public keys are often used for digital signatures
 
-Key Lengths and Strengths
+## Key Lengths and Strengths
 
 | Variable   | Large Key (1024+)                   | Small Key (128/256 bits)                                    |
 | ---------- | ----------------------------------- | ----------------------------------------------------------- |
 | Encryption | Encrypt small pieces of data        | Encrypt bulk data                                           |
 | Usage      | Key transfer and digital signatures | Streams of data or bulk data, where performance is critical |
 | Strength   | Length + Complexity                 | Length + Complexity                                         |
+
 ## Key Stretching
 
 **Key Stretching** is a method used to strengthen keys or passwords that are either too short or predictable via feeding the key/pasword into a type of hashing algorithm, producing an enhanced key/password.
@@ -40,15 +41,15 @@ A **salt** is a random value added to another value to increase **entropy**
 A **symmetric algorithm** is a cipher used to encrypt and decrypt data using the same key
 Example symmetric algorithms:
 - Data Encryption Standard (**DES**)
-	- 48-bit key | encrypts 64-bit blocks
+	- 48-bit key: encrypts 64-bit blocks
 	- developed by IBM, approved by NIST in the 1970s
 - Triple DES (**3DES**)
 	- DES but 3 times
 - International Data Encryption Algorithm (**IDEA**)
-	- 128-bit key | encrypts 64-bit blocks
+	- 128-bit key: encrypts 64-bit blocks
 	- developed in 1991
 - Advanced Encryption Standard (**AES**)
-	- 128/192/256-bit key | encrypts 128-bit blocks
+	- 128/192/256-bit key: encrypts 128-bit blocks
 	- renamed to AES from Rijndael after it was adopted by NIST in 2001
 - Rivest [Ciphers](https://notes.ryancranie.com/Notes/Cryptography/Ciphers)
 	- **RC4**
@@ -62,21 +63,23 @@ Example symmetric algorithms:
 		- won the AES algorithm competition
 - Blowfish / Twofish
 	- **Blowfish**
-		- configurable key size | encrypts 64-bit blocks
+		- configurable key size: encrypts 64-bit blocks
 		- released 1993
 	- **Twofish**
-		- 128, 192, 256-bit key sizes | encrypts 128-bit blocks
+		- 128, 192, 256-bit key sizes: encrypts 128-bit blocks
 		- published 1998: derived from Blowfish
 
-Symmetric Key Cryptography Table
+How does Symmetric Cryptography Work?
+1. A crypto app uses a symmetric key and cipher to convert the plaintext into ciphertext. 
+2. To decrypt it, the same symmetric key and cipher will convert the ciphertext back into plaintext
+
+## Symmetric Key Cryptography Table
 
 | Advantages                                                                | Disadvantages                             |
 | ------------------------------------------------------------------------- | ----------------------------------------- |
 | Faster to encrypt/decrypt (smaller key sizes, uses the same key for both) | Relies on a **secret** key                |
 | Efficient to encrypt and decrypt large amounts of data                    | Need to protect and secure the secret key |
-How does Symmetric Cryptography Work?
-1. A crypto app uses a symmetric key and cipher to convert the plaintext into ciphertext. 
-2. To decrypt it, the same symmetric key and cipher will convert the ciphertext back into plaintext
+
 ## Asymmetric Algorithm
 An **asymmetric algorithm** is a cipher used for cryptographic operations using a pair of mathematically related keys.
 - Encryption
@@ -104,16 +107,17 @@ Examples of asymmetric algorithms:
 - Digital Signing Algorithm (**DSA**)
 	- in 1994, NIST adopted DSA as its digital signature standard (**DSS**) as **FIPS 186**
 
-Asymmetric Key Cryptography Table
+How does asymmetric cryptography work?
+1. The sender's crypto application converts the plaintext data into cipher text using the recipients asymmetric public key and asymmetric cipher. 
+2. To decrypt it, the recipient's crypto application converts the ciphertext to plaintext using their private decryption key, and the asymmetric cipher that was used.
+
+### Asymmetric Key Cryptography Table
 
 | Advantages                                                     | Disadvantages                                                     |
 | -------------------------------------------------------------- | ----------------------------------------------------------------- |
 | Increased data security: users do not share their private keys | Operations are relatively slow compared to symmetric cyrptography |
 | Public key encrypts, private key decrypts                      | Not efficient to encrypt and decrypt large amounts of data        |
 
-How does asymmetric cryptography work?
-1. The sender's crypto application converts the plaintext data into cipher text using the recipients asymmetric public key and asymmetric cipher. 
-2. To decrypt it, the recipient's crypto application converts the ciphertext to plaintext using their private decryption key, and the asymmetric cipher that was used.
 ## Where to use symmetric/asymmetric algorithm
 Considering both advantages and disadvantages of symmetric encryption and asymmetric encryption:
 - symmetric encryption secures bulk data to resolve the slowness of asymmetric encryption

@@ -35,6 +35,7 @@ The three core capabilities of SASE are
 - zero trust network access
 - NGFW
 - DLP
+
 ## Links
 ### Revision History
 001: 2024-09-26 - Initialized SASE.md
