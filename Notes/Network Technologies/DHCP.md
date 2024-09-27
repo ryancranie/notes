@@ -284,6 +284,8 @@ Example 1-24 shows interface Gigabit Ethernet 0/0 configured with the command `i
 
 
 ## Links
+### Network Technologies
+- [IPv6](https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6)
 ### Revision History
 001: 2024-09-24 - Initialized DHCP.md
 
