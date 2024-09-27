@@ -268,6 +268,7 @@ DHCPv6 has a four-step negotiation process, like IPv4. However, DHCPv6 uses the 
 | **INFORMATION REQUEST** | A client sends this message to a server when the client only needs additional configuration information without any IP address assignment.                                         |
 | **RELAY-FORW**          | A relay agent uses this message to forward messages to a DHCP server                                                                                                               |
 | **RELAY-REPL**          | A DHCP server uses this message to reply to the relay agent.                                                                                                                       |
+
 ## DHCPv6 Relay Agent
 
 If you review the multicast address of the **SOLICIT** message, notice that it is a *link-local scope multicast address* (It starts with `FF02`). Therefore, the multicast does not leave the local network, and the client is not able to reach the DHCPv6 server.
