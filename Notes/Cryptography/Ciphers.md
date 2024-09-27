@@ -1,10 +1,10 @@
 # Ciphers
 
-A cipher is a secret or disguised way of writing code.
+A **cipher** is a secret or disguised way of writing code.
 
-Cryptographic algorithms and digital keys allow you to encrypt and decrypt information.
+**Cryptographic algorithms** and **digital keys** allow you to encrypt and decrypt information.
 
-Algorithms are public information and keys are usually secrets.
+**Algorithms** are public information and keys are usually secrets.
 
 ## Types of Ciphers
 
