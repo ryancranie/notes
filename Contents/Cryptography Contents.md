@@ -6,5 +6,5 @@
 - [PKI](https://notes.ryancranie.com/Notes/Cryptography/PKI)
 
 ---
-<font size=3><b>[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)<br>
-[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
+<font size=3><b>[Home Page](https://notes.ryancranie.com)<br></b>
+[Ryan Cranie](https://www.ryancranie.com)</font>

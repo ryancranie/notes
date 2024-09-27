@@ -62,9 +62,9 @@ Another way to access segmented networks is via a **Bastion Host**
 - Compliance affects a smaller scope.
 ## Links
 ### Revision History
-001: 2024-09-26 - INITIALIZE
+001: 2024-09-26 - Initialized Network Segmentation.md
 
 ---
-<font size=3><b>[SECURE NETWORK CONTENTS](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Secure%20Network%20Contents.md)<br>
-[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)<br>
-[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
+<font size=3><b>[Network Security Contents](https://notes.ryancranie.com/Contents/Network Security%20Contents)<br>
+[Home Page](https://notes.ryancranie.com)<br></b>
+[Ryan Cranie](https://www.ryancranie.com)</font>

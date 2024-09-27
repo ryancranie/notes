@@ -2,9 +2,9 @@
 
 ## Links
 ### Revision History
-001: 2024-09-01 - INITIALIZE
+001: 2024-09-01 - Initialized TCP-IP Model.md
 
 ---
-<font size=3><b>[NETWORK SECURITY CONTENTS](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Network%20Security%20Contents.md)<br>
-[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)<br>
-[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
+<font size=3><b>[Network Security Contents](https://notes.ryancranie.com/Contents/Network Security%20Contents)<br>
+[Home Page](https://notes.ryancranie.com)<br></b>
+[Ryan Cranie](https://www.ryancranie.com)</font>

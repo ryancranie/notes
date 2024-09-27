@@ -61,9 +61,9 @@ SD-WAN enhances:
 ### Network Security
 - [Network Segmentation](https://notes.ryancranie.com/Notes/Network%20Security/Network%20Segmentation)
 ### Revision History
-001: 2024-09-26 - INITIALIZE
+001: 2024-09-26 - Initialized SD-WAN.md
 
 ---
-<font size=3><b>[SECURE NETWORK CONTENTS](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Secure%20Network%20Contents.md)<br>
-[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)<br>
-[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
+<font size=3><b>[Network Security Contents](https://notes.ryancranie.com/Contents/Network Security%20Contents)<br>
+[Home Page](https://notes.ryancranie.com)<br></b>
+[Ryan Cranie](https://www.ryancranie.com)</font>

@@ -221,9 +221,9 @@ At the endpoint, the user needs a cryptographic application to
 ### Cryptography
 - [Cryptography Overview](https://notes.ryancranie.com/Notes/Cryptography/Cryptography%20Overview)
 ### Revision History
-001: 2024-09-25 - INITIALIZE
+001: 2024-09-25 - Initialized PKI.md
 
 ---
-<font size=3><b>[CRYPTOGRAPHY AND THE PUBLIC KEY INFRASTRUCTURE CONTENTS](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Cryptography%20and%20the%20Public%20Key%20Infrastructure%20Contents.md)<br>
-[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)<br>
-[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
+<font size=3><b>[Cryptography Contents](https://notes.ryancranie.com/Contents/Cryptography%20Contents)<br>
+[Home Page](https://notes.ryancranie.com)<br></b>
+[Ryan Cranie](https://www.ryancranie.com)</font>

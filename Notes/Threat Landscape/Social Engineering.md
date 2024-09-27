@@ -197,9 +197,9 @@ Cyber warfare can include
 ### Threat Landscape
 - [The Threat Landscape](https://notes.ryancranie.com/Notes/Threat%20Landscape/The%20Threat%20Landscape)
 ### Revision History
-001: 2024-09-25 - INITIALIZE
+001: 2024-09-25 - Initialized Social Engineering.md
 
 ---
-<font size=3><b>[INTRODUCTION TO THE THREAT LANDSCAPE CONTENTS](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Introduction%20to%20the%20Threat%20Landscape%20Contents.md)<br>
-[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)<br>
-[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
+<font size=3><b>[Threat Landscape Contents](https://notes.ryancranie.com/Contents/Threat Landscape%20Contents)<br>
+[Home Page](https://notes.ryancranie.com)<br></b>
+[Ryan Cranie](https://www.ryancranie.com)</font>

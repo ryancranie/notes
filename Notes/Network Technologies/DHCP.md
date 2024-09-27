@@ -282,9 +282,9 @@ Example 1-24 shows interface Gigabit Ethernet 0/0 configured with the command `i
 
 ## Links
 ### Revision History
-001: 2024-09-24 - INITIALIZE
+001: 2024-09-24 - Initialized DHCP.md
 
 ---
-<font size=3><b>[NETWORK TECHNOLOGIES CONTENTS](https://github.com/ryancranie/cybersecurity-osint/blob/main/Contents/-%20Network%20Technologies%20Contents.md)<br>
-[README](https://github.com/ryancranie/cybersecurity-osint/blob/main/README.md)<br>
-[LICENSE](https://github.com/ryancranie/cybersecurity-osint/blob/main/LICENSE)</b></font>
+<font size=3><b>[Network Technologies Contents](https://notes.ryancranie.com/Contents/Network Technologies%20Contents)<br>
+[Home Page](https://notes.ryancranie.com)<br></b>
+[Ryan Cranie](https://www.ryancranie.com)</font>
