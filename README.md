@@ -10,7 +10,7 @@ Hi, welcome to my Cyber Security OSINT page. {Content to be added}
 <img src="http://ghchart.rshah.org/ryancranie" alt="GitHub Chart" />
 
 <i>Note Count: XXX<br>
-Word Count: XXX</i>
+Word Count: XXX</i><br>
 ---
 
 <b>[License](https://raw.githubusercontent.com/ryancranie/notes/refs/heads/main/LICENSE)</b><br>
