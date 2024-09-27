@@ -252,6 +252,7 @@ DHCPv6 has a four-step negotiation process, like IPv4. However, DHCPv6 uses the 
 	- The server finalizes the process with this message.
 
 ## DHCPv6 Messages
+
 | DHCP Message            | Description                                                                                                                                                                        |
 | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **SOLICIT**             | A client sends this message in a attempt to locate a DHCPv6 server.                                                                                                                |

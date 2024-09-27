@@ -14,6 +14,7 @@ Information Security (InfoSec) is the practice of protecting information
 - Preventing
 - Detecting
 - Remediating
+
 InfoSec also involves documenting
 - Processes
 - Threats
