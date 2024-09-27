@@ -41,6 +41,8 @@ A **cipher** is a secret or disguised way of writing code.
 			- if messages is 1 megabyte, message would be split into blocks of 256 bits
 
 ## Links
+### Cryptography
+- [Keys and Cryptographic Algorithms](https://notes.ryancranie.com/Notes/Cryptography/Keys%20and%20Cryptographic%20Algorithms)
 ### Revision History
 001: 2024-09-25 - Initialized Ciphers.md
 
