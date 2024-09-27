@@ -281,6 +281,8 @@ Example 1-24 shows interface Gigabit Ethernet 0/0 configured with the command `i
 
 
 ## Links
+
+dumb link fr
 ### Revision History
 001: 2024-09-24 - INITIALIZE
 
