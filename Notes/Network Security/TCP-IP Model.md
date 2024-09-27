@@ -1,8 +1,6 @@
 # TCP-IP Model
 
 ## Links
-### Network Security
-- [OSI Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/OSI%20Model.md)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 

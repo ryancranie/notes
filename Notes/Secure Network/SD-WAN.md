@@ -59,7 +59,7 @@ SD-WAN enhances:
 
 ## Links
 ### Secure Network
-- [Network Segmentation](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Secure%20Network/Network%20Segmentation.md)
+- [Network Segmentation](https://notes.ryancranie.com/Notes/Secure%20Network/Network%20Segmentation)
 ### Revision History
 001: 2024-09-26 - INITIALIZE
 

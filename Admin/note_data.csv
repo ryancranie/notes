@@ -1,6 +1,5 @@
 note name,alias,alias ignore,subfolder,order
 OSI Model,osi model,,Network Security,1.0
-TCP-IP Model,tcp-ip model:TCP/IP Model:tcp/ip model,,Network Security,2.0
 Common Protocols,common protocols,,Network Technologies,1.0
 Protocols,protocols:Protocol:protocol,,Network Technologies,2.0
 DHCP,dhcp:dynamic host configuration protocol,,Network Technologies,3.0
@@ -19,3 +18,4 @@ SASE,sase,,Secure Network,5.0
 SD-WAN,sd-wan,,Secure Network,4.0
 Secure Perimeter,secure perimeter,,Secure Network,1.0
 Zero Trust Principles,zero trust principles,,Secure Network,2.0
+TCP-IP Model,tcp-ip model,,Network Security,

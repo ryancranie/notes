@@ -16,7 +16,7 @@ A digital key is a value, that can be expressed alphanumerically, that is used t
 Keys have a lifetime, which can be set from years to seconds, depending on the task.
 
 Keys can be private/secret, but can also be public:
-- Public keys are often used for [digital signatures](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures.md)
+- Public keys are often used for [digital signatures](https://notes.ryancranie.com/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures)
 
 Key Lengths and Strengths
 
@@ -50,7 +50,7 @@ Example symmetric algorithms:
 - Advanced Encryption Standard (**AES**)
 	- 128/192/256-bit key | encrypts 128-bit blocks
 	- renamed to AES from Rijndael after it was adopted by NIST in 2001
-- Rivest Ciphers
+- Rivest [Ciphers](https://notes.ryancranie.com/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Ciphers)
 	- **RC4**
 		- 40-bit - 2048-bit key
 		- stream cipher
@@ -142,7 +142,10 @@ DECRYPTION:
 	- = plaintext!!
 
 ## Links
-
+### Cryptography and the Public Key Infrastructure
+- [Cryptography Overview](https://notes.ryancranie.com/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Cryptography%20Overview)
+- [Hashing and Digital Signatures](https://notes.ryancranie.com/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures)
+- [PKI](https://notes.ryancranie.com/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/PKI)
 ### Revision History
 001: 2024-09-25 - INITIALIZE
 

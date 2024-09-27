@@ -14,7 +14,7 @@ Types of bad actors:
 	- attacks via DDoS
 - **Cyberterrorist**
 	- main motivation is just to destroy things. Such as operational technology. Operate like a virtual army.
-	- attacks via Spear Phishing, DDoS and [social engineering](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Introduction%20to%20the%20Threat%20Landscape/Social%20Engineering.md)
+	- attacks via Spear Phishing, DDoS and [social engineering](https://notes.ryancranie.com/Notes/Introduction%20to%20the%20Threat%20Landscape/Social%20Engineering)
 - **Cybercriminal**
 	- they want money
 	- attacks via phishing, fraud or ransomware
@@ -50,7 +50,7 @@ An attack path is the chain of events that occurs when attack vectors are exploi
 Cybersecurity Threat Categories
 - **Social engineering**
 	- phycological manipulation via gaining trust
-- **[Malware](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Introduction%20to%20the%20Threat%20Landscape/Malware.md)**
+- **[Malware](https://notes.ryancranie.com/Notes/Introduction%20to%20the%20Threat%20Landscape/Malware)**
 	- software which is designed to damage a computer system.
 - **Unauthorized access**
 	- tailgating: going through a gate following an authorized user, unauthorized.
@@ -71,7 +71,7 @@ Attack Vector Categories
 
 Pre-exploit stage
 Birthday Attack
-- attacks weaknesses in some password [hashing](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures.md) algorithms. The weakness is that the same input value produces the same output value.
+- attacks weaknesses in some password [hashing](https://notes.ryancranie.com/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures) algorithms. The weakness is that the same input value produces the same output value.
 Brute Force
 - relies on individual having weaker password
 Counters to these attacks:
@@ -120,7 +120,7 @@ Formatting Standards for Threat Intelligence
 		- Tactics and Exploits used to carry out attacks
 - Trusted automate exchange of indicator information (**TAXII**)
 	- taxiiproject.guthub.io
-	- application [protocol](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md) for exchanging cyber threat intelligence (**CTI**) over HTTPS
+	- application [protocol](https://notes.ryancranie.com/Notes/Network%20Technologies/Protocols) for exchanging cyber threat intelligence (**CTI**) over HTTPS
 	- defines a RESTful API and a set of requirements for TAXII clients and servers.
 
 RESTful API

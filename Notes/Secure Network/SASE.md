@@ -16,7 +16,7 @@ A SASE solution provides integrated networking and security capabilities includi
 	- allows network connection and traffic exchange directly across the internet without having to pay a third party
 - A Nex-Generation Firewall (**NGFW**) or Firewall-as-a-Service (**FWaaS**)
 	- IPS
-	- Anti-[Malware](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Introduction%20to%20the%20Threat%20Landscape/Malware.md)
+	- Anti-[Malware](https://notes.ryancranie.com/Notes/Introduction%20to%20the%20Threat%20Landscape/Malware)
 	- SSL Inspection
 	- Sandbox
 - A Secure Web Gateway

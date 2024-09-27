@@ -13,7 +13,7 @@ The secure perimeter consists of specific applications for
 Which protects and provide confidentiality, while filtering traffic to the trusted zone 
 
 ## Security in the OSI Model 
-The secure perimeter can filter traffic at different **[OSI Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/OSI%20Model.md) Layers**.
+The secure perimeter can filter traffic at different **[OSI Model](https://notes.ryancranie.com/Notes/Network%20Security/OSI%20Model) Layers**.
 
 7. **Application**
 	- End User Layer
@@ -52,7 +52,7 @@ At the **Transport** layer, a secure perimeter device can perform packet filteri
 - **Stateless** packet filtering: each packet is checked based on its
 	- IP addresses
 	- source/dest ports
-	- [protocol](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md)
+	- [protocol](https://notes.ryancranie.com/Notes/Network%20Technologies/Protocols)
 - **Stateful** packet filtering: Returned traffic is validated, only if it matches corresponding incoming traffic. The security device filters traffic and tracks the 
 	- 5-Tuple check
 		- This characterizes and allows tracking of a TCP/IP connection via these parameters:

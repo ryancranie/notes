@@ -24,7 +24,7 @@ The [TCP/IP Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/N
 
 ## Links
 ### Secure Network
-- [Secure Perimeter](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Secure%20Network/Secure%20Perimeter.md)
+- [Secure Perimeter](https://notes.ryancranie.com/Notes/Secure%20Network/Secure%20Perimeter)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 

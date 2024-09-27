@@ -3,7 +3,7 @@
 Data gathering can be done through
 - logs
 - Simple Network Management Protocol (**SNMP**)
-	- the SNMP [protocol](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Technologies/Protocols.md) collects and organizes information on managed devices
+	- the SNMP [protocol](https://notes.ryancranie.com/Notes/Network%20Technologies/Protocols) collects and organizes information on managed devices
 - Application Programming Interface (**API**)
 	- an API is a software interface allowing two devices to communicate with each other
 	- allows for scripting

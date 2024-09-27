@@ -42,7 +42,7 @@ Algorithms are public information and keys are usually secrets.
 
 ## Links
 ### Cryptography and the Public Key Infrastructure
-- [Keys and Cryptographic Algorithms](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Keys%20and%20Cryptographic%20Algorithms.md)
+- [Keys and Cryptographic Algorithms](https://notes.ryancranie.com/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Keys%20and%20Cryptographic%20Algorithms)
 ### Revision History
 001: 2024-09-25 - INITIALIZE
 
