@@ -58,8 +58,8 @@ SD-WAN enhances:
 - Unified Communications as a Service (**UCaaS**)
 
 ## Links
-### Secure Network
-- [Network Segmentation](https://notes.ryancranie.com/Notes/Secure%20Network/Network%20Segmentation)
+### Network Security
+- [Network Segmentation](https://notes.ryancranie.com/Notes/Network%20Security/Network%20Segmentation)
 ### Revision History
 001: 2024-09-26 - INITIALIZE
 

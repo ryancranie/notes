@@ -164,7 +164,7 @@ Network actions to protect assets
 
 ## Fraud, Scams and Influence Campaigns
 
-**Cyber Fraud** is a social engineering technique, [malware](https://notes.ryancranie.com/Notes/Introduction%20to%20the%20Threat%20Landscape/Malware), and other type of deception that is used to defraud or take advantage of a person or organization for financial or personal gain
+**Cyber Fraud** is a social engineering technique, [malware](https://notes.ryancranie.com/Notes/Threat%20Landscape/Malware), and other type of deception that is used to defraud or take advantage of a person or organization for financial or personal gain
 
 **Cyber Scams** are a type of fraud, but they are generally classified as petty, or not as serious as cyber fraud
 
@@ -194,8 +194,8 @@ Cyber warfare can include
 - influence campaigns
 - promoting fake news
 ## Links
-### Introduction to the Threat Landscape
-- [The Threat Landscape](https://notes.ryancranie.com/Notes/Introduction%20to%20the%20Threat%20Landscape/The%20Threat%20Landscape)
+### Threat Landscape
+- [The Threat Landscape](https://notes.ryancranie.com/Notes/Threat%20Landscape/The%20Threat%20Landscape)
 ### Revision History
 001: 2024-09-25 - INITIALIZE
 

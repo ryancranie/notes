@@ -20,11 +20,11 @@ The OSI Model follows a layered architecture
 | 2     | Data Link    |             |
 | 1     | Physical     |             |
 ## The OSI Model & TCP/IP Model
-The [TCP/IP Model](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Network%20Security/TCP-IP%20Model.md) is similar 
+The is similar 
 
 ## Links
-### Secure Network
-- [Secure Perimeter](https://notes.ryancranie.com/Notes/Secure%20Network/Secure%20Perimeter)
+### Network Security
+- [Secure Perimeter](https://notes.ryancranie.com/Notes/Network%20Security/Secure%20Perimeter)
 ### Revision History
 001: 2024-09-01 - INITIALIZE
 

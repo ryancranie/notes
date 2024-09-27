@@ -32,7 +32,7 @@ A network can be segmented into physical or logical segments.
 
 ### SD-WAN
 - Application Layer (Layer 7)
-	- [SD-WAN](https://notes.ryancranie.com/Notes/Secure%20Network/SD-WAN) allows communication over the internet using encrypted tunnels.
+	- [SD-WAN](https://notes.ryancranie.com/Notes/Network%20Security/SD-WAN) allows communication over the internet using encrypted tunnels.
 		- creates overlay network
 
 The **underlay** network refers to the physical network infrastructure
