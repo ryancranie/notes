@@ -195,8 +195,6 @@ Cyber warfare can include
 - promoting fake news
 
 ## Links
-### Threat Landscape
-- [The Threat Landscape](https://notes.ryancranie.com/Notes/Threat%20Landscape/The%20Threat%20Landscape)
 ### Revision History
 001: 2024-09-25 - Initialized Social Engineering.md
 
