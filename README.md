@@ -1,5 +1,5 @@
-# Cybersecurity OSINT
-Hi, welcome to my Cyber Security OSINT page. ...tbm.
+# Home Page
+Hi, welcome to my Cyber Security OSINT page. {Content to be added}
 
 ## Contents
 - [Network Security](https://notes.ryancranie.com/Contents/Network%20Security%20Contents) (8)
@@ -8,12 +8,11 @@ Hi, welcome to my Cyber Security OSINT page. ...tbm.
 - [Network Technologies](https://notes.ryancranie.com/Contents/Network%20Technologies%20Contents) (3)
 
 ---
-Note Count: XXX
-Word Count: XXX
-
 <img src="http://ghchart.rshah.org/ryancranie" alt="GitHub Chart" />
 
-License
+<i>Note Count: XXX<br>
+Word Count: XXX</i><br>
+<b>[License](https://raw.githubusercontent.com/ryancranie/notes/refs/heads/main/LICENSE)</b><br>
 [Ryan Cranie](https://www.ryancranie.com)
 
 
