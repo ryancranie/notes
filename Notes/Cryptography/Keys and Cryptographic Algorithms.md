@@ -146,6 +146,4 @@ DECRYPTION:
 001: 2024-09-25 - Initialized Keys and Cryptographic Algorithms.md
 
 ---
-<font size=3><b>[Cryptography Contents](https://notes.ryancranie.com/Contents/Cryptography%20Contents)<br>
-[Home Page](https://notes.ryancranie.com)<br></b>
-[Ryan Cranie](https://www.ryancranie.com)</font>
+<b>[Cryptography Contents](https://notes.ryancranie.com/Contents/Cryptography%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)

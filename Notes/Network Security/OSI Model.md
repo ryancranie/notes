@@ -29,6 +29,4 @@ The is similar
 001: 2024-09-01 - Initialized OSI Model.md
 
 ---
-<font size=3><b>[Network Security Contents](https://notes.ryancranie.com/Contents/Network Security%20Contents)<br>
-[Home Page](https://notes.ryancranie.com)<br></b>
-[Ryan Cranie](https://www.ryancranie.com)</font>
+<b>[Network Security Contents](https://notes.ryancranie.com/Contents/Network%20Security%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)

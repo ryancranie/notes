@@ -5,5 +5,4 @@
 - [Social Engineering](https://notes.ryancranie.com/Notes/Threat%20Landscape/Social%20Engineering)
 
 ---
-<font size=3><b>[Home Page](https://notes.ryancranie.com)<br></b>
-[Ryan Cranie](https://www.ryancranie.com)</font>
+<b>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)

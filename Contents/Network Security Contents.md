@@ -9,5 +9,4 @@
 - [Network Segmentation](https://notes.ryancranie.com/Notes/Network%20Security/Network%20Segmentation)
 
 ---
-<font size=3><b>[Home Page](https://notes.ryancranie.com)<br></b>
-[Ryan Cranie](https://www.ryancranie.com)</font>
+<b>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)

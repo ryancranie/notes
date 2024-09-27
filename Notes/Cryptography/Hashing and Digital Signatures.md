@@ -70,6 +70,4 @@ The **Verifying Process**
 001: 2024-09-25 - Initialized Hashing and Digital Signatures.md
 
 ---
-<font size=3><b>[Cryptography Contents](https://notes.ryancranie.com/Contents/Cryptography%20Contents)<br>
-[Home Page](https://notes.ryancranie.com)<br></b>
-[Ryan Cranie](https://www.ryancranie.com)</font>
+<b>[Cryptography Contents](https://notes.ryancranie.com/Contents/Cryptography%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)

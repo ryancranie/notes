@@ -47,6 +47,4 @@ Algorithms are public information and keys are usually secrets.
 001: 2024-09-25 - Initialized Ciphers.md
 
 ---
-<b>[Cryptography Contents](https://notes.ryancranie.com/Contents/Cryptography%20Contents)<br>
-[Home Page](https://notes.ryancranie.com)<br></b>
-[Ryan Cranie](https://www.ryancranie.com)
+<b>[Cryptography Contents](https://notes.ryancranie.com/Contents/Cryptography%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)

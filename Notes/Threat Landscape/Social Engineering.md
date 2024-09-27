@@ -200,6 +200,4 @@ Cyber warfare can include
 001: 2024-09-25 - Initialized Social Engineering.md
 
 ---
-<font size=3><b>[Threat Landscape Contents](https://notes.ryancranie.com/Contents/Threat Landscape%20Contents)<br>
-[Home Page](https://notes.ryancranie.com)<br></b>
-[Ryan Cranie](https://www.ryancranie.com)</font>
+<b>[Threat Landscape Contents](https://notes.ryancranie.com/Contents/Threat%20Landscape%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)

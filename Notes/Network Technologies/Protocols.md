@@ -27,8 +27,8 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 .
 ## Links
 ### Network Security
-- [Centralized Network Security Management](https://notes.ryancranie.com/Notes/Network%20Security/Centralized%20Network%20Security%20Management)
 - [Secure Perimeter](https://notes.ryancranie.com/Notes/Network%20Security/Secure%20Perimeter)
+- [Centralized Network Security Management](https://notes.ryancranie.com/Notes/Network%20Security/Centralized%20Network%20Security%20Management)
 ### Network Technologies
 - [DHCP](https://notes.ryancranie.com/Notes/Network%20Technologies/DHCP)
 ### Threat Landscape
@@ -37,6 +37,4 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 001: 2024-09-01 - Initialized Protocols.md
 
 ---
-<font size=3><b>[Network Technologies Contents](https://notes.ryancranie.com/Contents/Network Technologies%20Contents)<br>
-[Home Page](https://notes.ryancranie.com)<br></b>
-[Ryan Cranie](https://www.ryancranie.com)</font>
+<b>[Network Technologies Contents](https://notes.ryancranie.com/Contents/Network%20Technologies%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)
