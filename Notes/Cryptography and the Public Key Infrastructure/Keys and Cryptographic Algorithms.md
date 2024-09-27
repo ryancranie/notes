@@ -50,7 +50,7 @@ Example symmetric algorithms:
 - Advanced Encryption Standard (**AES**)
 	- 128/192/256-bit key | encrypts 128-bit blocks
 	- renamed to AES from Rijndael after it was adopted by NIST in 2001
-- Rivest [Ciphers](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Ciphers.md)
+- Rivest Ciphers
 	- **RC4**
 		- 40-bit - 2048-bit key
 		- stream cipher
@@ -142,10 +142,7 @@ DECRYPTION:
 	- = plaintext!!
 
 ## Links
-### Cryptography and the Public Key Infrastructure
-- [PKI](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/PKI.md)
-- [Cryptography Overview](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Cryptography%20Overview.md)
-- [Hashing and Digital Signatures](https://github.com/ryancranie/cybersecurity-osint/blob/main/Notes/Cryptography%20and%20the%20Public%20Key%20Infrastructure/Hashing%20and%20Digital%20Signatures.md)
+
 ### Revision History
 001: 2024-09-25 - INITIALIZE
 
