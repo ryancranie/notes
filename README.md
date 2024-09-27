@@ -7,11 +7,12 @@ Hi, welcome to my Cyber Security OSINT page. {Content to be added}
 - [Threat Landscape](https://notes.ryancranie.com/Contents/Threat%20Landscape%20Contents) (4)
 - [Network Technologies](https://notes.ryancranie.com/Contents/Network%20Technologies%20Contents) (3)
 
----
 <img src="http://ghchart.rshah.org/ryancranie" alt="GitHub Chart" />
 
 <i>Note Count: XXX<br>
-Word Count: XXX</i><br>
+Word Count: XXX</i>
+---
+
 <b>[License](https://raw.githubusercontent.com/ryancranie/notes/refs/heads/main/LICENSE)</b><br>
 [Ryan Cranie](https://www.ryancranie.com)
 
