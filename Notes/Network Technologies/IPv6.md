@@ -16,6 +16,11 @@
 
 {Content to be added}
 ## Links
+### Network Technologies
+
+- [DHCP](https://notes.ryancranie.com/Notes/Network%20Technologies/DHCP)
+
+
 ### Revision History
 001: 2024-09-27 - Initialized IPv6.md
 

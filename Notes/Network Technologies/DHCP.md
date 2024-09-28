@@ -147,7 +147,7 @@ You can also see the four-step process of a DHCP client obtaining IP address `10
 
 ## DHCP for IPv6
 
-- Manually assigning IP addresses (either IPv4 or IPv6) is not a scalable option. 
+- Manually assigning IP addresses (either IPv4 or [IPv6](https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6)) is not a scalable option. 
 - With IPv4, DHCP provides a dynamic addressing option. With IPv6, you have three dynamic options to choose from: stateless address autoconfiguration (SLAAC), stateful DHCPv6, or stateless DHCPv6. 
 - This section looks at the issues that might arise for each and how to troubleshoot them.
 
@@ -285,7 +285,10 @@ Example 1-24 shows interface Gigabit Ethernet 0/0 configured with the command `i
 
 ## Links
 ### Network Technologies
+
 - [IPv6](https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6)
+
+
 ### Revision History
 001: 2024-09-24 - Initialized DHCP.md
 

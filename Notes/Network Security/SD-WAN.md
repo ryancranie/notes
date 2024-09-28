@@ -60,7 +60,10 @@ SD-WAN enhances:
 
 ## Links
 ### Network Security
+
 - [Network Segmentation](https://notes.ryancranie.com/Notes/Network%20Security/Network%20Segmentation)
+
+
 ### Revision History
 001: 2024-09-26 - Initialized SD-WAN.md
 

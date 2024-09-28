@@ -27,7 +27,10 @@ The is similar
 
 ## Links
 ### Network Security
+
 - [Secure Perimeter](https://notes.ryancranie.com/Notes/Network%20Security/Secure%20Perimeter)
+
+
 ### Revision History
 001: 2024-09-01 - Initialized OSI Model.md
 

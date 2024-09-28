@@ -220,7 +220,10 @@ At the endpoint, the user needs a cryptographic application to
 
 ## Links
 ### Cryptography
+
 - [Cryptography Overview](https://notes.ryancranie.com/Notes/Cryptography/Cryptography%20Overview)
+
+
 ### Revision History
 001: 2024-09-25 - Initialized PKI.md
 

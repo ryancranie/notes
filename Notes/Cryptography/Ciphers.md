@@ -42,7 +42,10 @@ A **cipher** is a secret or disguised way of writing code.
 
 ## Links
 ### Cryptography
+
 - [Keys and Cryptographic Algorithms](https://notes.ryancranie.com/Notes/Cryptography/Keys%20and%20Cryptographic%20Algorithms)
+
+
 ### Revision History
 001: 2024-09-25 - Initialized Ciphers.md
 
