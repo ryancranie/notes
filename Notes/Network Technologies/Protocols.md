@@ -1,3 +1,9 @@
+---
+title: Protocols
+tags:
+created: 2024-09-27 09:06:17
+modified: 2024-09-28 10:48:59
+---
 # Protocols
 A protocol is a convention or standard that controls/enables the connection, communication, and data transfer between computing endpoints. Protocols are formal standards and policies comprised of rules governing the syntax, semantics and synchronization of computer communication. Protocols may be implemented by hardware, software, or both.
 
@@ -38,6 +44,7 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 ### Network Technologies
 
 - [DHCP](https://notes.ryancranie.com/Notes/Network%20Technologies/DHCP)
+- [IPv6](https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6)
 
 ### Threat Landscape
 
