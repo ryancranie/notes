@@ -104,7 +104,8 @@ IPv6 uses the “*/prefix-length*” **CIDR notation** to denote how many bits i
 1. The first 64-bits (`fec0:0000:0000:0001`) forms the **address prefix**. 
 2. The last 64-bits (`0000:0000:0000:1234`) forms the **Interface ID**.
 
-## Special Ipv6 Addresses
+## Special IPv6 Addresses
+
 | IPv6 Address        | Description                                                                                                                |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `::/0`              | - All routes and used when specifying a default static route.<br>- It is equivalent to the IPv4 **quad-zero** (`0.0.0.0`). |
