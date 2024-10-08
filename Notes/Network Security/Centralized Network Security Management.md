@@ -42,6 +42,7 @@ Data fabric provides the possibility to monitor and manage data/applications whe
 	- improved risk management
 5. **Easier capacity and performance forecasting**
 6. **Easier compliance audits**
+
 ## Links
 ### Revision History
 001: 2024-09-26 - Initialized Centralized Network Security Management.md

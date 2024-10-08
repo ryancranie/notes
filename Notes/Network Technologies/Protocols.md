@@ -38,13 +38,14 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 ## Links
 ### Network Security
 
-- [Secure Perimeter](https://notes.ryancranie.com/Notes/Network%20Security/Secure%20Perimeter)
 - [Centralized Network Security Management](https://notes.ryancranie.com/Notes/Network%20Security/Centralized%20Network%20Security%20Management)
+- [Secure Perimeter](https://notes.ryancranie.com/Notes/Network%20Security/Secure%20Perimeter)
 
 ### Network Technologies
 
 - [DHCP](https://notes.ryancranie.com/Notes/Network%20Technologies/DHCP)
 - [IPv6](https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6)
+- [EIGRP](https://notes.ryancranie.com/Notes/Network%20Technologies/EIGRP)
 
 ### Threat Landscape
 

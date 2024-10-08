@@ -15,11 +15,12 @@
 	- cannot reproduce the input by using output
 	- denies the bad actor access to input value with hash value
 
-Hashing and asymmetric cryptography are needed to produce a digital signature
+Hashing and asymmetric cryptography are needed to produce a **digital signature**
+
 Digital signatures ensure:
-- Integrity
-- Authentication
-- Non-repudiation
+- **Integrity**
+- **Authentication**
+- **Non-repudiation**
 
 ## The Signing Process
 1. The information that is to be signed, is hashed

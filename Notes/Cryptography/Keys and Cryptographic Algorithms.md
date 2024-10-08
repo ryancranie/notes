@@ -28,7 +28,7 @@ Keys can be private/secret, but can also be public:
 
 ## Key Stretching
 
-**Key Stretching** is a method used to strengthen keys or passwords that are either too short or predictable via feeding the key/pasword into a type of hashing algorithm, producing an enhanced key/password.
+**Key Stretching** is a method used to strengthen keys or passwords that are either too short or predictable via feeding the key/password into a type of hashing algorithm, producing an enhanced key/password.
 Example key stretching algorithms 
 - password-based key derivation function two (**PBKDF2**)
 - **BCRYPT**
@@ -69,7 +69,7 @@ Example symmetric algorithms:
 		- 128, 192, 256-bit key sizes: encrypts 128-bit blocks
 		- published 1998: derived from Blowfish
 
-How does Symmetric Cryptography Work?
+## How does Symmetric Cryptography Work?
 1. A crypto app uses a symmetric key and cipher to convert the plaintext into ciphertext. 
 2. To decrypt it, the same symmetric key and cipher will convert the ciphertext back into plaintext
 
@@ -107,7 +107,7 @@ Examples of asymmetric algorithms:
 - Digital Signing Algorithm (**DSA**)
 	- in 1994, NIST adopted DSA as its digital signature standard (**DSS**) as **FIPS 186**
 
-How does asymmetric cryptography work?
+## How does asymmetric cryptography work?
 1. The sender's crypto application converts the plaintext data into cipher text using the recipients asymmetric public key and asymmetric cipher. 
 2. To decrypt it, the recipient's crypto application converts the ciphertext to plaintext using their private decryption key, and the asymmetric cipher that was used.
 
@@ -115,13 +115,13 @@ How does asymmetric cryptography work?
 
 | Advantages                                                     | Disadvantages                                                     |
 | -------------------------------------------------------------- | ----------------------------------------------------------------- |
-| Increased data security: users do not share their private keys | Operations are relatively slow compared to symmetric cyrptography |
+| Increased data security: users do not share their private keys | Operations are relatively slow compared to symmetric cryptography |
 | Public key encrypts, private key decrypts                      | Not efficient to encrypt and decrypt large amounts of data        |
 
 ## Where to use symmetric/asymmetric algorithm
 Considering both advantages and disadvantages of symmetric encryption and asymmetric encryption:
-- symmetric encryption secures bulk data to resolve the slowness of asymmetric encryption
-- asymmetric encryption secures the symmetric key to resolve the problem of safely transferring the secret
+- symmetric encryption secures **bulk data** to resolve the slowness of asymmetric encryption
+- asymmetric encryption secures the **symmetric key** to resolve the problem of safely transferring the secret
 
 example: send from A to B
 ENCRYPTION:
