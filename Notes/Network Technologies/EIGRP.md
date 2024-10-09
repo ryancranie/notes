@@ -15,6 +15,7 @@
 - EIGRP uses a diffusing update algorithm (**DUAL**) to identify network paths and provides for fast convergence using pre-calculated loop-free backup paths.
 
 > "Convergence time is the time taken by the routers in the network to reach convergence after a change in topology."
+
 ## Autonomous Systems
 
 A router can run multiple EIGRP processes. Each process operates under the context of an autonomous system (AS), which represents a common routing domain. Routers within the same domain use the same metric calculation formula and exchange routes only with members of the same autonomous system.
