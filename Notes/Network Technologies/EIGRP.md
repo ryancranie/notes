@@ -4,7 +4,7 @@
 ## EIGRP Fundamentals
 
 - Enhanced Interior Gateway Routing Protocol (**EIGRP**) is an enhanced distance vector routing [protocol](https://notes.ryancranie.com/Notes/Network%20Technologies/Protocols) commonly found in enterprise networks. 
-	- A distance vector routing protocol
+	- A distance vector routing protocol is a type of routing protocol used in packet-switched networks to determine the best path for data to travel from one network node to another.
 
 - EIGRP is a Cisco Proprietary Protocol (only made for cisco devices)
 
