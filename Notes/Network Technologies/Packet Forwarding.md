@@ -67,7 +67,7 @@ When a router needs to route an IP packet
 For example, suppose a router has a routing entry for networks 
 1. `10.0.0.0/8`
 2. `10.1.1.0/24` 
-3. 10.1.1.0/26 
+3. `10.1.1.0/26`
 
 Also, suppose that the router is trying to *forward* a packet with the **destination IP address** `10.1.1.10`. 
 
