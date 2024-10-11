@@ -520,6 +520,12 @@ Dividing the feasible successor metric by the successor route metric provides th
 The variance multiplier is a whole number, and any remainders should always round up.
 
 ## Links
+### Network Technologies
+
+- [Packet Forwarding](https://notes.ryancranie.com/Notes/Network%20Technologies/Packet%20Forwarding)
+- [IPv6](https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6)
+
+
 ### Revision History
 001: 2024-10-08 - Initialized EIGRP.md
 

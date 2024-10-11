@@ -275,7 +275,7 @@ IPv6 supports the following routing:
 - RIPng
 - OSPFv3
 - IS-IS for IPv6
-- EIGRP for IPv6
+- [EIGRP](https://notes.ryancranie.com/Notes/Network%20Technologies/EIGRP) for IPv6
 - Multiprotocol BGP version 4 (MP-BGPv4)
 
 For each routing option above, the `ipv6 unicast-routing` command must be configured
