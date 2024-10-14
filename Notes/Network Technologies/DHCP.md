@@ -344,14 +344,6 @@ service dhcp: Enables the DHCP service on the router (often unnecessary as it's 
 
 ### Medium
 
-<details><summary><b>Explain the concept of SLAAC and its limitations. How do stateful and stateless DHCPv6 address these limitations?
-</b></summary>SLAAC (Stateless Address Autoconfiguration) allows devices to automatically generate their IPv6 address, prefix, and default gateway information from Router Advertisements (RAs) sent by routers.
-<br>
-While this offers simplicity, its limitations include:
-<br>
-<li>Limited Configuration Information: SLAAC only provides basic addressing information. Devices might need additional parameters like DNS server addresses, NTP server information, or domain names, which SLAAC cannot provide.</li>
-<li>Lack of Centralized Management: SLAAC lacks the centralized control provided by DHCP, making it difficult to track and manage address assignments across a network.</li></details>
-
 <details><summary><b></b></summary></details>
 
 <details><summary><b></b></summary></details>
@@ -360,7 +352,18 @@ While this offers simplicity, its limitations include:
 
 ### Hard
 
-<details><summary><b></b></summary></details>
+<details><summary><b>Explain the concept of SLAAC and its limitations. How do stateful and stateless DHCPv6 address these limitations?
+</b></summary>SLAAC (Stateless Address Autoconfiguration) allows devices to automatically generate their IPv6 address, prefix, and default gateway information from Router Advertisements (RAs) sent by routers.
+<br>
+While this offers simplicity, its limitations include:
+<br>
+<li>Limited Configuration Information: SLAAC only provides basic addressing information. Devices might need additional parameters like DNS server addresses, NTP server information, or domain names, which SLAAC cannot provide.</li>
+<li>Lack of Centralized Management: SLAAC lacks the centralized control provided by DHCP, making it difficult to track and manage address assignments across a network.</li>
+<br>
+Stateful DHCPv6 overcomes these limitations by providing a centralized DHCPv6 server that assigns addresses and delivers other configuration parameters. Clients receive all necessary information from the server, ensuring comprehensive configuration and management.
+<br>
+Stateless DHCPv6 combines the benefits of both approaches. Devices still utilize SLAAC for address assignment but obtain additional configuration parameters from a DHCPv6 server, providing both autoconfiguration and comprehensive configuration options.
+</details>
 
 <details><summary><b></b></summary></details>
 
