@@ -1,5 +1,11 @@
 # Ciphers
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/Ciphers.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 A **cipher** is a secret or disguised way of writing code.
 
 **Cryptographic algorithms** and **digital keys** allow you to encrypt and decrypt information.

@@ -1,5 +1,11 @@
 # Secure Perimeter
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/Secure Perimeter.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 A **secure perimeter** is a form of protection that consists of devices or techniques added to the edge of a managed network. 
 - Everything outside of the secure perimeter is considered untrusted.
 - A remote device can also be a part of a secure perimeter, as long as it is using a secure remote access.

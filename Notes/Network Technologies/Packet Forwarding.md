@@ -1,5 +1,11 @@
 # Packet Forwarding
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/Packet Forwarding.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 ## The Layer 3 Packet Forwarding Process
 
 If you are experiencing connectivity issues between two hosts on a network, you could check Layer 3 by **pinging** between the hosts. 
@@ -238,7 +244,79 @@ If you ever need to make sure that the routing information or subset of routing 
 	- which is a backup route configured to have a **higher AD** 
 		- and therefore be less preferred, than the route that is preferred.
 
+## Glossary
 
+### Layer 2 Terminology
+<details><summary><b>ARP (Address Resolution Protocol)</b></summary>is a protocol used to discover the MAC address associated with an IP address.<br><br></details>
+<details><summary><b>ARP Cache</b></summary>is a table that stores mappings between IP addresses and MAC addresses on a network.<br><br></details>
+<details><summary><b>DMVPN (Dynamic Multipoint Virtual Private Network)</b></summary>is a type of VPN that uses a dynamic mesh of tunnels between endpoints.<br><br></details>
+<details><summary><b>Ethernet</b></summary>is a family of networking technologies commonly used in local area networks (LANs).<br><br></details>
+<details><summary><b>Frame</b></summary>is a data unit used at Layer 2 of the OSI model, encapsulating data from higher layers.<br><br></details>
+<details><summary><b>HDLC (High-Level Data Link Control)</b></summary>is a bit-oriented synchronous data link layer protocol.<br><br></details>
+<details><summary><b>MAC Address</b></summary>is a unique hardware identifier assigned to a network interface card (NIC).<br><br></details>
+<details><summary><b>Multipoint Frame Relay</b></summary>is a type of Frame Relay network that supports multiple endpoints on a single physical circuit.<br><br></details>
+<details><summary><b>PPP (Point-to-Point Protocol)</b></summary>is a data link layer protocol used to establish a direct connection between two networking nodes.<br><br></details>
+
+### Layer 3 Terminology 
+<details><summary><b>CEF (Cisco Express Forwarding)</b></summary>is a high-performance packet forwarding mechanism used in Cisco routers.<br><br></details>
+<details><summary><b>Control Plane</b></summary>is the part of a router that manages routing protocols and maintains the routing table.<br><br></details>
+<details><summary><b>Data Plane</b></summary>is the part of a router that forwards packets based on the information in the routing table.<br><br></details>
+<details><summary><b>Default Gateway</b></summary>is the router that a device uses to send traffic to destinations outside its local network.<br><br></details>
+<details><summary><b>Destination IP Address</b></summary>is the IP address of the intended recipient of a packet.<br><br></details>
+<details><summary><b>Egress Interface</b></summary>is the interface on a router through which a packet exits the router on its way to its destination.<br><br></details>
+<details><summary><b>FIB (Forwarding Information Base)</b></summary>is a data structure used by CEF that contains Layer 3 routing information.<br><br></details>
+<details><summary><b>ICMP (Internet Control Message Protocol)</b></summary>is a network protocol used for error reporting and diagnostics.<br><br></details>
+<details><summary><b>IP Routing Table</b></summary>is a data structure used by a router to determine the best path for forwarding packets.<br><br></details>
+<details><summary><b>Longest Prefix</b></summary>refers to the routing table entry that matches the most bits of a destination IP address, used to select the most specific route.<br><br></details>
+<details><summary><b>Next-Hop IP Address</b></summary>is the IP address of the next router in the path to a packet's destination.<br><br></details>
+<details><summary><b>OSPF (Open Shortest Path First)</b></summary>is a link-state routing protocol commonly used in IP networks.<br><br></details>
+<details><summary><b>Packet-Forwarding Process</b></summary>is the series of steps that a router takes to forward a packet from its source to its destination.<br><br></details>
+<details><summary><b>Pinging</b></summary>is the process of sending ICMP echo requests to test the reachability of a host on a network.<br><br></details>
+<details><summary><b>Remote Subnet</b></summary>is a subnet that is different from the subnet that a device is currently on.<br><br></details>
+<details><summary><b>Route Redistribution</b></summary>is the process of exchanging routing information between different routing protocols.<br><br></details>
+<details><summary><b>Routing Protocol Data Structure</b></summary>is a data structure used by a routing protocol to store and manage routing information.<br><br></details>
+<details><summary><b>Serial Interface</b></summary>is a type of interface used for point-to-point communication over a serial link.<br><br></details>
+<details><summary><b>Source</b></summary>is the origin of a packet or data transmission.<br><br></details>
+<details><summary><b>Static Route</b></summary>is a route that is manually configured on a router, rather than learned dynamically through a routing protocol.<br><br></details>
+<details><summary><b>TTL (Time to Live)</b></summary>is a field in an IP packet header that limits the number of hops a packet can take before being discarded.<br><br></details>
+
+### Routing Protocol Terminology
+<details><summary><b>Administrative Distance (AD)</b></summary>is a measure of the trustworthiness of a routing source, used to determine which route to prefer when multiple routes exist to the same destination.<br><br></details>
+<details><summary><b>eBGP (External Border Gateway Protocol)</b></summary>is a version of BGP used to exchange routing information between different autonomous systems.<br><br></details>
+<details><summary><b>EIGRP (Enhanced Interior Gateway Routing Protocol)</b></summary>is a distance-vector routing protocol developed by Cisco Systems.<br><br></details>
+<details><summary><b>Floating Static Route</b></summary>is a backup route configured with a higher AD, making it less preferred than the primary route.<br><br></details>
+<details><summary><b>iBGP (Internal Border Gateway Protocol)</b></summary>is a version of BGP used to exchange routing information within an autonomous system.<br><br></details>
+<details><summary><b>IS-IS (Intermediate System to Intermediate System)</b></summary>is a link-state routing protocol used in large-scale IP networks.<br><br></details>
+<details><summary><b>ODR (On-Demand Routing)</b></summary>is a routing technique that creates routes only when they are needed.<br><br></details>
+<details><summary><b>RIP (Routing Information Protocol)</b></summary>is a distance-vector routing protocol commonly used in small-scale IP networks.<br><br></details>
+
+### Miscellaneous Terminology 
+<details><summary><b>Data Link Connection Identifier (DLCI)</b></summary>is a number used to identify a virtual circuit in a Frame Relay network.<br><br></details>
+<details><summary><b>EtherType</b></summary>is a two-byte field in an Ethernet frame that identifies the protocol encapsulated in the frame payload.<br><br></details>
+<details><summary><b>Hexadecimal Representation</b></summary>is a base-16 numbering system used to represent data in a compact form.<br><br></details>
+<details><summary><b>Multicast Route</b></summary>is a route used to send traffic to a group of devices on a network.<br><br></details>
+
+## Commands
+
+### Packet Forwarding Commands
+
+<details><summary><code>ping</code></summary>Used to test network connectivity between two devices.<br><br></details>
+<details><summary><code>show ip route [ip_address]</code></summary>Displays the IP routing table and provides information on how to reach a specific IP address.<br><br></details>
+<details><summary><code>show ip cef [ip_address]</code></summary>Shows the Cisco Express Forwarding (CEF) information for a particular IP address.<br><br></details>
+<details><summary><code>show ip cef exact-route [source_address] [destination_address]</code></summary>Displays the CEF information for a specific route, given a source and destination IP address.<br><br></details>
+<details><summary><code>show ip arp</code></summary>Shows the ARP cache, which contains mappings between IP addresses and MAC addresses.<br><br></details>
+<details><summary><code>show adjacency detail</code></summary>Displays detailed information about CEF adjacencies, including Layer 2 framing information needed to reach next-hop IP addresses.<br><br></details>
+
+Here’s the reformatted QnA section according to your specifications:
+
+## QnA
+<details><summary><b>What is the purpose of pinging between two hosts when troubleshooting network connectivity?</b></summary>Pinging helps determine whether the connectivity issue lies at <b>Layer 3</b> (network layer) of the OSI model or at higher layers.<br><br></details>
+<details><summary><b>What is the first step PC1 takes when it needs to send data to a device on a different network?</b></summary>PC1 first determines that the destination <b>IP address</b> is located on a <b>remote subnet</b>.<br><br></details>
+<details><summary><b>Why doesn't a serial interface require ARP?</b></summary>Serial interfaces don't have <b>MAC addresses</b>, so ARP, which is used to resolve <code>IP addresses</code> to <b>MAC addresses</b>, is unnecessary.<br><br></details>
+<details><summary><b>What is the administrative distance of a directly connected interface?</b></summary>A directly connected interface has an administrative distance of <b>0</b>, making it the most trustworthy source of routing information.<br><br></details>
+<details><summary><b>Explain the process a router uses to forward a packet to a device on a remote network.</b></summary>When a router receives a packet, it first decrements the <code>TTL</code> field. If the <code>TTL</code> reaches zero, the packet is discarded, and an <code>ICMP</code> message is sent to the source. If the <code>TTL</code> is not zero, the router consults its routing table to determine the best path to the destination <code>IP address</code>. This process involves identifying the <b>egress interface</b> and the <b>next-hop IP address</b>. If the next hop is on a multipoint network like <b>Ethernet</b>, the router uses <code>ARP</code> to determine the <b>MAC address</b> of the next-hop device. The packet is then encapsulated in a new frame with the appropriate Layer 2 header and forwarded out the correct interface.<br><br></details>
+<details><summary><b>Describe the function of Cisco Express Forwarding (CEF) and its two primary data structures.</b></summary>CEF is a mechanism used by Cisco routers to optimize packet forwarding. It achieves this by using pre-built data structures derived from the routing table and ARP cache. The two primary data structures are: <ul><li><b>Forwarding Information Base (FIB):</b> The FIB contains Layer 3 routing information, including multicast routes and information about directly connected hosts. It's similar to the <code>IP routing table</code> but optimized for forwarding.</li><li><b>Adjacency Table:</b> This table stores the Layer 2 information needed to forward packets to next-hop devices. It's referenced by the FIB and includes details such as the <b>egress interface</b> and the next-hop <b>MAC address</b> (for multipoint interfaces).</li></ul><br></details>
+<details><summary><b>How does a router prioritize different sources of routing information, and how can an administrator influence this prioritization?</b></summary>Routers use a concept called <b>administrative distance (AD)</b> to rank the reliability of different routing information sources. A lower AD value indicates a more trustworthy source. For example, directly connected interfaces have an AD of <b>0</b>, static routes have an AD of <b>1</b>, while routing protocols like <code>OSPF</code> and <code>RIP</code> have higher AD values. When multiple routes to the same destination exist, the router selects the route with the lowest AD.<br><br>Administrators can manipulate route selection by adjusting the AD. For instance, they can configure a floating static route with a higher AD as a backup path in case the preferred route becomes unavailable. Setting an AD of <b>255</b> effectively discards routes from a specific source. This allows administrators to control the routing behavior and ensure that traffic follows desired paths.<br><br></details>
 
 ## Links
 ### Revision History

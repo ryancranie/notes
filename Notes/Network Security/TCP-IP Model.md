@@ -1,5 +1,11 @@
 # TCP-IP Model
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/TCP-IP Model.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 {Content to be added}
 
 ## Links

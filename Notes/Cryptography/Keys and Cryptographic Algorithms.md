@@ -1,5 +1,11 @@
 # Keys and Cryptographic Algorithms
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/Keys and Cryptographic Algorithms.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 ## Digital Keys
 
 A digital key is a value, that can be expressed alphanumerically, that is used to perform cryptographic operations

@@ -5,6 +5,13 @@ created: 2024-09-27 09:06:17
 modified: 2024-09-28 10:48:59
 ---
 # Protocols
+
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/Protocols.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 A protocol is a convention or standard that controls/enables the connection, communication, and data transfer between computing endpoints. Protocols are formal standards and policies comprised of rules governing the syntax, semantics and synchronization of computer communication. Protocols may be implemented by hardware, software, or both.
 
 > protocols are to communication what algorithms are to computation
@@ -43,9 +50,9 @@ Syntax focuses on the **structure** and format of messages exchanged between com
 
 ### Network Technologies
 
-- [DHCP](https://notes.ryancranie.com/Notes/Network%20Technologies/DHCP)
 - [Packet Forwarding](https://notes.ryancranie.com/Notes/Network%20Technologies/Packet%20Forwarding)
 - [IPv6](https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6)
+- [DHCP](https://notes.ryancranie.com/Notes/Network%20Technologies/DHCP)
 - [EIGRP](https://notes.ryancranie.com/Notes/Network%20Technologies/EIGRP)
 
 ### Threat Landscape

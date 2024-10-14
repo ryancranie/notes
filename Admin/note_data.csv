@@ -1,8 +1,8 @@
 note name,alias,alias ignore,subfolder,order
 OSI Model,osi model,,Network Security,1.0
-Common Protocols,common protocols,,Network Technologies,3
-Protocols,protocols:Protocol:protocol,,Network Technologies,2
-DHCP,dhcp:dynamic host configuration protocol,,Network Technologies,4
+Common Protocols,common protocols,,Network Technologies,3.0
+Protocols,protocols:Protocol:protocol,,Network Technologies,2.0
+DHCP,dhcp:dynamic host configuration protocol,,Network Technologies,4.0
 TCP-IP Model,tcp-ip model,,Network Security,2.0
 Ciphers,ciphers,,Cryptography,2.0
 Cryptography Overview,cryptography overview,,Cryptography,1.0
@@ -19,6 +19,6 @@ Introduction to Cybersecurity,introduction to cybersecurity,,Threat Landscape,1.
 Malware,malware,,Threat Landscape,3.0
 Social Engineering,social engineering,,Threat Landscape,4.0
 The Threat Landscape,the threat landscape,,Threat Landscape,2.0
-IPv6,ipv6,,Network Technologies,5
-EIGRP,eigrp,,Network Technologies,6
-Packet Forwarding,packet forwarding,,Network Technologies,1
+IPv6,ipv6,,Network Technologies,5.0
+EIGRP,eigrp,,Network Technologies,6.0
+Packet Forwarding,packet forwarding,,Network Technologies,1.0

@@ -1,5 +1,11 @@
 # IPv6
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/IPv6.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 > "7 addresses to every atom of your body, for every person in the world = Number of IPv6 Addresses."
 
 ## Features of IPv6
@@ -295,6 +301,96 @@ Node A is an IPv6 only node and wants to send an IPv6 datagram to node D and the
 - The NAT-PT router maintains a pool of globally routable IPv4 addresses that are assigned to IPv6 nodes dynamically as sessions are initiated.
 
 An advantage of NAT-PT is that no modifications are required on the hosts.
+
+## Glossary
+
+### IPv6 Addressing
+
+<details><summary><b>IPv6 Address</b></summary>A 128-bit numerical label that identifies a network interface participating in an IPv6 network.<br><br></details>
+
+<details><summary><b>Coloned Hex</b></summary>A representation of an IPv6 address using eight, 16-bit segments separated by colons.<br><br></details>
+
+<details><summary><b>Subnet Prefix</b></summary>A portion of an IPv6 address that identifies the network to which an interface is connected.<br><br></details>
+
+<details><summary><b>Interface ID</b></summary>A unique identifier assigned to a specific network interface within a subnet.<br><br></details>
+
+<details><summary><b>CIDR Notation</b></summary>A method to denote the subnet prefix length using a slash followed by a decimal value, representing the number of bits in the prefix.<br><br></details>
+
+<details><summary><b>EUI-64</b></summary>A standard used to generate a 64-bit interface identifier based on a device's MAC address.<br><br></details>
+
+<details><summary><b>Link-Local Address</b></summary>An IPv6 address with a scope limited to the local network link, used for communication between devices on the same link.<br><br></details>
+
+<details><summary><b>Global Unicast Address</b></summary>A globally routable IPv6 address used for communication across different networks.<br><br></details>
+
+<details><summary><b>Multicast Address</b></summary>An IPv6 address used to send a single packet to multiple interfaces.<br><br></details>
+
+<details><summary><b>Anycast Address</b></summary>An IPv6 address that identifies a group of interfaces, with packets sent to the nearest interface based on routing protocols.<br><br></details>
+
+<details><summary><b>Unspecified Address (::/128)</b></summary>An IPv6 address that is not assigned to any interface and is used by a host before it obtains a link-local address.<br><br></details>
+
+<details><summary><b>Loopback Address (::1/128)</b></summary>An IPv6 address that is used to send traffic to the local host, equivalent to 127.0.0.1 in IPv4.<br><br></details>
+
+### IPv6 Features and Technologies
+
+<details><summary><b>Dual Stack</b></summary>A configuration where both IPv4 and IPv6 are enabled and operate simultaneously on a network interface.<br><br></details>
+
+<details><summary><b>IPv6-to-IPv4 (6to4) Tunneling</b></summary>A transition mechanism that encapsulates IPv6 packets within IPv4 packets to enable communication between IPv6 networks over an IPv4 infrastructure.<br><br></details>
+
+<details><summary><b>NAT Protocol Translation (NAT-PT)</b></summary>A transition mechanism that translates IPv6 addresses to IPv4 addresses and vice-versa, allowing IPv6-only devices to communicate with IPv4-only devices.<br><br></details>
+
+<details><summary><b>Stateless Autoconfiguration</b></summary>A feature that allows IPv6 devices to automatically configure their own unique link-local addresses without the need for a DHCP server.<br><br></details>
+
+<details><summary><b>RIPng</b></summary>The Routing Information Protocol for IPv6, a distance-vector routing protocol used for exchanging routing information in IPv6 networks.<br><br></details>
+
+<details><summary><b>OSPFv3</b></summary>Open Shortest Path First version 3, a link-state routing protocol adapted for use with IPv6.<br><br></details>
+
+<details><summary><b>IS-IS for IPv6</b></summary>Intermediate System to Intermediate System for IPv6, a link-state routing protocol that supports both IPv4 and IPv6.<br><br></details>
+
+<details><summary><b>EIGRP for IPv6</b></summary>Enhanced Interior Gateway Routing Protocol for IPv6, a Cisco proprietary distance-vector routing protocol extended to support IPv6.<br><br></details>
+
+<details><summary><b>Multiprotocol BGP version 4 (MP-BGPv4)</b></summary>A version of the Border Gateway Protocol that supports multiple network layer protocols, including IPv4 and IPv6.<br><br></details>
+
+## Commands
+
+### IPv6 Configuration Commands
+
+<details><summary><code>ipv6 unicast-routing</code></summary>Enables the forwarding of IPv6 unicast datagrams on the router.<br><br></details>
+
+<details><summary><code>no ipv6 unicast-routing</code></summary>Disables IPv6 routing capabilities, making the router act as an IPv6 end-station.<br><br></details>
+
+<details><summary><code>ipv6 address address/prefix-length [link-local | eui-64]</code></summary>Configures a static IPv6 address and prefix on an interface, enabling IPv6 processing.<br><br>
+<ul>
+    <li>The <code>link-local</code> parameter designates the address as the link-local address for the interface.</li>
+    <li>The <code>eui-64</code> parameter uses the EUI-64 format to complete a global IPv6 address.</li>
+</ul>
+<br></details>
+
+### IPv6 Verification Commands
+
+<details><summary><code>show ipv6 interface [interface-type [interface-number]]</code></summary>Displays IPv6 information for a specific interface, including configured addresses, status, and other related details.<br><br></details>
+
+<details><summary><code>show run interface [interface-type [interface-number]]</code></summary>Displays the running configuration for a specific interface, including IPv6 addresses and other settings.<br><br></details>
+
+Here’s the reformatted Q&A as per your specifications:
+
+## QnA
+<details><summary><b>What is the size of an IPv6 address?</b></summary>An IPv6 address is <b>128 bits</b> long.<br><br></details>
+<details><summary><b>What are the three types of IPv6 addresses, excluding those allocated from Unicast?</b></summary>The three types of IPv6 addresses are <b>unicast, multicast, and anycast</b>.<br><br></details>
+<details><summary><b>What is the purpose of the "::" symbol in an IPv6 address?</b></summary>A double colon "::" is used in an IPv6 address to represent <b>successive zeros</b>, simplifying the representation.<br><br></details>
+<details><summary><b>What command enables IPv6 routing on a Cisco router?</b></summary>The command <code>ipv6 unicast-routing</code> enables IPv6 routing on a Cisco router.<br><br></details>
+<details><summary><b>Explain the concept of dual-stack in IPv6 transition.</b></summary>Dual-stack is a transition mechanism where both IPv4 and IPv6 protocols are <b>enabled and run concurrently</b> on a network interface. This allows devices to communicate with both IPv4 and IPv6 networks simultaneously during the transition period. A dual-stacked interface can have both IPv4 and IPv6 addresses assigned to it. For example, an interface might have an IPv4 address for existing connectivity and an IPv6 address for newer services or connections.<br><br></details>
+<details><summary><b>Describe the function of link-local addresses in IPv6.</b></summary>Link-local addresses are IPv6 addresses that are <b>scoped to the local network link only</b>. They are used for communication between devices on the same link, such as within a subnet. These addresses are not routable beyond the local link and are <b>automatically created</b> using the EUI-64 format when an interface has IPv6 enabled or a global IPv6 address configured. They can also be manually assigned for easier management. A key point is that link-local addresses do <b>not require a prefix mask</b> as they are not routed.<br><br></details>
+<details><summary><b>How does the EUI-64 standard generate a unique Interface ID from a MAC address, and provide a step-by-step example demonstrating the conversion from a sample MAC address to an IPv6 Interface ID.</b></summary>The EUI-64 standard generates a unique 64-bit Interface ID from a 48-bit MAC address through the following steps:<br>
+<ul>
+    <li><b>Split the MAC address:</b> Divide the 48-bit MAC address into two 24-bit halves.</li>
+    <li><b>Insert FFFE:</b> Insert the hexadecimal value "FFFE" between the two 24-bit halves of the MAC address.</li>
+    <li><b>Flip the Universal/Local bit:</b> The seventh bit of the first octet of the MAC address (the Universal/Local bit) is flipped. If it was 0, it becomes 1, and if it was 1, it becomes 0.</li>
+    <li><b>Combine to form Interface ID:</b> The modified MAC address, now 64 bits long, becomes the Interface ID.</li>
+</ul><br>Example:<br>Let's take a sample MAC address: <b>AA:BB:CC:DD:EE:FF</b><br>
+1. <b>Split:</b> AA:BB:CC and DD:EE:FF<br>
+2. <b>Insert FFFE:</b> AA:BB:CC:FF:FE:DD:EE:FF<br>
+3. <b>Flip U/L bit:</b> The seventh bit of the first octet (AA) is 0. Flipping it makes it 1. In hexadecimal, this changes AA to BA. The resulting address is: BA:BB:CC:FF:FE:DD:EE:FF<br>
+4. <b>Interface ID:</b> The resulting 64-bit address <b>BA:BB:CC:FF:FE:DD:EE:FF</b> is the generated Interface ID.<br><br></details>
 
 ## Links
 ### Network Technologies

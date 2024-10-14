@@ -1,5 +1,11 @@
 # Zero Trust Principles
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/Zero Trust Principles.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 Idea behind Zero Trust Model is that trust must be explicitly derived from a mix of identity-based and context-based aspects
 1. **Never trust, always verify**
 	- Authentication

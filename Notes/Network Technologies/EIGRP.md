@@ -6,6 +6,11 @@ modified: 2024-10-14 13:20:34
 ---
 # EIGRP
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/EIGRP.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
 
 ## EIGRP Fundamentals
 
@@ -524,6 +529,107 @@ Any feasible successor’s FD with a metric **below the EIGRP variance value** i
 Dividing the feasible successor metric by the successor route metric provides the variance multiplier. 
 
 The variance multiplier is a whole number, and any remainders should always round up.
+
+## Glossary
+
+Here’s the reformatted glossary according to your specifications:
+
+### EIGRP Specific Terms
+
+<details><summary><b>EIGRP</b></summary>is an enhanced distance vector routing protocol created by Cisco for use in enterprise networks.<br><br></details>
+<details><summary><b>DUAL</b></summary>is a diffusing update algorithm used by EIGRP to quickly identify network paths and provide fast convergence.<br><br></details>
+<details><summary><b>Successor Route</b></summary>is the route with the lowest path metric to a destination.<br><br></details>
+<details><summary><b>Successor</b></summary>is the next-hop router on the Successor Route.<br><br></details>
+<details><summary><b>Feasible Distance (FD)</b></summary>is the metric value for the lowest-metric path to reach a destination.<br><br></details>
+<details><summary><b>Reported Distance (RD)</b></summary>is the distance a router reports as its cost to reach a prefix.<br><br></details>
+<details><summary><b>Feasibility Condition</b></summary>ensures a loop-free backup path by requiring the RD received for a route to be less than the FD calculated locally.<br><br></details>
+<details><summary><b>Feasible Successor</b></summary>is a backup route that meets the Feasibility Condition, guaranteeing a loop-free path.<br><br></details>
+<details><summary><b>EIGRP Topology Table</b></summary>stores all network prefixes advertised within an EIGRP autonomous system and identifies loop-free backup routes.<br><br></details>
+<details><summary><b>Neighbor Adjacency Table</b></summary>tracks neighbor status and updates for each neighbor.<br><br></details>
+<details><summary><b>EIGRP Hello Packet</b></summary>is a packet used to discover EIGRP neighbors and detect when a neighbor is no longer available.<br><br></details>
+<details><summary><b>EIGRP Request Packet</b></summary>is a packet used to request specific information from one or more neighbors.<br><br></details>
+<details><summary><b>EIGRP Update Packet</b></summary>is a packet used to send routing and reachability information to other EIGRP neighbors.<br><br></details>
+<details><summary><b>EIGRP Query Packet</b></summary>is a packet sent out to find an alternative path during convergence.<br><br></details>
+<details><summary><b>EIGRP Reply Packet</b></summary>is a packet sent in response to a query packet.<br><br></details>
+<details><summary><b>RIB</b></summary>is the Routing Information Base and stores the best route for each destination network.<br><br></details>
+<details><summary><b>Classic EIGRP Configuration Mode</b></summary>involves configuring settings both in the EIGRP process and under individual interface submodes.<br><br></details>
+<details><summary><b>EIGRP ASN</b></summary>is the autonomous system number that identifies an EIGRP routing domain.<br><br></details>
+<details><summary><b>EIGRP Named Mode</b></summary>offers a hierarchical configuration approach with all EIGRP configuration in one location, supporting multiple address families and future developments.<br><br></details>
+<details><summary><b>EIGRP Wildcard Mask</b></summary>is used in network statements to specify the range of IP addresses that EIGRP will use, allowing for flexible configuration.<br><br></details>
+<details><summary><b>EIGRP Passive Interface</b></summary>is configured to prevent neighbors from forming adjacencies on a specific network segment while still advertising it into EIGRP.<br><br></details>
+<details><summary><b>EIGRP MD5 Authentication</b></summary>uses a precomputed password hash to ensure only authorized routers become EIGRP neighbors, but does not encrypt routing updates.<br><br></details>
+<details><summary><b>EIGRP HMAC-SHA-256 Authentication</b></summary>is an alternative to MD5 available in named mode configurations.<br><br></details>
+<details><summary><b>EIGRP K Values</b></summary>define the factors considered (bandwidth, delay, load, reliability) and their impact in EIGRP's metric calculation.<br><br></details>
+<details><summary><b>EIGRP Wide Metrics</b></summary>support higher-capacity interfaces (up to 655 Tbps) and are used in named mode configurations.<br><br></details>
+<details><summary><b>ECMP (Equal-Cost Multipathing)</b></summary>allows multiple successor routes with the same metric to be installed in the RIB for load balancing.<br><br></details>
+<details><summary><b>EIGRP Variance Multiplier</b></summary>enables unequal-cost load balancing by allowing feasible successors with metrics below a calculated variance value to be installed in the RIB.<br><br></details>
+
+### General Networking Terms
+
+<details><summary><b>Distance Vector Routing Protocol</b></summary>determines the best path for data by exchanging distance information with neighboring routers.<br><br></details>
+<details><summary><b>VLSM (Variable-Length Subnet Masking)</b></summary>allows using different subnet masks within the same network.<br><br></details>
+<details><summary><b>RIP (Routing Information Protocol)</b></summary>is a distance vector routing protocol that relies on hop count as its primary metric.<br><br></details>
+<details><summary><b>OSPF (Open Shortest Path First)</b></summary>is a link-state routing protocol that uses a more complex algorithm to determine best paths.<br><br></details>
+<details><summary><b>IS-IS (Intermediate System-to-Intermediate System)</b></summary>is a link-state routing protocol primarily used in service provider networks.<br><br></details>
+<details><summary><b>Convergence Time</b></summary>is the time it takes for routers in a network to agree on the best paths after a topology change.<br><br></details>
+<details><summary><b>Protocol-Dependent Modules (PDMs)</b></summary>enable EIGRP to support multiple network protocols, such as IPv4 and IPv6.<br><br></details>
+<details><summary><b>RTP (Reliable Transport Protocol)</b></summary>guarantees the ordered delivery of EIGRP packets and uses ACK packets to ensure reception.<br><br></details>
+<details><summary><b>VRF (Virtual Routing and Forwarding)</b></summary>allows the creation of multiple routing instances on a single router, isolating routing tables and traffic.<br><br></details>
+<details><summary><b>RID (Router ID)</b></summary>uniquely identifies an EIGRP router, preventing routing loops and can be assigned dynamically or manually.<br><br></details>
+<details><summary><b>Administrative Distance (AD)</b></summary>is a value used to rank routing protocols, determining which protocol's route will be preferred when multiple routes exist to the same destination.<br><br></details>
+
+### Security
+
+<details><summary><b>Authentication</b></summary>is a security mechanism used in EIGRP to verify the identity of neighboring routers and prevent unauthorized devices from exchanging routing information.<br><br></details>
+
+### Other Terms
+
+<details><summary><b>Hop Count</b></summary>is the number of routers a packet must traverse to reach its destination.<br><br></details>
+<details><summary><b>Bandwidth</b></summary>refers to the data-carrying capacity of a network link.<br><br></details>
+<details><summary><b>Delay</b></summary>represents the time it takes for a packet to travel across a network link, measured in microseconds or picoseconds.<br><br></details>
+<details><summary><b>Load</b></summary>is a measure of network traffic on a given link or interface.<br><br></details>
+<details><summary><b>Reliability</b></summary>assesses the stability and consistency of a network link or path.<br><br></details>
+<details><summary><b>Minimum Bandwidth Link Speed</b></summary>reflects the lowest bandwidth link in a given path.<br><br></details>
+<details><summary><b>Jitter</b></summary>is the variation in packet delay, causing uneven data flow.<br><br></details>
+
+## Commands
+
+Here’s the formatted list of Cisco commands with their definitions, categorized according to your specifications:
+
+### EIGRP Configuration Commands
+
+<details><summary><code>router eigrp [as-number]</code></summary>initializes the EIGRP process and specifies the autonomous system number (ASN).<br><br></details>
+<details><summary><code>network ip-address [mask]</code></summary>identifies network interfaces for EIGRP to use, employing wildcard masks for flexible configuration.<br><br></details>
+<details><summary><code>address-family ipv4 unicast autonomous-system [as-number]</code></summary>(in named mode) configures EIGRP for IPv4 unicast routing under a specific autonomous system.<br><br></details>
+<details><summary><code>passive-interface interface-id</code></summary>(classic mode) or <code>passive-interface [default | interface-id]</code> (named mode) configures an EIGRP interface as passive, preventing neighbor adjacencies on that segment.<br><br></details>
+<details><summary><code>eigrp router-id [router-id]</code></summary>sets the EIGRP router ID (RID) manually.<br><br></details>
+<details><summary><code>key chain key-chain-name</code></summary>creates a keychain for EIGRP authentication.<br><br></details>
+<details><summary><code>key [key-number]</code></summary>identifies a key sequence within a keychain.<br><br></details>
+<details><summary><code>key-string [password]</code></summary>specifies the preshared password for a key sequence.<br><br></details>
+<details><summary><code>ip authentication key-chain eigrp [as-number] [key-chain-name]</code></summary>(classic mode) enables MD5 authentication on an interface using a specified keychain.<br><br></details>
+<details><summary><code>ip authentication mode eigrp [as-number] md5</code></summary>(classic mode) sets the authentication mode to MD5 on an interface.<br><br></details>
+<details><summary><code>authentication key-chain eigrp [key-chain-name]</code></summary>(named mode) enables authentication using a defined keychain.<br><br></details>
+<details><summary><code>authentication mode [md5 | hmacsha-256 [password]]</code></summary>(named mode) sets the authentication mode to MD5 or HMAC-SHA-256.<br><br></details>
+<details><summary><code>metric weights [TOS] [K1] [K2] [K3] [K4] [K5] [K6]</code></summary>customizes the EIGRP metric calculation formula by adjusting K values.<br><br></details>
+<details><summary><code>delay [tens-of-microseconds]</code></summary>sets the delay value for an interface, influencing metric calculations.<br><br></details>
+<details><summary><code>maximum-paths [no.]</code></summary>configures the maximum number of equal-cost paths (ECMP) allowed, influencing load balancing.<br><br></details>
+
+### EIGRP Verification and Monitoring Commands
+
+<details><summary><code>show ip eigrp interfaces [{interface-id [detail] | detail}]</code></summary>displays active EIGRP interfaces and optionally provides detailed information.<br><br></details>
+<details><summary><code>show ip eigrp neighbors [interface-id]</code></summary>shows the EIGRP neighbors for a router, including their status and timers.<br><br></details>
+<details><summary><code>show ip route eigrp</code></summary>displays the EIGRP routes that have been installed into the Routing Information Base (RIB).<br><br></details>
+<details><summary><code>show key chain</code></summary>verifies keychain configuration, displaying key sequence numbers, lifetimes, and passwords.<br><br></details>
+<details><summary><code>show ip protocols</code></summary>displays information about configured routing protocols, including EIGRP parameters and metric style (classic or wide).<br><br></details>
+
+## QnA
+<details><summary><b>What is EIGRP's primary function in a network?</b></summary>EIGRP is used to determine the <b>best</b> path for data to travel across a network. As a routing <b>protocol</b>, it helps routers within a network share information about available routes and select the most <b>efficient</b> paths to forward data packets.<br><br></details>
+<details><summary><b>What are the five packet types used by EIGRP for inter-router communication?</b></summary>EIGRP uses five packet types: <b>Hello</b>, <b>Request</b>, <b>Update</b>, <b>Query</b>, and <b>Reply</b>. These packets facilitate neighbor discovery, information exchange, and route convergence within the EIGRP routing domain.<br><br></details>
+<details><summary><b>Why is the EIGRP neighbor adjacency table considered vital?</b></summary>The neighbor adjacency table is crucial because it tracks the <b>status</b> of neighboring routers and the updates that have been sent to each neighbor. Maintaining <b>accurate</b> neighbor information is essential for reliable route calculations and network stability.<br><br></details>
+<details><summary><b>What is the purpose of configuring an EIGRP interface as passive?</b></summary>Configuring an EIGRP interface as passive prevents the formation of neighbor <b>adjacencies</b> on that specific network segment while still allowing the segment to be advertised within the EIGRP domain. This is useful in scenarios where you want to control neighbor <b>relationships</b> and limit EIGRP communication on certain interfaces.<br><br></details>
+<details><summary><b>Explain the key differences between EIGRP's classic and named mode configurations.</b></summary><ul><li><b>Classic Mode:</b> Configuration settings are distributed between the EIGRP process and individual interface submodes. This can lead to configuration <b>complexity</b> and make troubleshooting more challenging.</li><li><b>Named Mode:</b> Provides a hierarchical configuration approach, consolidating all EIGRP settings in one location. It offers several <b>advantages</b>, including support for multiple address families (like <code>IPv4</code> and <code>IPv6</code>), VRF instances, and streamlined configuration. Named mode also facilitates future EIGRP developments due to its organized structure.</li></ul><br></details>
+<details><summary><b>What are the factors used in EIGRP's metric calculation and how do K values influence the metric?</b></summary>EIGRP uses <b>bandwidth</b>, <b>delay</b>, load, and reliability to calculate the metric for a given path. These factors are weighted using K values (<b>K1-K5</b>), which can be customized to adjust the influence of each factor on the metric. By default, bandwidth and delay are the primary factors considered (<code>K1=K3=1</code>), while the others are ignored (<code>K2=K4=K5=0</code>). Modifying these K values allows network administrators to fine-tune path selection based on specific network <b>requirements</b>.<br><br></details>
+<details><summary><b>Describe how EIGRP achieves fast convergence and maintains loop-free paths within a network.</b></summary>EIGRP's rapid convergence is primarily attributed to its <b>Diffusing</b> Update Algorithm (<b>DUAL</b>) and the use of feasible successors.<br><br><b>DUAL:</b> This algorithm allows EIGRP routers to pre-calculate backup paths (feasible successors) and quickly converge upon a new best path when a network change occurs.<br><br><b>Feasible Successors:</b> These are backup routes that meet the feasibility condition, guaranteeing loop-free alternative paths to a destination. By maintaining a topology table containing information about all advertised prefixes and their associated metrics from neighboring routers, EIGRP routers can proactively identify loop-free backup paths.<br><br><b>Feasibility Condition:</b> This condition dictates that for a route to be considered a feasible successor, the reported distance (<b>RD</b>) received for that route must be less than the feasible distance (<b>FD</b>) calculated locally. This logic ensures that the backup path does not create a routing loop because the backup path's metric (<b>RD</b>) is guaranteed to be lower than the current best path's metric (<b>FD</b>). When a topology change occurs, EIGRP routers can quickly switch to a feasible successor without the need for extensive route recalculations or flooding the network with update messages, minimizing convergence time and disruptions to network <b>traffic</b>.<br><br></details>
 
 ## Links
 ### Network Technologies

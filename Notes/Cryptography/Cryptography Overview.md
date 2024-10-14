@@ -1,5 +1,11 @@
 # Cryptography Overview
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/Cryptography Overview.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 **Cryptography** is the study of writing or solving codes.
 
 Public Key Infrastructure ([PKI](https://notes.ryancranie.com/Notes/Cryptography/PKI)) is the implementation of cryptology on a computer network; a PKI is an infrastructure composed of:

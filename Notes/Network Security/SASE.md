@@ -1,5 +1,11 @@
 # SASE
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/SASE.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 Secure Access Service Edge (**SASE**) is a technology that combines Network as a Service with Security-as-a-Service capabilities. SASE is delivered through the cloud as-a-service consumption model, to support secure access for todays distributed/hybrid enterprise networks.
 
 SASE was introduced because users began to access information from a variety of locations and devices, which

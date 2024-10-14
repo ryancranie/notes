@@ -1,5 +1,11 @@
 # Network Segmentation
 
+<audio controls>
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/Network Segmentation.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+</audio>
+↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a>
+
 Network segmentation divides a network into smaller, isolated segments. This allows the IT managers a better time managing/overseeing everything going on.
 
 If one subnetwork becomes compromised, other subnetworks would not be effected.
