@@ -371,8 +371,6 @@ An advantage of NAT-PT is that no modifications are required on the hosts.
 
 <details><summary><code>show run interface [interface-type [interface-number]]</code></summary>Displays the running configuration for a specific interface, including IPv6 addresses and other settings.<br><br></details>
 
-Here’s the reformatted Q&A as per your specifications:
-
 ## QnA
 <details><summary><b>What is the size of an IPv6 address?</b></summary>An IPv6 address is <b>128 bits</b> long.<br><br></details>
 <details><summary><b>What are the three types of IPv6 addresses, excluding those allocated from Unicast?</b></summary>The three types of IPv6 addresses are <b>unicast, multicast, and anycast</b>.<br><br></details>

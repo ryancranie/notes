@@ -307,8 +307,6 @@ If you ever need to make sure that the routing information or subset of routing 
 <details><summary><code>show ip arp</code></summary>Shows the ARP cache, which contains mappings between IP addresses and MAC addresses.<br><br></details>
 <details><summary><code>show adjacency detail</code></summary>Displays detailed information about CEF adjacencies, including Layer 2 framing information needed to reach next-hop IP addresses.<br><br></details>
 
-Here’s the reformatted QnA section according to your specifications:
-
 ## QnA
 <details><summary><b>What is the purpose of pinging between two hosts when troubleshooting network connectivity?</b></summary>Pinging helps determine whether the connectivity issue lies at <b>Layer 3</b> (network layer) of the OSI model or at higher layers.<br><br></details>
 <details><summary><b>What is the first step PC1 takes when it needs to send data to a device on a different network?</b></summary>PC1 first determines that the destination <b>IP address</b> is located on a <b>remote subnet</b>.<br><br></details>

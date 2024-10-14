@@ -26,6 +26,7 @@ Cryptography has facilitated the rise of e-commerce and secure communications.
 ## Links
 ### Revision History
 001: 2024-09-25 - Initialized Cryptography Overview.md
+002: 2024-10-14 - Created Audio Overview
 
 ---
 <b>[Cryptography Contents](https://notes.ryancranie.com/Contents/Cryptography%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)
