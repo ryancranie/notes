@@ -284,21 +284,89 @@ Example 1-24 shows interface Gigabit Ethernet 0/0 configured with the command `i
 
 ## Commands
 
+service dhcp: Enables the DHCP service on the router (often unnecessary as it's enabled by default)
+
+`ip helper-address [ip_address]`: Configures a router interface to act as a DHCP relay agent, forwarding DHCP broadcasts to a server at the specified IP address
+
+`ip address dhcp`: Configures a router interface to obtain an IP address from a DHCP server
+
+`ip dhcp excluded-address [start_IP] [end_IP]`: Defines a range of IP addresses to exclude from the DHCP pool, preventing them from being assigned to clients
+
+`ip dhcp pool [pool_name]`: Creates a DHCP pool and enters DHCP pool configuration mode for further settings
+
+`network [network_address] [subnet_mask]`: Specifies the network address and subnet mask for the DHCP pool
+
+`default-router [IP_address]`: Sets the default gateway IP address to be assigned to DHCP clients
+
+`dns-server [IP_address]`: Specifies the DNS server IP address to be provided to DHCP clients
+
+`netbios-name-server [IP_address]`: Assigns a NetBIOS Name Server IP address to DHCP clients
+
+`show ip dhcp conflict`: Displays detected IP address conflicts on the network, including the conflicting IP address, detection method, and time
+
+`clear ip dhcp conflict *`: Clears the DHCP conflict information after resolving the issue
+
+`show ip dhcp binding`: Lists IP addresses leased by the DHCP server to clients, along with their MAC addresses and lease duration
+
+`clear ip dhcp binding [IP_address]`: Releases a specific DHCP lease associated with the specified IP address
+
+`debug ip dhcp server events`: Provides real-time updates to the DHCP server database, showing events like address assignments, renewals, and releases
+
+`debug ip dhcp server packet`: Captures and displays detailed information about DHCP packets exchanged between the server and clients
+
+`ipv6 address autoconfig`: Enables SLAAC on a router interface, allowing it to automatically configure its IPv6 address
+
+`show ipv6 interface`: Displays information about an IPv6-enabled interface, including its address, prefix, and default gateway
+
+`ipv6 unicast-routing`: Enables IPv6 unicast routing on the router
+
+`ipv6 nd managed-config-flag`: Configures the RA to inform the client to contact a DHCPv6 server for all IPv6 addressing information
+
+`ipv6 dhcp server`: Enters DHCPv6 server configuration mode
+
+`ipv6 nd other-config-flag`: Configures the RA to signal the client to obtain non-addressing information (like DNS server address) from a DHCPv6 server
+
+`ipv6 dhcp relay destination [IPv6_address]`: Configures a router interface as a DHCPv6 relay agent, forwarding SOLICIT messages to a DHCPv6 server at the specified IPv6 address
 
 ## FAQ
 
 ### Easy
 
 <details><summary><b>What does DHCP stand for?</b></summary>DHCP stands for Dynamic Host Configuration Protocol.</details>
-<br>
+
 <details><summary><b>What is the purpose of a DHCP relay agent?</b></summary>A DHCP relay agent forwards DHCP broadcasts from clients to servers located on different networks. Since broadcasts cannot cross router boundaries, a relay agent is needed for clients to obtain IP information from a server on a different subnet.</details>
-<br>
+
 <details><summary><b>What command enables the DHCP service on a Cisco router?</b></summary>The command <code>service dhcp</code> enables the DHCP service on a Cisco router. However, this is usually not required as the service is enabled by default.
 </details>
-<br>
+
 <details><summary><b>How does a client indicate that it wants to use the address offered by a DHCP server?</b></summary>The client sends a <b>broadcast DHCPREQUEST</b> message to the server, indicating it will use the offered address and wants to lease it.
 </details>
+
+### Medium
+
+<details><summary><b>Explain the concept of SLAAC and its limitations. How do stateful and stateless DHCPv6 address these limitations?
+</b></summary>SLAAC (Stateless Address Autoconfiguration) allows devices to automatically generate their IPv6 address, prefix, and default gateway information from Router Advertisements (RAs) sent by routers.
 <br>
+While this offers simplicity, its limitations include:
+<br>
+<li>Limited Configuration Information: SLAAC only provides basic addressing information. Devices might need additional parameters like DNS server addresses, NTP server information, or domain names, which SLAAC cannot provide.</li>
+<li>Lack of Centralized Management: SLAAC lacks the centralized control provided by DHCP, making it difficult to track and manage address assignments across a network.</li></details>
+
+<details><summary><b></b></summary></details>
+
+<details><summary><b></b></summary></details>
+
+<details><summary><b></b></summary></details>
+
+### Hard
+
+<details><summary><b></b></summary></details>
+
+<details><summary><b></b></summary></details>
+
+<details><summary><b></b></summary></details>
+
+<details><summary><b></b></summary></details>
 
 ## Links
 ### Network Technologies
