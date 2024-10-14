@@ -282,6 +282,23 @@ Example 1-24 shows interface Gigabit Ethernet 0/0 configured with the command `i
 
 <img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020240925060643.png" width="700">
 
+## Commands
+
+
+## FAQ
+
+### Easy
+
+<details><summary><b>What does DHCP stand for?</b></summary>DHCP stands for Dynamic Host Configuration Protocol.</details>
+<br>
+<details><summary><b>What is the purpose of a DHCP relay agent?</b></summary>A DHCP relay agent forwards DHCP broadcasts from clients to servers located on different networks. Since broadcasts cannot cross router boundaries, a relay agent is needed for clients to obtain IP information from a server on a different subnet.</details>
+<br>
+<details><summary><b>What command enables the DHCP service on a Cisco router?</b></summary>The command <code>service dhcp</code> enables the DHCP service on a Cisco router. However, this is usually not required as the service is enabled by default.
+</details>
+<br>
+<details><summary><b>How does a client indicate that it wants to use the address offered by a DHCP server?</b></summary>The client sends a <b>broadcast DHCPREQUEST</b> message to the server, indicating it will use the offered address and wants to lease it.
+</details>
+<br>
 
 ## Links
 ### Network Technologies
