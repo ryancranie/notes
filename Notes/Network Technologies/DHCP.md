@@ -284,86 +284,154 @@ Example 1-24 shows interface Gigabit Ethernet 0/0 configured with the command `i
 
 ## Glossary
 
-Certainly! Here's the reformatted version of the terms and definitions according to your specifications:
+### DHCP for IPv4 
 
-### DHCP for IPv4
-<details><summary><b>Dynamic Host Configuration Protocol (DHCP)</b></summary>A network protocol that allows devices to automatically obtain IP addresses and other network configuration settings from a DHCP server.</details><br>
-<details><summary><b>DHCP client</b></summary>A device that requests and receives IP configuration information from a DHCP server.<br></details>
-<details><summary><b>DHCP server</b></summary>A network device responsible for managing and assigning IP addresses and related configuration details to clients.</details><br>
-<details><summary><b>DHCP relay agent</b></summary>A network device, typically a router, that forwards DHCP broadcasts between clients and servers located on different subnets.</details><br>
-<details><summary><b>DHCPDISCOVER</b></summary>The initial broadcast message sent by a client to discover available DHCP servers.</details><br>
-<details><summary><b>DHCPOFFER</b></summary>A message sent by a DHCP server in response to a DHCPDISCOVER, offering an available IP address and configuration parameters.</details><br>
-<details><summary><b>DHCPREQUEST</b></summary>A broadcast message sent by a client, accepting a DHCPOFFER and requesting the lease of the offered IP address.</details><br>
-<details><summary><b>DHCPACK</b></summary>The final message in the DHCP process, sent by the server to confirm the IP address lease and provide additional configuration options.</details><br>
-<details><summary><b>DHCP pool</b></summary>A range of IP addresses managed by a DHCP server for allocation to clients.</details><br>
-<details><summary><b>Lease duration</b></summary>The amount of time an IP address is assigned to a client by the DHCP server.</details><br>
-<details><summary><b>DHCP options</b></summary>Additional configuration parameters that can be included in DHCP messages, such as DNS server addresses, domain names, and other settings.</details><br>
+<details><summary><b>Dynamic Host Configuration Protocol (DHCP)</b></summary>A network protocol that allows devices to automatically obtain IP addresses and other network configuration settings from a DHCP server.<br></br></details>
+
+<details><summary><b>DHCP client</b></summary>A device that requests and receives IP configuration information from a DHCP server.<br></br></details>
+
+<details><summary><b>DHCP server</b></summary>A network device responsible for managing and assigning IP addresses and related configuration details to clients.<br></br></details>
+
+<details><summary><b>DHCP relay agent</b></summary>A network device, typically a router, that forwards DHCP broadcasts between clients and servers located on different subnets.<br></br></details>
+
+<details><summary><b>DHCPDISCOVER</b></summary>The initial broadcast message sent by a client to discover available DHCP servers.<br></br></details>
+
+<details><summary><b>DHCPOFFER</b></summary>A message sent by a DHCP server in response to a DHCPDISCOVER, offering an available IP address and configuration parameters.<br></br></details>
+
+<details><summary><b>DHCPREQUEST</b></summary>A broadcast message sent by a client, accepting a DHCPOFFER and requesting the lease of the offered IP address.<br></br></details>
+
+<details><summary><b>DHCPACK</b></summary>The final message in the DHCP process, sent by the server to confirm the IP address lease and provide additional configuration options.<br></br></details>
+
+<details><summary><b>DHCP pool</b></summary>A range of IP addresses managed by a DHCP server for allocation to clients.<br></br></details>
+
+<details><summary><b>Lease duration</b></summary>The amount of time an IP address is assigned to a client by the DHCP server.<br></br></details>
+
+<details><summary><b>DHCP options</b></summary>Additional configuration parameters that can be included in DHCP messages, such as DNS server addresses, domain names, and other settings.<br></br></details>
 
 ### IPv6 Addressing
-<details><summary><b>IPv6</b></summary>The latest version of the Internet Protocol, designed to replace IPv4 and provide a vastly larger address space.<br></details>
-<details><summary><b>Stateless address autoconfiguration (SLAAC)</b></summary>A method for IPv6 devices to automatically configure their own IP addresses without the need for a DHCPv6 server.</details><br>
-<details><summary><b>Stateful DHCPv6</b></summary>A method where a DHCPv6 server assigns IPv6 addresses, prefixes, default gateways, and other configuration parameters to clients.</details><br>
-<details><summary><b>Stateless DHCPv6</b></summary>A combination of SLAAC and DHCPv6, where clients obtain their IPv6 addresses and prefixes through SLAAC but receive other configuration information from a DHCPv6 server.</details><br>
-<details><summary><b>Router Solicitation (RS)</b></summary>A message sent by an IPv6 device to discover routers on the local link.</details><br>
-<details><summary><b>Router Advertisement (RA)</b></summary>A message sent by a router in response to an RS, providing prefix information and other configuration details.</details><br>
-<details><summary><b>EUI-64</b></summary>A method for generating a 64-bit interface identifier based on a device's MAC address, commonly used in IPv6 addressing.</details><br>
-<details><summary><b>Link-local address</b></summary>An IPv6 address with a scope limited to the local link, used for communication between devices on the same network segment.</details><br>
-<details><summary><b>Global unicast address</b></summary>A globally routable IPv6 address used for communication across different networks.</details><br>
+
+<details><summary><b>IPv6</b></summary>The latest version of the Internet Protocol, designed to replace IPv4 and provide a vastly larger address space.<br></br></details>
+
+<details><summary><b>Stateless address autoconfiguration (SLAAC)</b></summary>A method for IPv6 devices to automatically configure their own IP addresses without the need for a DHCPv6 server.<br></br></details>
+
+<details><summary><b>Stateful DHCPv6</b></summary>A method where a DHCPv6 server assigns IPv6 addresses, prefixes, default gateways, and other configuration parameters to clients.<br></br></details>
+
+<details><summary><b>Stateless DHCPv6</b></summary>A combination of SLAAC and DHCPv6, where clients obtain their IPv6 addresses and prefixes through SLAAC but receive other configuration information from a DHCPv6 server.<br></br></details>
+
+<details><summary><b>Router Solicitation (RS)</b></summary>A message sent by an IPv6 device to discover routers on the local link.<br></br></details>
+
+<details><summary><b>Router Advertisement (RA)</b></summary>A message sent by a router in response to an RS, providing prefix information and other configuration details.<br></br></details>
+
+<details><summary><b>EUI-64</b></summary>A method for generating a 64-bit interface identifier based on a device's MAC address, commonly used in IPv6 addressing.<br></br></details>
+
+<details><summary><b>Link-local address</b></summary>An IPv6 address with a scope limited to the local link, used for communication between devices on the same network segment.<br></br></details>
+
+<details><summary><b>Global unicast address</b></summary>A globally routable IPv6 address used for communication across different networks.<br></br></details>
 
 ### DHCP Troubleshooting
-<details><summary><b>Duplicate IP address</b></summary>A situation where two or more devices on a network have the same IP address, leading to communication problems.</details><br>
-<details><summary><b>IP address conflict</b></summary>A conflict that occurs when a DHCP server assigns an IP address that is already in use by another device on the network.</details><br>
-<details><summary><b>Misconfiguration</b></summary>Incorrectly configured DHCP server settings, which can lead to various addressing and connectivity issues.</details><br>
-<details><summary><b>Redundant services</b></summary>Multiple DHCP servers operating on the same network to provide redundancy and fault tolerance.</details><br>
-<details><summary><b>"Pull" nature of DHCP</b></summary>DHCP servers only respond to client requests for IP configuration information and cannot initiate changes to client addresses after the initial lease.</details><br>
+
+<details><summary><b>Duplicate IP address</b></summary>A situation where two or more devices on a network have the same IP address, leading to communication problems.<br></br></details>
+
+<details><summary><b>IP address conflict</b></summary>A conflict that occurs when a DHCP server assigns an IP address that is already in use by another device on the network.<br></br></details>
+
+<details><summary><b>Misconfiguration</b></summary>Incorrectly configured DHCP server settings, which can lead to various addressing and connectivity issues.<br></br></details>
+
+<details><summary><b>Redundant services</b></summary>Multiple DHCP servers operating on the same network to provide redundancy and fault tolerance.<br></br></details>
+
+<details><summary><b>"Pull" nature of DHCP</b></summary>DHCP servers only respond to client requests for IP configuration information and cannot initiate changes to client addresses after the initial lease.<br></br></details>
+
+
 ## Commands
 
 ### DHCP Relay Agent Configuration
-<details><summary><code>ip helper-address ip_address</code></summary>This command is used to configure a router as a DHCP relay agent to forward DHCP broadcasts to a DHCP server on a different network.</details><br>
+
+<details><summary><code>ip helper-address  ip_address</code></summary>This command is used to configure a router as a DHCP relay agent to forward DHCP broadcasts to a DHCP server on a different network.<br></br></details>
 
 ### DHCP Server Configuration
-<details><summary><code>service dhcp</code></summary>This command enables the DHCP service on the router. Typically, this isn't required as the DHCP service is enabled by default.</details><br>
-<details><summary><code>ip dhcp excluded-address [start_ip_address] [end_ip_address]</code></summary>This command excludes a range of IP addresses from being assigned by the DHCP server, preventing address conflicts.</details><br>
-<details><summary><code>ip dhcp pool [pool_name]</code></summary>Defines a DHCP pool for managing a range of IP addresses.</details><br>
-<details><summary><code>network [network_address] [subnet_mask]</code></summary>Specifies the network address and subnet mask for the DHCP pool.</details><br>
-<details><summary><code>default-router [ip_address]</code></summary>Configures the default gateway IP address to be assigned by the DHCP server.</details><br>
-<details><summary><code>dns-server [ip_address]</code></summary>Sets the DNS server IP address to be provided by the DHCP server.</details><br>
-<details><summary><code>netbios-name-server [ip_address]</code></summary>Defines the NetBIOS name server IP address for DHCP clients.</details><br>
+
+<details><summary><code>service dhcp</code></summary>This command enables the DHCP service on the router. Typically, this isn't required as the DHCP service is enabled by default.<br></br></details>
+
+<details><summary><code>ip dhcp excluded-address [start_ip_address] [end_ip_address]</code></summary>This command excludes a range of IP addresses from being assigned by the DHCP server, preventing address conflicts.<br></br></details>
+
+<details><summary><code>ip dhcp pool [pool_name]</code></summary>Defines a DHCP pool for managing a range of IP addresses.<br></br></details>
+
+<details><summary><code>network [network_address] [subnet_mask]</code></summary>Specifies the network address and subnet mask for the DHCP pool.<br></br></details>
+
+<details><summary><code>default-router [ip_address]</code></summary>Configures the default gateway IP address to be assigned by the DHCP server.<br></br></details>
+
+<details><summary><code>dns-server [ip_address]</code></summary>Sets the DNS server IP address to be provided by the DHCP server.<br></br></details>
+
+<details><summary><code>netbios-name-server [ip_address]</code></summary>Defines the NetBIOS name server IP address for DHCP clients.<br></br></details>
 
 ### Router as a DHCP Client
-<details><summary><code>ip address dhcp</code></summary>This command configures a router interface to obtain its IP address from a DHCP server.</details><br>
+
+<details><summary><code>ip address dhcp</code></summary>This command configures a router interface to obtain its IP address from a DHCP server.<br></br></details>
 
 ### IPv6 Configuration
-<details><summary><code>ipv6 address autoconfig</code></summary>Enables SLAAC on a router interface, allowing it to automatically configure its IPv6 address.</details><br>
-<details><summary><code>ipv6 dhcp server [pool_name]</code></summary>Associates a DHCPv6 pool with an interface for assigning IPv6 addresses and other information.</details><br>
-<details><summary><code>ipv6 nd managed-config-flag</code></summary>Informs clients via Router Advertisement (RA) to obtain all IPv6 addressing information from a DHCPv6 server.</details><br>
-<details><summary><code>ipv6 nd other-config-flag</code></summary>Instructs clients via RA to obtain non-addressing information, such as DNS server address, from a DHCPv6 server.</details><br>
-<details><summary><code>ipv6 dhcp relay destination [ipv6_address]</code></summary>Configures a router interface as a DHCPv6 relay agent, forwarding DHCPv6 messages to a server on another network.</details><br>
+
+<details><summary><code>ipv6 address autoconfig</code></summary>Enables SLAAC on a router interface, allowing it to automatically configure its IPv6 address.<br></br></details>
+
+<details><summary><code>ipv6 dhcp server [pool_name]</code></summary>Associates a DHCPv6 pool with an interface for assigning IPv6 addresses and other information.<br></br></details>
+
+<details><summary><code>ipv6 nd managed-config-flag</code></summary>Informs clients via Router Advertisement (RA) to obtain all IPv6 addressing information from a DHCPv6 server.<br></br></details>
+
+<details><summary><code>ipv6 nd other-config-flag</code></summary>Instructs clients via RA to obtain non-addressing information, such as DNS server address, from a DHCPv6 server.<br></br></details>
+
+<details><summary><code>ipv6 dhcp relay destination [ipv6_address]</code></summary>Configures a router interface as a DHCPv6 relay agent, forwarding DHCPv6 messages to a server on another network.<br></br></details>
 
 ### DHCP Troubleshooting
-<details><summary><code>show ip dhcp conflict</code></summary>Displays information about detected IP address conflicts on the network.</details><br>
-<details><summary><code>clear ip dhcp conflict *</code></summary>Clears information related to IP address conflicts after resolving the issue.</details><br>
-<details><summary><code>show ip dhcp binding</code></summary>Shows DHCP bindings, including the assigned IP addresses and MAC addresses of clients.</details><br>
-<details><summary><code>clear ip dhcp binding [ip_address]</code></summary>Releases a specific DHCP lease associated with a particular IP address.</details><br>
-<details><summary><code>debug ip dhcp server events</code></summary>Provides debugging output related to updates and events occurring within the DHCP server database.</details><br>
-<details><summary><code>debug ip dhcp server packet</code></summary>Displays debugging information about DHCP packets received and sent by the server, aiding in analyzing the DHCP process and identifying potential issues.</details><br>
-<details><summary><code>show ipv6 interface</code></summary>Used to verify the IPv6 address generated by SLAAC and other interface details, including the default gateway.</details><br>
+
+<details><summary><code>show ip dhcp conflict</code></summary>Displays information about detected IP address conflicts on the network.<br></br></details>
+
+<details><summary><code>clear ip dhcp conflict *</code></summary>Clears information related to IP address conflicts after resolving the issue.<br></br></details>
+
+<details><summary><code>show ip dhcp binding</code></summary>Shows DHCP bindings, including the assigned IP addresses and MAC addresses of clients.<br></br></details>
+
+<details><summary><code>clear ip dhcp binding [ip_address]</code></summary>Releases a specific DHCP lease associated with a particular IP address.<br></br></details>
+
+<details><summary><code>debug ip dhcp server events</code></summary>Provides debugging output related to updates and events occurring within the DHCP server database.<br></br></details>
+
+<details><summary><code>debug ip dhcp server packet</code></summary>Displays debugging information about DHCP packets received and sent by the server, aiding in analyzing the DHCP process and identifying potential issues.<br></br></details>
+
+<details><summary><code>show ipv6 interface</code></summary>Used to verify the IPv6 address generated by SLAAC and other interface details, including the default gateway.<br></br></details>
 
 ## QnA
+<details><summary><b>What is the common use of Dynamic Host Configuration Protocol (DHCP)?</b></summary>DHCP is commonly used for assigning <b>IPv4 address</b> information to a network host.<br></br></details>
+<details><summary><b>What does DHCP allow a client to obtain from a DHCP server?</b></summary>DHCP allows a DHCP client to obtain an <b>IP address</b>, subnet mask, default gateway IP address, DNS server IP address, and other types of IP addressing information from a DHCP server.<br></br></details>
+<details><summary><b>What command enables DHCP service on a router?</b></summary>The <code>service dhcp</code> command enables the DHCP service on the router. Usually, it is not required because the DHCP service is enabled by default.<br></br></details>
+<details><summary><b>What are the three dynamic addressing options for IPv6?</b></summary>For IPv6, there are three dynamic options to choose from:<br></br>
+<ul>
+<li><b>Stateless address autoconfiguration (SLAAC)</b></li>
+<li><b>Stateful DHCPv6</b></li>
+<li><b>Stateless DHCPv6</b></li>
+</ul><br></br></details>
+<details><summary><b>What is the purpose of a DHCP relay agent, and how is it configured?</b></summary>A DHCP relay agent is necessary when a DHCP client and server reside on different networks. Since DHCPDISCOVER messages are broadcast and cannot cross router boundaries, the client's default gateway needs to be configured as a DHCP relay agent. This agent forwards the broadcast packets as unicast packets to the server.<br></br>
+To configure a router as a DHCP relay agent, use the <code>ip helper-address ip_address</code> interface configuration mode command. This command specifies the IP address of the DHCP server.<br></br></details>
+<details><summary><b>What is the difference between stateful and stateless DHCPv6?</b></summary><ul>
+<li><b>Stateful DHCPv6</b> provides clients with their IPv6 address, prefix, default gateway, and other optional information like NTP server, domain name, DNS server, and TFTP server addresses. This approach requires a DHCPv6 server to manage and distribute this information to clients.</li>
+<li><b>Stateless DHCPv6</b> combines aspects of SLAAC and DHCPv6. Clients use Router Advertisements (RAs) to determine their IPv6 address, prefix, and default gateway. However, they obtain other non-addressing information, like DNS or TFTP server addresses, from a DHCPv6 server.</li>
+</ul><br></br></details>
+<details><summary><b>Describe the DHCP process and potential issues that may arise.</b></summary><b>DHCP Process (DORA)</b><br></br>
+<ol>
+<li><b>DHCP Discover</b>: A client booting up without IP configuration broadcasts a DHCPDISCOVER message.</li>
+<li><b>DHCP Offer</b>: DHCP servers respond with DHCPOFFER messages, offering an available IP address and other configuration details.</li>
+<li><b>DHCP Request</b>: The client selects an offer and broadcasts a DHCPREQUEST, accepting the offered IP.</li>
+<li><b>DHCP Acknowledgement</b>: The chosen server confirms the lease with a DHCPACK message, including lease duration and other options.</li>
+</ol><br></br>
+<b>Potential Issues:</b><br></br>
+<ul>
+<li><b>Router Not Forwarding Broadcasts</b>: If the client and server are on different subnets, the router must be configured as a DHCP relay agent.</li>
+<li><b>DHCP Pool Depletion</b>: When all IP addresses in the pool are leased, new requests are rejected.</li>
+<li><b>Misconfiguration</b>: Incorrect DHCP server settings can lead to addressing problems.</li>
+<li><b>Duplicate IP Addresses</b>: Assigning a DHCP address already statically assigned to another host causes conflicts.</li>
+<li><b>Redundant Server Communication Failure</b>: If multiple DHCP servers don't communicate properly, they might assign overlapping IP addresses.</li>
+<li><b>DHCP's "Pull" Nature</b>: The server cannot initiate client IP address changes after the initial lease; it only responds to client requests.</li>
+<li><b>Interface Outside DHCP Pool</b>: The DHCP server's interface must have an IP address within the subnet it's managing, unless a relay agent is used.</li>
+<li><b>IPv6-Specific Issues</b>: In IPv6, issues can occur with SLAAC, stateful DHCPv6, or stateless DHCPv6 configurations, including router advertisement problems or misconfigured flags in RAs.</li>
+</ul><br></br>
+Troubleshooting commands like <code>show ip dhcp conflict</code>, <code>show ip dhcp binding</code>, <code>debug ip dhcp server events</code>, and <code>debug ip dhcp server packet</code> can help diagnose and resolve these issues.<br></br></details>
 
-<details><summary><b>What is the common use of Dynamic Host Configuration Protocol (DHCP)?</b></summary>DHCP is commonly used for assigning IPv4 address information to a network host.</details><br>
 
-<details><summary><b>What does DHCP allow a client to obtain from a DHCP server?</b></summary>DHCP allows a DHCP client to obtain an <b>IP address</b>, subnet mask, default gateway <b>IP address</b>, DNS server IP address, and other types of IP addressing information from a DHCP server.</details><br>
-
-<details><summary><b>What command enables DHCP service on a router?</b></summary>The <code>service dhcp</code> command enables the DHCP service on the router. Usually, it is not required because the DHCP service is enabled by default.</details><br>
-
-<details><summary><b>What are the three dynamic addressing options for IPv6?</b></summary>For IPv6, there are three dynamic options to choose from:<br>* <b>Stateless address autoconfiguration (SLAAC)</b><br>* Stateful DHCPv6<br>* Stateless DHCPv6</details><br>
-
-<details><summary><b>What is the purpose of a DHCP relay agent, and how is it configured?</b></summary>A DHCP relay agent is necessary when a DHCP client and server reside on different networks. Since <b>DHCPDISCOVER</b> messages are broadcast and cannot cross router boundaries, the client's default gateway needs to be configured as a DHCP relay agent. This agent forwards the broadcast packets as unicast packets to the server.<br>To configure a router as a DHCP relay agent, use the <code>ip helper-address ip_address</code> interface configuration mode command. This command specifies the IP address of the DHCP server.</details><br>
-
-<details><summary><b>What is the difference between stateful and stateless DHCPv6?</b></summary><b>Stateful DHCPv6</b> provides clients with their <b>IPv6 address</b>, prefix, default gateway, and other optional information like NTP server, domain name, DNS server, and TFTP server addresses. This approach requires a DHCPv6 server to manage and distribute this information to clients.<br><b>Stateless DHCPv6</b> combines aspects of SLAAC and DHCPv6. Clients use Router Advertisements (RAs) to determine their IPv6 address, prefix, and default gateway. However, they obtain other non-addressing information, like DNS or TFTP server addresses, from a DHCPv6 server.</details><br>
-
-<details><summary><b>Describe the DHCP process and potential issues that may arise.</b></summary><b>DHCP Process (DORA)</b><br>1. <b>DHCP Discover:</b> A client booting up without IP configuration broadcasts a DHCPDISCOVER message.<br>2. <b>DHCP Offer:</b> DHCP servers respond with DHCPOFFER messages, offering an available IP address and other configuration details.<br>3. <b>DHCP Request:</b> The client selects an offer and broadcasts a DHCPREQUEST, accepting the offered IP.<br>4. <b>DHCP Acknowledgement:</b> The chosen server confirms the lease with a DHCPACK message, including lease duration and other options.<br><b>Potential Issues:</b><br>* <b>Router Not Forwarding Broadcasts:</b> If the client and server are on different subnets, the router must be configured as a DHCP relay agent.<br>* <b>DHCP Pool Depletion:</b> When all IP addresses in the pool are leased, new requests are rejected.<br>* <b>Misconfiguration:</b> Incorrect DHCP server settings can lead to addressing problems.<br>* <b>Duplicate IP Addresses:</b> Assigning a DHCP address already statically assigned to another host causes conflicts.<br>* <b>Redundant Server Communication Failure:</b> If multiple DHCP servers don't communicate properly, they might assign overlapping IP addresses.<br>* <b>DHCP's "Pull" Nature:</b> The server cannot initiate client IP address changes after the initial lease; it only responds to client requests.<br>* <b>Interface Outside DHCP Pool:</b> The DHCP server's interface must have an IP address within the subnet it's managing, unless a relay agent is used.<br>* <b>IPv6-Specific Issues:</b> In IPv6, issues can occur with SLAAC, stateful DHCPv6, or stateless DHCPv6 configurations, including router advertisement problems or misconfigured flags in RAs.<br>Troubleshooting commands like <code>show ip dhcp conflict</code>, <code>show ip dhcp binding</code>, <code>debug ip dhcp server events</code>, and <code>debug ip dhcp server packet</code> can help diagnose and resolve these issues.</details><br>
 
 ## Links
 ### Network Technologies
