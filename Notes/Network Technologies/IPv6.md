@@ -302,15 +302,77 @@ Node A is an IPv6 only node and wants to send an IPv6 datagram to node D and the
 
 An advantage of NAT-PT is that no modifications are required on the hosts.
 
+## Glossary
+
+### IPv6 Address Structure & Formatting
+
+<details><summary><b>IPv6 Address</b></summary>A 128-bit address, written in hexadecimal numbers, that uniquely identifies a device on an IPv6 network.<br><br></details>
+<details><summary><b>Coloned Hex Format</b></summary>The standard format for writing IPv6 addresses, using eight 16-bit segments separated by colons.<br><br></details>
+<details><summary><b>Subnet Prefix</b></summary>The portion of an IPv6 address that identifies the network to which an interface is connected.<br><br></details>
+<details><summary><b>Interface ID</b></summary>The portion of an IPv6 address that uniquely identifies a specific interface within a subnet.<br><br></details>
+<details><summary><b>CIDR Notation</b></summary>A method for denoting the subnet prefix length in an IPv6 address using a slash followed by a decimal value (e.g., /64).<br><br></details>
+
+### IPv6 Address Types
+
+<details><summary><b>Unicast Address</b></summary>An address that identifies a single interface on a network. Packets sent to a unicast address are delivered to the specific interface associated with that address.<br><br></details>
+<details><summary><b>Multicast Address</b></summary>An address used to send packets to a group of interfaces, typically on different nodes. All interfaces belonging to the multicast group will receive the packet.<br><br></details>
+<details><summary><b>Anycast Address</b></summary>An address associated with a group of interfaces, often on different nodes. Packets sent to an anycast address are delivered to the nearest interface within the group, as determined by routing protocols.<br><br></details>
+<details><summary><b>Link-Local Address</b></summary>An address used for communication within a single link or subnet, and not routable beyond that link.<br><br></details>
+<details><summary><b>Global Unicast Address</b></summary>A globally routable address used to identify a specific interface on the internet.<br><br></details>
+
+### IPv6 Features & Technologies
+
+<details><summary><b>Stateless Autoconfiguration</b></summary>A feature that allows IPv6 devices to automatically configure their own link-local addresses without relying on a DHCP server.<br><br></details>
+<details><summary><b>Dual Stack</b></summary>A configuration where both IPv4 and IPv6 protocols are enabled and run simultaneously on a device or interface.<br><br></details>
+<details><summary><b>Tunneling</b></summary>A technique used to encapsulate IPv6 packets within IPv4 packets, allowing IPv6 communication over existing IPv4 networks.<br><br></details>
+<details><summary><b>NAT-PT (Network Address Translation - Protocol Translation)</b></summary>A mechanism that allows IPv6-only devices to communicate with IPv4-only devices by translating between the two protocols.<br><br></details>
+<details><summary><b>EUI-64 (Extended Unique Identifier - 64 bit)</b></summary>A standard for creating a 64-bit interface identifier based on a device's MAC address.<br><br></details>
+
+### Special IPv6 Addresses
+
+<details><summary><b>::/0</b></summary>A default route in IPv6, equivalent to 0.0.0.0 in IPv4.<br><br></details>
+<details><summary><b>::/128</b></summary>The unspecified address assigned to a host before it obtains a link-local address.<br><br></details>
+<details><summary><b>::1/128</b></summary>The IPv6 loopback address, equivalent to 127.0.0.1 in IPv4.<br><br></details>
+<details><summary><b>FE80::/10</b></summary>The prefix used for link-local unicast addresses.<br><br></details>
+<details><summary><b>FF00::/8</b></summary>The prefix for IPv6 multicast addresses.<br><br></details>
+
+## Commands
+
+<details><summary>Enables the device to send and receive IPv6 packets to and from other devices</summary><code>Router(config)# ipv6 unicast-routing</code><br><br></details>
+<details><summary>Disables the ability to forward IPv6 traffic, treating the device as an end device rather than a router</summary><code>Router(config)# no ipv6 unicast-routing</code><br><br></details>
+<details><summary>Configures an IPv6 address and prefix length on an interface</summary><code>Router(config-if)# ipv6 address [address]/[prefix-length] [link-local | eui-64]</code><br><br></details>
+<details><summary>Sets a specific IPv6 address as the link-local address for an interface</summary><code>Router(config-if)# ipv6 address FE80::1 link-local</code><br><br></details>
+<details><summary>Displays information about the configuration and status of loopback interface 100 related to IPv6</summary><code>Router# show ipv6 interface loopback 100</code><br><br></details>
+<details><summary>Displays the current running configuration for interface fa0/0</summary><code>Router# show run interface fa0/0</code><br><br></details>
+<details><summary>Shows information about the status and configuration of interface fa0/1 specifically for IPv6</summary><code>Router# show ipv6 interface fa0/1</code><br><br></details>
+<details><summary>Enters global configuration mode</summary><code>Router# config t</code><br><br></details>
+<details><summary>Enters interface configuration mode for interface fa0/1</summary><code>Router(config)# int fa0/1</code><br><br></details>
+<details><summary>Configures a global unicast IPv6 address using the EUI-64 format for the interface ID</summary><code>Router(config-if)# ipv6 address [address]/[prefix-length] eui-64</code><br><br></details>
+<details><summary>Executes the "show ipv6 interface fa0/1" command immediately, even if in configuration mode</summary><code>Router(config-if)# do show ipv6 interface fa0/1</code><br><br></details>
+
+## QnA
+
+<details><summary><b>What are the three types of IPv6 addresses, excluding those that are deprecated?</b></summary>The three types of IPv6 addresses are <b>unicast</b>, <b>multicast</b>, and <b>anycast</b> addresses.<br><br></details>
+<details><summary><b>How many bits does an IPv6 address use?</b></summary>An IPv6 address uses <b>128 bits</b>.<br><br></details>
+<details><summary><b>What are the two parts of an IPv6 address?</b></summary>The two parts of an IPv6 address are the <b>subnet prefix</b>, which represents the network the interface is connected to, and the <b>interface ID</b> which is also called the local identifier or token.<br><br></details>
+<details><summary><b>How is the subnet prefix of an IPv6 address denoted?</b></summary>The subnet prefix is denoted using <b>CIDR notation</b>.<br><br></details>
+<details><summary><b>What is stateless autoconfiguration, and how does it work in IPv6?</b></summary>Stateless autoconfiguration is a feature in IPv6 that allows a device to automatically configure its own <b>link-local</b> address without the need for a DHCP server. The device generates a unique link-local address by combining the well-known <b>FE80::/10 prefix</b> with an interface identifier, typically derived from its MAC address using the <b>EUI-64</b> format.<br><br></details>
+<details><summary><b>Describe the concept of dual stack in the context of IPv4 and IPv6.</b></summary>Dual stack refers to configuring a device or interface to support <b>both IPv4 and IPv6 protocols concurrently</b>. This enables communication with devices using either protocol version and facilitates a gradual transition from IPv4 to IPv6.<br><br></details>
+<details><summary><b>What are the advantages of NAT-PT when transitioning from IPv4 to IPv6?</b></summary>NAT-PT (Network Address Translation - Protocol Translation) allows <b>IPv6-only devices to communicate with IPv4-only devices</b> by translating between the two protocols. This eliminates the need for modifications on the hosts themselves, simplifying the transition process.<br><br></details>
+<details><summary><b>Explain the benefits of IPv6 over IPv4, and how these benefits are realized through specific features of IPv6.</b></summary>IPv6 offers several advantages over IPv4, primarily due to its larger address space (<b>128 bits</b> vs. <b>32 bits</b>), enhanced security features, and simplified header structure. These benefits translate to:<br><ul><li><b>Increased Address Space:</b> The vast address space of IPv6 eliminates the need for Network Address Translation (NAT), a workaround used in IPv4 to conserve addresses, which can complicate network management and security. This is due to the elimination of public-to-private NAT, which is a feature of IPv6.</li><li><b>End-to-End Connectivity:</b> With a sufficient number of unique addresses, every device can have a globally routable address, facilitating direct communication and simplifying application development.</li><li><b>Improved Routing Efficiency:</b> The simplified header structure reduces processing overhead for routers, improving overall network performance. This is also a feature of IPv6.</li><li><b>Enhanced Security:</b> IPv6 integrates IPsec (Internet Protocol Security) as a core feature, providing robust mechanisms for authentication, data integrity, and confidentiality. This is due to the support for mobility and security in IPv6.</li><li><b>Support for Mobility:</b> IPv6 includes features that enable seamless roaming for mobile devices, allowing them to maintain connectivity as they move between different networks. Again, this is due to support for mobility and security as a key feature of IPv6.</li></ul><br><br></details>
+<details><summary><b>Using the provided examples, illustrate how IPv6 addresses can be abbreviated, and explain the rules for abbreviation.</b></summary>IPv6 addresses can be abbreviated to improve readability and reduce the amount of space they occupy. Here's how it works, with examples from the source:<br><ul><li><b>Leading Zero Compression:</b> Leading zeros within each 16-bit segment can be omitted. For example, 09C0 can be shortened to 9C0, and 0000 can be abbreviated to 0. Example 1 from the source shows this, changing <code>2031:0000:130F:0000:0000:09C0:876A:130B</code> to <code>2031:0:130F:0:0:9C0:876A:130B</code>.</li><li><b>Double Colon (::) Compression:</b> A double colon can be used once within an address to represent a sequence of consecutive zero segments. This further reduces the length of the address. Continuing Example 1, <code>2031:0:130F:0:0:9C0:876A:130B</code> is shortened to <code>2031:0:130F::9C0:876A:130B</code>.</li></ul>It's important to note:<br><ul><li>You can only use the double colon (::) once within an address to avoid ambiguity.</li><li>If multiple sequences of consecutive zeros exist, the longest sequence should be replaced with ::.</li><li>Hexadecimal digits are not case-sensitive, meaning 'a' and 'A' are equivalent.</li></ul>These abbreviations make IPv6 addresses more manageable without losing their uniqueness and functionality. Examples 2 and 3 also demonstrate these rules.<br><br></details>
+
 ## Links
 ### Network Technologies
 
 - [DHCP](https://notes.ryancranie.com/Notes/Network%20Technologies/DHCP)
 - [EIGRP](https://notes.ryancranie.com/Notes/Network%20Technologies/EIGRP)
 
-
 ### Revision History
 001: 2024-09-27 - Initialized IPv6.md
+
+### Sources
+- University Notes
 
 ---
 <b>[Network Technologies Contents](https://notes.ryancranie.com/Contents/Network%20Technologies%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)

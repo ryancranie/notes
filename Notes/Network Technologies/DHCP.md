@@ -363,11 +363,12 @@ In both cases, the relay agent acts as an intermediary, facilitating communicati
 
 - [IPv6](https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6)
 
-### Sources
-- University Notes
 ### Revision History
 001: 2024-09-24 - Initialized DHCP.md
 002: 2024-10-21 - Created Audio Overview, Glossary, Commands, and QnA
+
+### Sources
+- University Notes
 
 ---
 <b>[Network Technologies Contents](https://notes.ryancranie.com/Contents/Network%20Technologies%20Contents)<br>[Home Page](https://notes.ryancranie.com)<br></b>[Ryan Cranie](https://www.ryancranie.com)
