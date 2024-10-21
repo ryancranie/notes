@@ -5,20 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-{% seo %}
+    {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
-  </head>
-  <body>
+    <link rel="stylesheet" href="{{ "/assets/styles.css" | relative_url }}"> <!-- Ensure your styles for flashcards are included -->
+</head>
+<body>
     <div class="container-lg px-3 my-5 markdown-body">
-      {% if site.title and site.title != page.title %}
-      <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
-      {% endif %}
+        {% if site.title and site.title != page.title %}
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title }}</a></h1>
+        {% endif %}
 
-      {{ content }}
+        {{ content }}
+
+        <div id="flashcards-container"></div> <!-- Container for flashcards -->
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
+
+    <script>
+      // Function to create flashcards
+      function createFlashcards(data) {
+          const container = document.getElementById('flashcards-container');
+          data.forEach(item => {
+              const card = document.createElement('div');
+              card.classList.add('flashcard');
+  
+              const term = document.createElement('h3');
+              term.textContent = item.item;
+  
+              const definition = document.createElement('p');
+              definition.textContent = item.definition;
+  
+              card.appendChild(term);
+              card.appendChild(definition);
+              container.appendChild(card);
+          });
+      }
+  
+      // Function to fetch YAML files from a specified directory
+      async function fetchYAMLFiles(directory) {
+          const response = await fetch(directory);
+          const text = await response.text();
+          return parseYAML(text);
+      }
+  
+      // Simple YAML parser (basic implementation)
+      function parseYAML(text) {
+          const lines = text.split('\n').filter(line => line.trim() !== '');
+          const data = [];
+  
+          let currentItem = {};
+          lines.forEach(line => {
+              if (line.startsWith('-')) {
+                  if (Object.keys(currentItem).length > 0) {
+                      data.push(currentItem);
+                  }
+                  currentItem = {};
+              }
+              if (line.includes('item:')) {
+                  currentItem.item = line.split('item:')[1].trim();
+              }
+              if (line.includes('definition:')) {
+                  currentItem.definition = line.split('definition:')[1].trim();
+              }
+          });
+          if (Object.keys(currentItem).length > 0) {
+              data.push(currentItem); // Push the last item
+          }
+          return data;
+      }
+  
+      // Get the directory from the front matter
+      const directory = '{{ site.baseurl }}/data/{{ page.flashcard_directory | default: "questions" }}/'; // Default to "questions" if not specified
+  
+      async function loadYAML() {
+          const fileList = await fetch(directory)
+              .then(response => response.text())
+              .then(text => text.split('\n').filter(Boolean));
+  
+          const allData = [];
+          for (const file of fileList) {
+              try {
+                  const data = await fetch(`${directory}/${file}`);
+                  const yamlData = await data.text();
+                  allData.push(...parseYAML(yamlData));
+              } catch (error) {
+                  console.error(`Error loading YAML from ${directory}/${file}:`, error);
+              }
+          }
+          createFlashcards(allData);
+      }
+  
+      document.addEventListener('DOMContentLoaded', loadYAML);
+  </script>  
+
   </body>
 </html>
