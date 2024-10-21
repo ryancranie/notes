@@ -151,57 +151,10 @@ DECRYPTION:
 	- + same **symmetric** algorithm
 	- = plaintext!!
 
-## Glossary
-
-### Keys
-<details><summary><b>Digital Key</b></summary>An alphanumeric value used for cryptographic operations like digital signatures and encryption.<br><br></details>
-<details><summary><b>Key Lifetime</b></summary>The duration for which a key remains valid, ranging from seconds to years.<br><br></details>
-<details><summary><b>Private/Secret Key</b></summary>A key kept confidential and used for decryption and digital signature generation.<br><br></details>
-<details><summary><b>Public Key</b></summary>A key made available to everyone and used for encryption and digital signature verification.<br><br></details>
-
-### Algorithms
-<details><summary><b>Symmetric Algorithm</b></summary>An encryption method using the same key for both encryption and decryption.<br><br></details>
-<details><summary><b>Asymmetric Algorithm</b></summary>An encryption method using a pair of related keys, one for encryption (public key) and one for decryption (private key).<br><br></details>
-<details><summary><b>Key Stretching</b></summary>A technique to strengthen weak keys or passwords by processing them through hashing algorithms.<br><br></details>
-
-### Cryptographic Techniques and Concepts
-<details><summary><b>Digital Signature</b></summary>An electronic signature verifying the authenticity and integrity of a digital message.<br><br></details>
-<details><summary><b>Message Authentication Code (MAC)</b></summary>A hash function using a key to ensure message integrity and authenticity.<br><br></details>
-<details><summary><b>Encryption</b></summary>The process of converting plaintext into an unreadable format (ciphertext) for secure transmission.<br><br></details>
-<details><summary><b>Key Exchange</b></summary>The secure exchange of cryptographic keys between two parties over a public channel.<br><br></details>
-<details><summary><b>Salt</b></summary>A random value added to data before hashing, enhancing security by increasing entropy.<br><br></details>
-<details><summary><b>Entropy</b></summary>The randomness or unpredictability of data, crucial for cryptographic security.<br><br></details>
-
-### Specific Algorithms and Standards
-<details><summary><b>DES (Data Encryption Standard)</b></summary>A symmetric encryption algorithm using a 48-bit key, encrypting 64-bit blocks.<br><br></details>
-<details><summary><b>3DES (Triple DES)</b></summary>A symmetric encryption algorithm applying the DES algorithm three times for enhanced security.<br><br></details>
-<details><summary><b>IDEA (International Data Encryption Algorithm)</b></summary>A symmetric encryption algorithm using a 128-bit key, encrypting 64-bit blocks.<br><br></details>
-<details><summary><b>AES (Advanced Encryption Standard)</b></summary>A widely used symmetric encryption algorithm with key sizes of 128, 192, or 256 bits, encrypting 128-bit blocks.<br><br></details>
-<details><summary><b>Blowfish/Twofish</b></summary>Symmetric encryption algorithms, with Blowfish encrypting 64-bit blocks and Twofish encrypting 128-bit blocks.<br><br></details>
-<details><summary><b>RC4, RC5, RC6 (Rivest Ciphers)</b></summary>A family of symmetric encryption algorithms, with varying key and block sizes.<br><br></details>
-<details><summary><b>Diffie-Hellman</b></summary>An asymmetric algorithm for key exchange over an insecure channel.<br><br></details>
-<details><summary><b>RSA (Rivest, Shamir, and Adleman)</b></summary>A widely used asymmetric algorithm for encryption, decryption, digital signatures, and key exchange.<br><br></details>
-<details><summary><b>ECC (Elliptic Curve Cryptography)</b></summary>An asymmetric encryption method offering strong security with smaller key sizes.<br><br></details>
-<details><summary><b>PGP (Pretty Good Privacy)</b></summary>A popular email encryption tool using asymmetric encryption.<br><br></details>
-<details><summary><b>GPG (GNU Privacy Guard)</b></summary>An open-source implementation of the PGP standard for email and file encryption.<br><br></details>
-<details><summary><b>DSA (Digital Signature Algorithm)</b></summary>An algorithm used for creating and verifying digital signatures.<br><br></details>
-<details><summary><b>DSS (Digital Signature Standard)</b></summary>A standard specifying the use of DSA for digital signatures.<br><br></details>
-<details><summary><b>FIPS 186</b></summary>A U.S. government standard specifying the use of DSA as the Digital Signature Standard.<br><br></details>
-<details><summary><b>PBKDF2 (Password-Based Key Derivation Function 2)</b></summary>A key stretching algorithm used to derive strong keys from passwords.<br><br></details>
-<details><summary><b>BCRYPT</b></summary>A key stretching algorithm that is the default in OpenBSD and various Linux distributions.<br><br></details>
-
-## QnA
-<details><summary><b>What is a digital key?</b></summary>A digital key is an <b>alphanumeric</b> value used for <b>cryptographic</b> operations.<br><br></details>
-<details><summary><b>What is the difference between a private key and a public key?</b></summary>A private key is kept <b>secret</b> and used for <b>decryption</b> and digital signature generation, while a public key is made available to <b>everyone</b> and used for encryption and digital signature verification.<br><br></details>
-<details><summary><b>What is the purpose of key stretching?</b></summary>Key stretching is used to <b>strengthen</b> weak keys or passwords by making them <b>longer</b> and more complex.<br><br></details>
-<details><summary><b>Name one advantage and one disadvantage of symmetric cryptography?</b></summary>One advantage is that it is <b>faster</b> for encrypting/decrypting data, and a disadvantage is that it relies on a <b>secret key</b>, which must be protected.<br><br></details>
-<details><summary><b>Explain the concept of a salt in cryptography.</b></summary>A salt is a <b>random</b> value that is added to data before it is <b>hashed</b>. This process helps to increase entropy and make it more difficult for attackers to guess the <b>original</b> data. For example, if two users have the same password, adding a unique salt to each password before hashing will result in different hash values, even though the passwords are the same. This makes it more difficult for an attacker to crack multiple passwords at once.<br><br></details>
-<details><summary><b>What are the key differences between DES and AES?</b></summary><b>DES</b> (Data Encryption Standard) is an older symmetric encryption algorithm that uses a <b>48-bit key</b> to encrypt <b>64-bit</b> blocks of data. <b>AES</b> (Advanced Encryption Standard), on the other hand, is a more modern algorithm that uses key sizes of <b>128</b>, <b>192</b>, or <b>256 bits</b> to encrypt <b>128-bit</b> blocks. AES is generally considered to be more <b>secure</b> than DES due to its larger key size and more complex algorithm.<br><br></details>
-<details><summary><b>Describe how symmetric and asymmetric cryptography can be used together to securely transmit data.</b></summary>Symmetric and asymmetric encryption can be used together to overcome their individual weaknesses and enhance security. This is how they work together:<br><ul><li><b>Symmetric encryption</b> is used to encrypt the bulk data because it is faster and more efficient for large amounts of data.</li><li><b>Asymmetric encryption</b> is used to securely transmit the symmetric key that was used to encrypt the data.</li></ul>Here’s a step-by-step example:<br><br>1. <b>Encryption:</b><br><ul><li>Sender A generates a one-time symmetric key and uses a symmetric algorithm to encrypt the bulk data.</li><li>Sender A uses receiver B's <b>public key</b> and an asymmetric algorithm to encrypt the one-time symmetric key.</li><li>Sender A sends both the encrypted data and the encrypted symmetric key to B.</li></ul>2. <b>Decryption:</b><br><ul><li>Receiver B uses their <b>private key</b> and the same asymmetric algorithm to decrypt the symmetric key.</li><li>Receiver B uses the decrypted symmetric key and the same symmetric algorithm to decrypt the bulk data.</li></ul>This method combines the speed of symmetric encryption with the security of asymmetric encryption, enabling the secure transmission of large amounts of data.<br><br></details>
-
 ## Links
 ### Revision History
 001: 2024-09-25 - Initialized Keys and Cryptographic Algorithms.md
+
 002: 2024-10-14 - Created Audio Overview, Glossary, and QnA
 
 ---

@@ -224,93 +224,6 @@ At the endpoint, the user needs a cryptographic application to
 		- verifying
 5. All these entities carry out their functions in accordance with policy, which is prescribed by PKI authorities
 
-## Glossary
-
-### Digital Certificate Components
-
-<details><summary><b>Digital Certificate</b></summary>An electronic document issued and signed by a trusted entity, binding an entity's identity to a public key.<br><br></details>
-
-<details><summary><b>Encryption Certificate</b></summary>A certificate containing a public key specifically used for encrypting data.<br><br></details>
-
-<details><summary><b>Verification Certificate</b></summary>A certificate containing a public key specifically for verifying digital signatures.<br><br></details>
-
-<details><summary><b>Policy Certificate</b></summary>A certificate holding policy information, without a public key.<br><br></details>
-
-<details><summary><b>Serial Number</b></summary>A unique identifier assigned by the issuing authority to each certificate.<br><br></details>
-
-<details><summary><b>Algorithm</b></summary>A specific mathematical procedure used to create the certificate's hash and signature.<br><br></details>
-
-<details><summary><b>Validity Period</b></summary>The defined timeframe during which a certificate is considered valid and operational.<br><br></details>
-
-<details><summary><b>Issuer Name</b></summary>The identity of the trusted entity, often a CA, that issued the certificate.<br><br></details>
-
-<details><summary><b>DN (Distinguished Name)</b></summary>A unique identifier mapping to an entity's entry in a hierarchical directory server.<br><br></details>
-
-<details><summary><b>DIT (Directory Information Tree)</b></summary>A tree-like structure organizing entries in a directory server.<br><br></details>
-
-<details><summary><b>Subject Name</b></summary>Identifies the entity bound to the certificate, potentially a person, device, or application.<br><br></details>
-
-<details><summary><b>FQDN (Fully Qualified Domain Name)</b></summary>The complete domain name of a website or server.<br><br></details>
-
-<details><summary><b>Key Value</b></summary>The alphanumeric code, often the public key, embedded within a certificate.<br><br></details>
-
-<details><summary><b>Key Usage</b></summary>Defines the specific allowed use of the key within a certificate.<br><br></details>
-
-<details><summary><b>keyCertSign Attribute</b></summary>An attribute required for a CA to use its keys to sign and verify other certificates.<br><br></details>
-
-### PKI Infrastructure and Trust
-
-<details><summary><b>PKI (Public Key Infrastructure)</b></summary>A system of policies, procedures, and technologies used to manage digital certificates.<br><br></details>
-
-<details><summary><b>CA (Certification Authority)</b></summary>A trusted entity that issues and manages digital certificates.<br><br></details>
-
-<details><summary><b>CRL (Certificate Revocation List)</b></summary>A list containing information about revoked certificates, making them untrusted.<br><br></details>
-
-<details><summary><b>X.509 version 3</b></summary>The most important standard for managing and producing digital certificates.<br><br></details>
-
-<details><summary><b>CSP (Cryptographic Service Provider)</b></summary>A software module providing cryptographic services, like key storage, often from an operating system.<br><br></details>
-
-<details><summary><b>MS CAPI</b></summary>The Microsoft Cryptographic Service Provider, also known as the MS CAPI key store.<br><br></details>
-
-<details><summary><b>HSM (Hardware Security Module)</b></summary>A physical device offering enhanced security for generating and storing private keys.<br><br></details>
-
-<details><summary><b>PKCS (Public-Key Cryptography Standards)</b></summary>A set of standards for public-key cryptography, including PKCS#12, which defines a file format for storing private keys.<br><br></details>
-
-<details><summary><b>Root CA</b></summary>The top-level CA in a hierarchical PKI structure, serving as the ultimate source of trust.<br><br></details>
-
-<details><summary><b>Subordinate CA</b></summary>A CA that issues certificates to end entities and may be under a root CA in a hierarchical structure.<br><br></details>
-
-<details><summary><b>Cross-Certifying</b></summary>Establishing trust between two CAs from different PKIs, enabling trust between their users.<br><br></details>
-
-<details><summary><b>Lateral Structure</b></summary>A PKI structure where trust relationships exist between CAs of different PKIs.<br><br></details>
-
-<details><summary><b>Chain of Trust</b></summary>A series of certificates, each relying on the one above it for trust, ultimately leading back to the root CA.<br><br></details>
-
-<details><summary><b>Source of Trust</b></summary>The root CA in a PKI hierarchy, representing the foundation of trust for all certificates within that PKI.<br><br></details>
-
-### PKI Processes and Management
-
-<details><summary><b>RA (Registration Authority)</b></summary>An entity responsible for verifying and forwarding certificate requests to the CA.<br><br></details>
-
-<details><summary><b>X.500</b></summary>A series of standards for directory services, commonly used to store and manage certificates.<br><br></details>
-
-<details><summary><b>LDAP (Lightweight Directory Access Protocol)</b></summary>A standard protocol for accessing and managing distributed directory information services over an IP network.<br><br></details>
-
-<details><summary><b>ARL (Authority Revocation List)</b></summary>A list specifically containing revoked CA certificates and cross-certificates.<br><br></details>
-
-<details><summary><b>CSR (Certificate Service Request)</b></summary>A formal request generated and submitted to a CA to obtain a digital certificate.<br><br></details>
-
-<details><summary><b>ITU-T (International Telecommunication Union)</b></summary>The organization responsible for developing the X.500 standards for directory services.<br><br></details>
-
-## QnA
-<details><summary><b>What does PKI stand for and what is it comprised of?</b></summary>PKI stands for <b>Public Key Infrastructure</b>. It is an ecosystem comprised of <b>policies</b>, <b>procedures</b>, hardware, and software used to manage digital certificates.<br><br></details>
-<details><summary><b>What are the two types of certificates that contain public keys?</b></summary>The two types of certificates containing public keys are <b>Encryption Certificates</b> and <b>Verification Certificates</b>.<br><br></details>
-<details><summary><b>What is the purpose of a Certificate Revocation List (CRL)?</b></summary>A CRL contains a list of <b>revoked certificates</b>, signifying that they are no longer trusted.<br><br></details>
-<details><summary><b>What is a common file extension for storing private keys?</b></summary>Private keys are typically stored in files with a <code>.p12</code> (for PKCS#12) or <code>.key</code> extension.<br><br></details>
-<details><summary><b>What is the difference between a hierarchical and lateral PKI structure?</b></summary><ul><li>In a <b>hierarchical structure</b>, there is a single <b>root CA</b> at the top, with one or more subordinate CAs below it. Subordinate CAs can further have their own subordinate CAs, creating a tree-like structure. Trust flows downwards from the root CA.</li><li>In a <b>lateral structure</b>, trust relationships are established between CAs of different PKIs through <b>cross-certification</b>. This allows users of one PKI to trust users of another PKI. Cross-certification can occur between root or subordinate CAs from different PKIs.</li></ul><br></details>
-<details><summary><b>Explain the process of how an end entity obtains a certificate from a CA, involving the RA.</b></summary><ol><li>The end entity sends a request for a certificate to the <b>Registration Authority (RA)</b>.</li><li>The RA verifies the end entity's information and either approves or denies the request.</li><li>If approved, the RA registers the request with the <b>CA</b>.</li><li>The RA then generates a one-time authorization code for the requestor.</li><li>The CA issues the certificate and private key to the end entity.</li><li>The CA stores the issued certificates in the <b>Directory Server</b>.</li></ol><br></details>
-<details><summary><b>Describe how the Chain of Trust works to establish trust in a digital certificate, using an example of a document being sent from entity A to entity B.</b></summary>The Chain of Trust is a mechanism for verifying the <b>authenticity</b> and <b>trustworthiness</b> of a digital certificate. It works by linking the certificate in question to a trusted root CA through a series of intermediate certificates.<br><b>Example:</b><ol><li>Entity A sends a signed document to entity B.</li><li>Entity B's application retrieves the certificate associated with A's document to verify the signature. However, B doesn't inherently trust A's certificate yet.</li><li>B's application then retrieves the certificate of the CA that issued A's certificate. This is the next link in the chain.</li><li>B's application uses the public key in this CA's certificate to verify the signature on A's certificate. Again, B still doesn't fully trust A's certificate.</li><li>This process repeats, with B retrieving the certificate of the CA that issued the previous CA's certificate, and so on.</li><li>Eventually, the chain leads to the root CA's certificate. Since the root CA is the ultimate source of trust, B trusts its certificate.</li><li>Because each certificate in the chain has been verified by the one above it, trust flows down the chain, and B can now trust A's certificate and the signed document.</li></ol><b>Key point:</b> The chain of trust relies on each entity trusting the certificate of the issuing CA in the chain, ultimately leading back to the trusted root CA. This ensures the authenticity and integrity of the final certificate and any associated data.<br><br></details> 
-
 ## Links
 ### Cryptography
 
@@ -319,6 +232,7 @@ At the endpoint, the user needs a cryptographic application to
 
 ### Revision History
 001: 2024-09-25 - Initialized PKI.md
+
 002: 2024-10-14 - Created Audio Overview, Glossary, and QnA
 
 ---
