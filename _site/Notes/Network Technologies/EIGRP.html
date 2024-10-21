@@ -1,0 +1,935 @@
+<h1 id="eigrp">EIGRP</h1>
+
+<audio controls="">
+    <source src="https://github.com/ryancranie/notes/raw/refs/heads/main/Attachments/Audio/EIGRP.mp3" type="audio/mpeg" />
+    Your browser does not support the audio tag.
+</audio>
+<p>↑ AI-Generated Audio Overview via @<a href="https://notebooklm.google/">NotebookLM</a></p>
+
+<h2 id="eigrp-fundamentals">EIGRP Fundamentals</h2>
+
+<ul>
+  <li>Enhanced Interior Gateway Routing Protocol (<strong>EIGRP</strong>) is an enhanced distance vector routing <a href="https://notes.ryancranie.com/Notes/Network%20Technologies/Protocols">protocol</a> commonly found in enterprise networks.
+    <ul>
+      <li>A distance vector routing protocol is a type of routing protocol used in packet-switched networks to determine the best path for data to travel from one network node to another.</li>
+    </ul>
+  </li>
+  <li>
+    <p>EIGRP is a Cisco Proprietary Protocol (only made for cisco devices)</p>
+  </li>
+  <li>
+    <p>EIGRP is a derivative of Interior Gateway Routing Protocol (IGRP) but includes <strong>support for variable-length subnet masking</strong> (<strong>VLSM</strong>) and metrics capable of supporting higher-speed interfaces.</p>
+  </li>
+  <li>
+    <p>EIGRP overcomes the deficiencies of other distance vector routing protocols, such as Routing Information Protocol (<strong>RIP</strong>), with features such as unequal-cost load balancing, support for networks <em>255</em> hops away, and rapid convergence features.</p>
+  </li>
+  <li>EIGRP uses a diffusing update algorithm (<strong>DUAL</strong>) to identify network paths and provides for fast convergence using pre-calculated loop-free backup paths.</li>
+</ul>
+
+<blockquote>
+  <p>“Convergence time is the time taken by the routers in the network to reach convergence after a change in topology.”</p>
+</blockquote>
+
+<h2 id="autonomous-systems">Autonomous Systems</h2>
+
+<p>A router can run multiple EIGRP processes. Each process operates under the context of an autonomous system (AS), which represents a common routing domain. Routers within the same domain use the same metric calculation formula and exchange routes only with members of the same autonomous system.</p>
+
+<p>EIGRP uses <strong>protocol-dependent modules</strong> (PDMs) to support multiple network protocols, such as IPv4, and <a href="https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6">IPv6</a>. EIGRP is written so that the PDM is responsible for the functions that handle the route selection criteria for each communication protocol. Current versions of EIGRP only support IPv4 and IPv6.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241007120612.png" width="500" /></p>
+
+<h2 id="eigrp-terminology">EIGRP Terminology</h2>
+
+<p>Figure 2-2 is used as a reference topology for R1 calculating the best path and alternative loop-free paths to the <code class="language-plaintext highlighter-rouge">10.4.4.0/24</code> network. The values in parentheses represent the link’s calculated metric for a segment based on bandwidth and delay.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241007120713.png" width="600" /></p>
+
+<p><strong>NOTE</strong>: RIP would go from R1 to R4, since it’s 1 hop, despite the higher cost.</p>
+
+<h2 id="eigrp-terminology-1">EIGRP Terminology</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Term</th>
+      <th>Definition</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Successor Route</strong></td>
+      <td>The route with the lowest path metric to reach a destination. The successor route for R1 to reach <code class="language-plaintext highlighter-rouge">10.4.4.0/24</code> on R4 is R1-&gt;R3-&gt;R4</td>
+    </tr>
+    <tr>
+      <td><strong>Successor</strong></td>
+      <td>The first next-hop router for the successor route. The successor for <code class="language-plaintext highlighter-rouge">10.4.4.0/24</code> is R3</td>
+    </tr>
+    <tr>
+      <td><strong>Feasible Distance (FD)</strong></td>
+      <td>The metric value for the lowest-metric path to reach a destination. The feasible distance is calculated locally using the formula shown in the “Path Metric Calculation” section. The FD calculated by R1 for the <code class="language-plaintext highlighter-rouge">10.4.4.0/24</code> network is 3328 (256 + 256 + 2816).</td>
+    </tr>
+    <tr>
+      <td><strong>Reported Distance (RD)</strong></td>
+      <td>Distance reported by a router to reach a prefix. The reported distance value is the feasible distance for the advertising router, R3 advertises the <code class="language-plaintext highlighter-rouge">10.4.4.0/24</code> prefix with an RD of 3072. R4 advertises the <code class="language-plaintext highlighter-rouge">10.4.4.0/24</code> to R1 and R2 with an RD of 2816.</td>
+    </tr>
+    <tr>
+      <td><strong>Feasibility Condition</strong></td>
+      <td>For a route to be a considered backup route, the RD received for that route must be less than the FD calculated locally. This logic guarantees a loop-free path.</td>
+    </tr>
+    <tr>
+      <td><strong>Feasible Successor</strong></td>
+      <td>A route with that satisfies the feasibility condition is maintained as a a backup rout. The feasibility condition ensures that the backup route is loop free. The route R1 -&gt; R4 is the feasible successor because the RD of 2816 is lower than the FD of 3328 for the R1-&gt;R3-&gt;R4 path.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="eigrp-topology-table">EIGRP Topology Table</h2>
+
+<p>EIGRP contains a topology table, which makes it different from a true distance vector routing protocol. EIGRP’s topology table is a vital component of DUAL and contains information to identify loop-free backup routes. The topology table contains all the network prefixes advertised within an EIGRP autonomous system.</p>
+
+<p>Each entry in the table contains the following:</p>
+<ol>
+  <li>Network prefix</li>
+  <li>EIGRP neighbors that have advertised that prefix</li>
+  <li>Metrics from each neighbor
+    <ul>
+      <li>reported distance</li>
+      <li>hop count</li>
+    </ul>
+  </li>
+  <li>Values used for calculating the metric
+    <ul>
+      <li>load</li>
+      <li>reliability</li>
+      <li>total delay</li>
+      <li>minimum bandwidth</li>
+    </ul>
+  </li>
+</ol>
+
+<p>The command <code class="language-plaintext highlighter-rouge">show ip eigrp topology</code> shows only the <strong>successor and feasible successor routes</strong>, as shown in Figure 2-3, the optional <code class="language-plaintext highlighter-rouge">all-links</code> keyword shows all paths received.</p>
+
+<p>Figure 2-3 shows the topology table for R1 from Figure 2-2.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241007124010.png" width="600" /></p>
+
+<h2 id="eigrp-neighbours">EIGRP Neighbours</h2>
+
+<p>EIGRP does <strong>not rely on periodic advertisement</strong> of all the network prefixes in an autonomous system, which is done with routing protocols such as</p>
+<ul>
+  <li>Routing Information Protocol (<strong>RIP</strong>)</li>
+  <li>Open Shortest Path First (<strong>OSPF</strong>)</li>
+  <li>Intermediate System-to-Intermediate System (<strong>IS-IS</strong>).</li>
+</ul>
+
+<p>EIGRP neighbors <strong>exchange the entire routing table when forming an adjacency</strong>, and they <em>advertise incremental updates</em> only as topology changes occur within a network.</p>
+
+<p>The <strong>neighbor adjacency table is vital</strong> for tracking neighbor status and the updates sent to each neighbor.</p>
+
+<h2 id="inter-router-communication">Inter-Router Communication</h2>
+
+<ul>
+  <li>EIGRP uses five different packet types to communicate with other routers
+    <ol>
+      <li>Hello</li>
+      <li>Request</li>
+      <li>Update</li>
+      <li>Query</li>
+      <li>Reply</li>
+    </ol>
+  </li>
+  <li>EIGRP uses its own IP protocol number (88) and uses multicast packets where possible
+    <ul>
+      <li>it uses unicast packets when necessary.</li>
+    </ul>
+  </li>
+  <li>Communication between routers is done with multicast using the group address <code class="language-plaintext highlighter-rouge">224.0.0.10</code> or the MAC address <code class="language-plaintext highlighter-rouge">01:00:5e:00:00:0a</code> when possible.</li>
+  <li>EIGRP uses multicast packets to reduce bandwidth consumed on a link (one packet to reach multiple devices).</li>
+  <li>EIGRP uses Reliable Transport Protocol (<strong>RTP</strong>) to ensure that packets are delivered in order and to ensure that routers receive specific packets.</li>
+  <li>A sequence number is included in each EIGRP packet.
+    <ul>
+      <li>The sequence value zero does not require a response from the receiving EIGRP router</li>
+      <li>all other values require an <strong>ACK</strong> packet that includes the original sequence number.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="eigrp-packet-types">EIGRP Packet Types</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Packet Type</th>
+      <th>Packet Name</th>
+      <th>Function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td><strong>Hello</strong></td>
+      <td>Used for discovery of EIGRP neighbors and for detecting when a neighbor is no longer available.</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><strong>Request</strong></td>
+      <td>Used to get specific information from one or more neighbors</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>Update</strong></td>
+      <td>Used to transmit routing and reachability information with other EIGRP neighbors</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>Query</strong></td>
+      <td>Sent out to search for another path during convergence</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td><strong>Reply</strong></td>
+      <td>Sent in response to a query packet</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="forming-eigrp-neighbors">Forming EIGRP Neighbors</h2>
+
+<p>Unlike other distance vector routing protocols, EIGRP requires a neighbor relationship to form <strong>before routes are processed</strong> and added to the Routing Information Base (<strong>RIB</strong>). Upon hearing an EIGRP hello packet, a router attempts to become the neighbor of the other router.</p>
+
+<p>The following parameters must match for the two routers to become neighbors:</p>
+<ul>
+  <li>Metric formula K values</li>
+  <li>Primary subnet matches</li>
+  <li>Autonomous system number (ASN) matches</li>
+  <li>Authentication parameters</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008170542.png" width="650" /></p>
+
+<p>Figure 2-4 shows the process EIGRP uses for <strong>forming neighbor adjacencies</strong>.</p>
+
+<h2 id="eigrp-configuration-modes">EIGRP Configuration Modes</h2>
+<p>The two modes of EIGRP configuration are classic mode and named mode.</p>
+
+<h3 id="classic-eigrp-configuration-mode">Classic EIGRP Configuration Mode</h3>
+<p>With classic EIGRP configuration mode, most of the configuration takes place in the EIGRP process, but <strong>some settings are configured under the interface configuration submode</strong>.</p>
+
+<p>This can add complexity for deployment and troubleshooting as users must scroll back and forth between the EIGRP process and individual network interfaces.</p>
+
+<p>Some of the settings that are set individually are</p>
+<ul>
+  <li>hello advertisement interval</li>
+  <li>split-horizon</li>
+  <li>authentication</li>
+  <li>summary route advertisements</li>
+</ul>
+
+<p>Classic configuration requires the initialization of the routing process with the global configuration command <code class="language-plaintext highlighter-rouge">router eigrp [as-number]</code> to identify the <strong>ASN</strong> and initialize the EIGRP process. The second step is to identify the network interfaces with the command <code class="language-plaintext highlighter-rouge">network ip-address [mask]</code>.</p>
+
+<h3 id="eigrp-named-mode">EIGRP Named Mode</h3>
+
+<p>EIGRP named mode configuration was released to overcome some of the difficulties network engineers have with classic EIGRP autonomous system configuration, including scattered configurations and unclear scope of commands.</p>
+
+<p>EIGRP named configuration provides the following benefits:</p>
+<ul>
+  <li>All the EIGRP configuration occurs in <strong>one location</strong>.</li>
+  <li>It supports current EIGRP features and <strong>future developments</strong>.</li>
+  <li>It supports <strong>multiple address families</strong>
+    <ul>
+      <li>including Virtual Routing and Forwarding <strong>VRF</strong> instances.</li>
+      <li>Commands are clear in terms of the scope of their configuration.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>EIGRP named configuration is also known as multi-address family configuration mode. EIGRP named configuration makes it possible to run multiple instances under the same EIGRP process.</p>
+
+<p>EIGRP named mode provides a <em>hierarchical configuration</em> and stores settings in three subsections:</p>
+<ol>
+  <li><strong>Address Family</strong>
+    <ul>
+      <li>This submode contains settings that are relevant to the global EIGRP AS operations
+        <ul>
+          <li>selection of network <strong>interfaces</strong></li>
+          <li>EIGRP <strong>K values</strong></li>
+          <li><strong>logging</strong> settings</li>
+          <li><strong>stub</strong> settings</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Interface</strong>
+    <ul>
+      <li>This submode contains settings that are relevant to the interface
+        <ul>
+          <li>hello advertisement interval</li>
+          <li><strong>split-horizon</strong></li>
+          <li>authentication</li>
+          <li><strong>summary route</strong> advertisements</li>
+        </ul>
+      </li>
+      <li>In actuality, there are two methods of the EIGRP interface section’s configuration. Commands can be assigned to a <em>specific</em> interface or to a <em>default</em> interface, in which case those settings are placed on all EIGRP-enabled interfaces.
+        <ul>
+          <li>If there is a conflict between the default interface and a specific interface, the <strong>specific interface takes priority</strong> over the default interface.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Topology</strong>
+    <ul>
+      <li>This submode contains settings regarding the EIGRP topology database and how routes are presented to the router’s <strong>RIB</strong>.</li>
+      <li>This section also contains route <strong>redistribution</strong> and <strong>administrative distance</strong> settings.</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="eigrp-network-statement">EIGRP Network Statement</h2>
+
+<p>Both configuration modes use a network statement to identify the interfaces that EIGRP will use. The network statement uses a <strong>wildcard mask</strong>, which allows the configuration to be as specific or ambiguous as necessary.</p>
+
+<p>The syntax for the network statement, which exists under the EIGRP process, is <code class="language-plaintext highlighter-rouge">network ip-address [mask]</code>. The optional mask can be omitted to enable interfaces that fall within <strong>the classful boundaries</strong> for that network statement</p>
+
+<h3 id="sample-addressing-table">Sample Addressing Table</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Router Interface</th>
+      <th>IP Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Gigabit Ethernet 0/0</td>
+      <td><code class="language-plaintext highlighter-rouge">10.0.0.10/24</code></td>
+    </tr>
+    <tr>
+      <td>Gigabit Ethernet 0/1</td>
+      <td><code class="language-plaintext highlighter-rouge">10.0.10.10/24</code></td>
+    </tr>
+    <tr>
+      <td>Gigabit Ethernet 0/2</td>
+      <td><code class="language-plaintext highlighter-rouge">192.0.0.10/24</code></td>
+    </tr>
+    <tr>
+      <td>Gigabit Ethernet 0/3</td>
+      <td><code class="language-plaintext highlighter-rouge">192.10.0.10/24</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sample-eigrp-configuration">Sample EIGRP Configuration</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>router eigrp 1
+  network 10.0.0.10 0.0.0.0
+  network 10.0.10.10 0.0.0.0
+  network 192.0.0.10 0.0.0.0
+  network 192.10.0.10 0.0.0.0
+</code></pre></div></div>
+
+<p><strong>NOTE:</strong> These wildcard makes equate to EIGRP advertising the single host, as opposed to a larger network.</p>
+
+<h2 id="sample-topology-and-configuration">Sample Topology and Configuration</h2>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008135953.png" width="600" /></p>
+
+<h3 id="classic-configuration-r1">Classic Configuration (R1)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interface Loopback0
+  ip address 192.168.1.1 255.255.255.255
+!
+interface g0/1
+  ip address 10.12.1.1 255.255.255.0
+!
+interface g0/2
+  ip address 10.11.11.1 255.255.255.0
+!
+router eigrp 100
+  network 10.11.11.1 0.0.0.0
+  network 10.12.1.1 0.0.0.0
+  network 192.168.1.1 0.0.0.0
+</code></pre></div></div>
+
+<h3 id="named-mode-configuration-r2">Named Mode Configuration (R2)</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>interface Loopback0
+  ip address 192.168.2.2 255.255.255.255
+!
+interface g0/1
+  ip address 10.12.1.2 255.255.255.0
+!
+interface g0/2
+  ip address 10.22.22.2 255.255.255.0
+!
+router eigrp EIGRP-NAMED
+  address-family ipv4 unicast autonomous-system 100
+    network 0.0.0.0 255.255.255.255
+</code></pre></div></div>
+
+<h2 id="confirming-interfaces">Confirming Interfaces</h2>
+
+<p>After configuration, it is a good practice to verify that only the intended interfaces are running EIGRP. The command <code class="language-plaintext highlighter-rouge">show ip eigrp interfaces [{interface-id [detail] | detail}]</code> shows <strong>active EIGRP interfaces</strong>.</p>
+
+<p>Appending the optional <code class="language-plaintext highlighter-rouge">detail</code> keyword provides additional information such as</p>
+<ul>
+  <li>authentication</li>
+  <li>EIGRP timers</li>
+  <li>split horizon</li>
+  <li>various packet counts</li>
+</ul>
+
+<p>Example 2-5 demonstrates R1’s non-detailed EIGRP interface and R2’s detailed information for the gi0/1 interface.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008140721.png" width="700" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Interface</strong></td>
+      <td>Interfaces running EIGRP</td>
+    </tr>
+    <tr>
+      <td><strong>Peers</strong></td>
+      <td>Number of peers detected on that interface</td>
+    </tr>
+    <tr>
+      <td><strong>Xmt Queue Un/Reliable</strong></td>
+      <td>Number of unreliable/reliable packets remaining in the transmit queue. The value zero is an indication of a stable network.</td>
+    </tr>
+    <tr>
+      <td><strong>Mean SRTT</strong></td>
+      <td>Average time for a packet to be sent to a neighbor and a reply from that neighbor to be recieved, in ms.</td>
+    </tr>
+    <tr>
+      <td><strong>Multicast Flow Timer</strong></td>
+      <td>Maximum time (seconds) that the router sent multicast packets.</td>
+    </tr>
+    <tr>
+      <td><strong>Pending Routes</strong></td>
+      <td>Number of routes in the transmit queue that needs to be sent.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="verifying-eigrp-neighbor-adjacencies">Verifying EIGRP Neighbor Adjacencies</h2>
+
+<p>Each EIGRP process maintains a <strong>table of neighbors</strong> to ensure that they are alive and processing updates properly.</p>
+
+<p>Without keeping track of a neighbor state</p>
+<ul>
+  <li>an autonomous system could contain incorrect data and could potentially route traffic improperly.</li>
+</ul>
+
+<p>EIGRP <strong>must</strong> form a <em>neighbor relationship</em> <strong>before</strong> a router advertises <em>update packets</em> containing network prefixes.</p>
+
+<p>The command <code class="language-plaintext highlighter-rouge">show ip eigrp neighbors [interface-id]</code> displays the EIGRP neighbors for a router. Example 2-6 shows the EIGRP neighbor information using this command.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008141627.png" width="500" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Field</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Address</strong></td>
+      <td>IP address of the EIGRP neighbor</td>
+    </tr>
+    <tr>
+      <td><strong>Interface</strong></td>
+      <td>interface the neighbor was detected on</td>
+    </tr>
+    <tr>
+      <td><strong>Holdtime</strong></td>
+      <td>Time left to receive a packet from this neighbor to ensure it is still alive</td>
+    </tr>
+    <tr>
+      <td><strong>SRTT</strong></td>
+      <td>Time for a packet to be sent to a neighbor and reply to be recieved from that neighbor in ms</td>
+    </tr>
+    <tr>
+      <td><strong>RTO</strong></td>
+      <td>Timeout for retransmission (Waiting for ACK)</td>
+    </tr>
+    <tr>
+      <td><strong>Q cnt</strong></td>
+      <td>Number of packets (update/query/reply) in queue for sending</td>
+    </tr>
+    <tr>
+      <td><strong>Seq Num</strong></td>
+      <td>Sequence number that was last recieved from the router</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="displaying-installed-eigrp-routes">Displaying Installed EIGRP Routes</h2>
+<p>You can see EIGRP routes that are installed into the <strong>RIB</strong> by using the command <code class="language-plaintext highlighter-rouge">show ip route eigrp</code>.</p>
+<ul>
+  <li>EIGRP routes originating within the autonomous system have an administrative distance (<strong>AD</strong>) of <strong>90</strong> and are indicated in the routing table with a <code class="language-plaintext highlighter-rouge">D</code>.</li>
+  <li>Routes that originate from outside the autonomous system are <strong>external</strong> EIGRP routes</li>
+  <li>External EIGRP routes have an <strong>AD</strong> of 170 and are indicated in the routing table with <code class="language-plaintext highlighter-rouge">D EX</code>.</li>
+  <li>Placing external EIGRP routes into the <strong>RIB</strong> with a higher AD acts as a <em>loop-prevention mechanism</em>.
+    <ul>
+      <li>Example 2-7 displays the EIGRP routes from the sample topology in Figure 2-5. The metric for the selected route is the second number in brackets</li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008142715.png" width="700" /></p>
+
+<h2 id="eigrp-router-id">EIGRP Router ID</h2>
+<p>The router ID (<strong>RID</strong>) is a 32-bit number that uniquely identifies an EIGRP router and is used as a <em>loop-prevention mechanism</em>.</p>
+<ul>
+  <li>The <strong>RID</strong> can be set dynamically, which is the default, or manually.</li>
+</ul>
+
+<p>The algorithm for <strong>dynamically</strong> choosing the EIGRP RID uses the <strong>highest IPv4 address of any up loopback interfaces</strong>.</p>
+<ul>
+  <li>If there are not any up loopback interfaces, the <strong>highest IPv4 address of any active up physical interfaces</strong> becomes the <strong>RID</strong> when the EIGRP process <em>initializes</em>.</li>
+</ul>
+
+<p>You use the command <code class="language-plaintext highlighter-rouge">eigrp router-id</code> to set the <strong>RID</strong>, as demonstrated in Example 2-8, for both classic and named mode configurations.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008143023.png" width="650" /></p>
+
+<h2 id="passive-interfaces">Passive Interfaces</h2>
+
+<p>Some network topologies must advertise a network segment into EIGRP but need to <em>prevent neighbors</em> from <em>forming adjacencies</em> with other routers on that segment. In this scenario, you need to put the EIGRP interface <strong>in a passive state</strong>. Passive EIGRP interfaces <strong>do not send out or process EIGRP hellos</strong>, which prevents EIGRP from forming adjacencies on that interface.</p>
+
+<p>To configure an EIGRP interface as passive, you use the command <code class="language-plaintext highlighter-rouge">passive-interface interface-id</code> under the EIGRP process for classic configuration.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008143316.png" width="650" /></p>
+
+<p>Example 2-9 demonstrates making R1’s <code class="language-plaintext highlighter-rouge">gi0/2</code> interface passive and also the alternative option of making all interfaces passive but setting <code class="language-plaintext highlighter-rouge">gi0/1</code> as <strong>non-passive</strong>.</p>
+
+<p>For a named mode configuration, you place the <code class="language-plaintext highlighter-rouge">passive-interface</code> state on <code class="language-plaintext highlighter-rouge">af-interface default</code> for all EIGRP interfaces <strong>or</strong> on a spe,cific interface with the <code class="language-plaintext highlighter-rouge">af-interface [interface-id]</code> section.</p>
+
+<p>Example 2-10 shows how to set the <code class="language-plaintext highlighter-rouge">gi0/2</code> interface as passive while allowing the <code class="language-plaintext highlighter-rouge">gi0/1</code> interface to be active using both configuration strategies.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008143455.png" width="700" /></p>
+
+<h2 id="authentication">Authentication</h2>
+
+<ul>
+  <li>Authentication is a mechanism for ensuring that <strong>only authorized routers</strong> are eligible to become EIGRP neighbors.</li>
+  <li>Authentication prevents adding a router to a network and introducing invalid routes, <em>accidentally</em> or <em>maliciously</em>.</li>
+  <li>A <strong>precomputed password hash</strong> is included with all EIGRP packets, and when the packet is received, the receiving router also calculates the <strong>hash on the packet</strong>.
+    <ul>
+      <li>If the two <strong>hash values match</strong>, the packet is accepted.</li>
+    </ul>
+  </li>
+  <li>EIGRP encrypts the password by using a Message Digest 5 (<strong>MD5</strong>) authentication, using the keychain function.
+    <ul>
+      <li>The hash consists of the <em>key number</em> and a <em>password</em>.</li>
+      <li>EIGRP authentication <strong>does not encrypt the contents of the routing update packets</strong>.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Keychain creation is accomplished with the following steps:</p>
+<ol>
+  <li>Create the keychain by using the command <code class="language-plaintext highlighter-rouge">key chain key-chain-name</code>.</li>
+  <li>Identify the key sequence by using the command <code class="language-plaintext highlighter-rouge">key [key-number]</code>, where <code class="language-plaintext highlighter-rouge">[key-number]</code> can be anything from 0 to 2147483647.</li>
+  <li>Specify the preshared password by using the command <code class="language-plaintext highlighter-rouge">key-string password</code></li>
+</ol>
+
+<h3 id="enabling-authentication-on-the-interface">Enabling Authentication on the Interface</h3>
+<p>When using classic configuration, authentication must be enabled on the interface under the <strong>interface configuration submode</strong>. The following commands are used in the interface configuration submode:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">ip authentication key-chain eigrp [as-number] [key-chain-name]</code></li>
+  <li><code class="language-plaintext highlighter-rouge">ip authentication mode eigrp [as-number] md5</code></li>
+</ul>
+
+<p>The named mode configuration places the configurations under the EIGRP interface submode, under the <code class="language-plaintext highlighter-rouge">af-interface default</code> or the <code class="language-plaintext highlighter-rouge">af-interface [interface-id]</code>. Named mode configuration supports <strong>MD5</strong> or <em>Hashed Message Authentication Code-Secure Hash Algorithm-256</em> (<strong>HMAC-SHA-256</strong>) authentication.</p>
+
+<p><strong>MD5</strong> authentication involves the following commands:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">authentication key-chain eigrp [key-chain-name]</code></li>
+  <li>`authentication mode md5</li>
+</ul>
+
+<p>The <strong>HMAC-SHA-256</strong> authentication involves the command:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">authentication mode hmacsha-256 [password]</code></li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008144425.png" width="650" /></p>
+
+<p>Example 2-14 demonstrates <strong>MD5</strong> configuration on R1 with classic EIGRP configuration and on R2 with named mode configuration.</p>
+
+<p><strong>NOTE:</strong> Remember that the hash is computed using the <strong>key sequence number</strong> and <strong>key string</strong>, which must match on the two nodes.</p>
+
+<h3 id="verification-of-key-chain-settings">Verification of Key Chain Settings</h3>
+
+<p>The command <code class="language-plaintext highlighter-rouge">show key chain</code> provides verification of the keychain. Example 2-15 shows that each key sequence provides the <em>lifetime</em> and <em>password</em>.</p>
+
+<p>Example 2-16 provides <strong>detailed</strong> EIGRP interface output.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008144709.png" width="700" /></p>
+
+<h2 id="path-metric-calculations">Path Metric Calculations</h2>
+
+<ul>
+  <li>Metric calculation is a <strong>critical component</strong> for any <em>routing protocol</em>.</li>
+  <li>EIGRP uses multiple factors to calculate the metric for a path.</li>
+  <li>Metric calculation uses <em>bandwidth</em> and <em>delay</em> by default but can include interface load and reliability, too.</li>
+</ul>
+
+<h2 id="eigrp-classic-metric-formula">EIGRP Classic Metric Formula</h2>
+
+<p>The formula shown in Figure 2-6 illustrates the <strong>EIGRP classic metric formula</strong>.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008145216.png" width="500" /></p>
+
+<p>EIGRP uses <strong>K values</strong> to define which factors the formula uses and the impact associated with a factor when calculating the metric.</p>
+<ul>
+  <li><strong>BW</strong> represents the <em>slowest link in the path</em>, scaled to a 10 Gbps link (107).</li>
+  <li><strong>Link speed</strong> is collected from the configured interface bandwidth on an interface.</li>
+  <li><strong>Delay</strong> is the total measure of delay in the path, measured in tens of microseconds (<strong>μs</strong>).</li>
+</ul>
+
+<p>The EIGRP formula is based on the <strong>IGRP metric formula</strong>, except the output is multiplied by <strong>256</strong> to change the metric from 24 bits to 32 bits. Taking these definitions into consideration, the formula for EIGRP is shown in Figure 2-7.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008145430.png" width="700" /></p>
+
+<p>By default:</p>
+<ul>
+  <li>K<sup>1</sup> and K<sup>3</sup> have a value of 1,</li>
+  <li>K<sup>2</sup>, K<sup>4</sup>, and K<sup>5</sup> are set to 0.</li>
+</ul>
+
+<p>Figure 2-8 places <strong>default K values into the formula</strong> and shows a streamlined version of the formula.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008145533.png" width="500" /></p>
+
+<h2 id="eigrp-attribute-propagation">EIGRP Attribute Propagation</h2>
+
+<p>The EIGRP <strong>update packet</strong> includes <em>path attributes</em> associated with each <em>prefix</em>. The EIGRP path attributes can include</p>
+<ul>
+  <li>hop count</li>
+  <li>cumulative delay</li>
+  <li>minimum bandwidth link speed</li>
+  <li>Reported Distance (<strong>RD</strong>).</li>
+</ul>
+
+<p>The attributes are updated <strong>each hop along the way</strong>, allowing each router to independently identify the shortest path.</p>
+
+<p>Figure 2-9 shows the information in the EIGRP update packets for the <code class="language-plaintext highlighter-rouge">10.1.1.0/24</code> prefix propagating through the autonomous system.</p>
+
+<p>Notice that as the hop count increments:</p>
+<ul>
+  <li>minimum bandwidth decreases</li>
+  <li>total delay increases</li>
+  <li>the RD changes with each EIGRP update.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008150125.png" width="650" /></p>
+
+<h2 id="default-eigrp-interface-metrics-for-classic-metrics">Default EIGRP Interface Metrics for Classic Metrics</h2>
+
+<p>The following table shows some of the common <strong><em>network types</em></strong>, <em>link speeds</em>, <em>delay</em>, and <em>EIGRP metric</em>, using the streamlined formula from Figure 2-7.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Interface Type</th>
+      <th>Link Speed (<strong>Kbps</strong>)</th>
+      <th>Delay</th>
+      <th>Metric</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Serial</td>
+      <td>64</td>
+      <td>20,000 μs</td>
+      <td>40,512,000</td>
+    </tr>
+    <tr>
+      <td>T1</td>
+      <td>1544</td>
+      <td>20,000 μs</td>
+      <td>2,170,031</td>
+    </tr>
+    <tr>
+      <td>Ethernet</td>
+      <td>10,000</td>
+      <td>1,000 μs</td>
+      <td>281,600</td>
+    </tr>
+    <tr>
+      <td>Fast Ethernet</td>
+      <td>100,000</td>
+      <td>100 μs</td>
+      <td>28,160</td>
+    </tr>
+    <tr>
+      <td>GigabitEthernet</td>
+      <td>1,000,000</td>
+      <td>10 μs</td>
+      <td>2816</td>
+    </tr>
+    <tr>
+      <td>TenGigabitEthernet</td>
+      <td>10,000,000</td>
+      <td>10 μs</td>
+      <td>512</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008145430.png" width="700" /></p>
+
+<h2 id="wide-metrics">Wide Metrics</h2>
+
+<p>Example 2-18 provides some metric calculations for <strong>common LAN interface speeds</strong>.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008150845.png" width="700" /></p>
+
+<p>Notice that there is <strong>not a differentiation</strong> between an 11 Gbps interface and a 20 Gbps interface. The composite metric stays at 256, despite the different <em>bandwidth rates</em>.</p>
+
+<p>EIGRP includes support for a <strong>second</strong> set of metrics, known as <strong>wide metrics</strong>, that addresses the issue of scalability with <strong>higher-capacity</strong> interfaces.</p>
+
+<p>Figure 2-11 shows the explicit EIGRP wide metrics formula.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008151005.png" width="700" /></p>
+
+<p>Notice that an <em>additional K value</em> (<strong>K<sup>6</sup></strong>) is included that adds an extended attribute to measure</p>
+<ul>
+  <li>jitter</li>
+  <li>energy</li>
+  <li>or other future attributes</li>
+</ul>
+
+<p>Just as EIGRP scaled by 256 to accommodate IGRP, EIGRP wide metrics scale by 65,535 to accommodate higher-speed links.</p>
+<ul>
+  <li>This provides support for interface speeds up to 655 terabits per second (65,535 × 107) without any scalability issues.</li>
+</ul>
+
+<p>Latency is the <strong>total interface delay measured in picoseconds</strong> (10<sup>−12</sup>) instead of in microseconds (10<sup>−6</sup>). Figure 2-12 shows an updated formula that takes into account the conversions in latency and scalability.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008151428.png" width="700" /></p>
+
+<ul>
+  <li>EIGRP classic metrics exist only with EIGRP classic configuration</li>
+  <li>EIGRP <strong>wide metrics</strong> exist only in EIGRP <strong>named</strong> mode.</li>
+</ul>
+
+<p>The metric style used by a router is identified with the command <code class="language-plaintext highlighter-rouge">show ip protocols</code>; if a K<sup>6</sup> metric is present, the router is using <strong>wide-style metrics</strong>.</p>
+
+<h2 id="metric-backward-compatibility">Metric Backward Compatibility</h2>
+
+<p>EIGRP wide metrics were designed with backward compatibility in mind. EIGRP wide metrics set</p>
+<ul>
+  <li>K<sup>2</sup> and K<sup>3</sup> to a value of <strong>1</strong></li>
+  <li>K<sup>2</sup>, K<sup>4</sup>, K<sup>5</sup>, and K6 to <strong>0</strong></li>
+</ul>
+
+<p>which allows backward compatibility, because, the <strong>K value metrics match with classic metrics</strong>. As long as K<sup>1</sup> through K<sup>5</sup> are the same and K<sup>6</sup> is not set, the two metric styles allow adjacency between routers.</p>
+
+<p>EIGRP is able to detect when peering with a router is using <strong>classic metrics</strong>, and it unscales the metric to the formula in Figure 2-13.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008152131.png" width="550" /></p>
+
+<p>This conversion results in loss of clarity if routes pass through a mixture of classic metric and wide metric devices.</p>
+<ul>
+  <li>It is best to keep all devices operating with the same metric style.</li>
+</ul>
+
+<h2 id="interface-delay-metrics">Interface Delay Metrics</h2>
+
+<p>Example 2-20 provides sample output of the command on R1 and R2. Both interfaces have a <strong>delay of 10</strong>.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008152238.png" width="700" /></p>
+
+<p>EIGRP delay is set on an <strong>interface-by-interface basis</strong>, allowing for <em>manipulation</em> of traffic patterns flowing through a specific interface on a router.</p>
+
+<p>Delay is configured with the interface parameter command <code class="language-plaintext highlighter-rouge">delay [tens-of-microseconds]</code> under the interface</p>
+
+<p>Example 2-21 demonstrates the <em>modification</em> of the delay on R1 to <strong>100</strong>, increasing the delay to <strong>1000 μs</strong> on the link between R1 and R2.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008152414.png" width="500" /></p>
+
+<p>To ensure consistent routing, modify the delay on R2’s gi0/1 interface as well, then verify the change.</p>
+
+<h2 id="custom-k-values">Custom K Values</h2>
+
+<p>If the default metric calculations are insufficient, you can change them to modify the path metric formula.</p>
+<ul>
+  <li>K values for the path metric formula are set with the command <code class="language-plaintext highlighter-rouge">metric weights [TOS] [K1] [K2] [K3] [K4] [K5] [K6]</code> under the EIGRP process.
+    <ul>
+      <li>The TOS value always has a value of <strong>0</strong>, and the K6 value is used for named mode configurations</li>
+    </ul>
+  </li>
+  <li>To ensure consistent routing logic in an EIGRP <em>autonomous system</em>, the K values <strong>must match</strong> between EIGRP neighbors to <strong>form an adjacency</strong> and exchange routes.
+    <ul>
+      <li>The K values are included as part of the EIGRP <strong>hello packet</strong></li>
+    </ul>
+  </li>
+</ul>
+
+<p>The K values are displayed with the <code class="language-plaintext highlighter-rouge">show ip protocols</code> command.</p>
+
+<h2 id="load-balancing">Load Balancing</h2>
+
+<p>EIGRP allows multiple successor routes (<em>with the same metric</em>) to be installed into the <strong>RIB</strong>. Installing multiple paths into the <strong>RIB</strong> for the same prefix is called <em>equal-cost multipathing</em> (<strong>ECMP</strong>) routing. The default <strong>maximum ECMP</strong> is <strong>four routes</strong>. You change the default ECMP setting with the command <code class="language-plaintext highlighter-rouge">maximum-paths [no.]</code> under the</p>
+<ul>
+  <li>EIGRP process in <em>classic mode</em></li>
+  <li>topology base submode in <em>named mode</em></li>
+</ul>
+
+<p>Example 2-22 shows the configuration for changing the maximum paths on R1 and R2 so that classic and named mode configurations are visible.</p>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008172400.png" width="650" /></p>
+
+<p>EIGRP supports <em>unequal-cost load balancing</em>, which allows installation of both <strong>successor routes</strong> and <strong>feasible successors</strong> into the <strong>EIGRP RIB</strong>.</p>
+
+<p>To use unequal-cost load balancing with EIGRP:</p>
+<ul>
+  <li>change EIGRP’s variance multiplier.</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/ryancranie/cybersecurity-osint/refs/heads/main/Attachments/Pasted%20image%2020241008172621.png" width="450" /></p>
+
+<p>The EIGRP variance value is these multiplied</p>
+<ol>
+  <li>feasible distance (<strong>FD</strong>) for a route</li>
+  <li>the EIGRP variance multiplier.</li>
+</ol>
+
+<p>Any feasible successor’s FD with a metric <strong>below the EIGRP variance value</strong> is installed into the <strong>RIB</strong>.</p>
+
+<p>Dividing the feasible successor metric by the successor route metric provides the variance multiplier.</p>
+
+<p>The variance multiplier is a whole number, and any remainders should always round up.</p>
+
+<h2 id="glossary">Glossary</h2>
+
+<p><button onclick="toggleGlossary()">Toggle Glossary</button></p>
+<div id="glossary">
+    <h2>Glossary</h2>
+    <h3>EIGRP Specific Terms</h3>
+    <details class="toggle-details">
+        <summary><b>EIGRP</b></summary>Enhanced Interior Gateway Routing Protocol - A Cisco proprietary enhanced distance vector routing protocol used to determine the best path for data to travel across a network.<br /><br />
+    </details>
+    <details class="toggle-details">
+        <summary><b>DUAL</b></summary>Diffusing Update Algorithm - An algorithm used in EIGRP to calculate loop-free backup routes, enabling fast convergence.<br /><br />
+    </details>
+    <!-- Add more terms here -->
+</div>
+
+<h2 id="commands">Commands</h2>
+
+<p><button onclick="toggleCommands()">Toggle Commands</button></p>
+<div id="commands">
+    <h2>Commands</h2>
+    <details class="toggle-details">
+        <summary>Displays either just the best route and the backup route, or every route received.</summary><code>Router# show ip eigrp topology [all-links]</code><br /><br />
+    </details>
+    <details class="toggle-details">
+        <summary>Displays information about which interfaces are running EIGRP.</summary><code>Router# show ip eigrp interfaces [{interface-id [detail] | detail}]</code><br /><br />
+    </details>
+    <!-- Add more commands here -->
+</div>
+
+<h2 id="glossary-1">Glossary</h2>
+
+<h3 id="eigrp-specific-terms">EIGRP Specific Terms</h3>
+
+<details><summary><b>EIGRP</b></summary>Enhanced Interior Gateway Routing Protocol - A Cisco proprietary enhanced distance vector routing protocol used to determine the best path for data to travel across a network.<br /><br /></details>
+<details><summary><b>DUAL</b></summary>Diffusing Update Algorithm - An algorithm used in EIGRP to calculate loop-free backup routes, enabling fast convergence.<br /><br /></details>
+<details><summary><b>Successor Route</b></summary>The route with the lowest calculated metric, deeming it the most efficient path to a destination.<br /><br /></details>
+<details><summary><b>Successor</b></summary>The next-hop router along the Successor Route.<br /><br /></details>
+<details><summary><b>Feasible Distance (FD)</b></summary>The metric value of the Successor Route to a destination network, calculated locally on each router.<br /><br /></details>
+<details><summary><b>Reported Distance (RD)</b></summary>The FD advertised by the neighboring router for a specific network prefix.<br /><br /></details>
+<details><summary><b>Feasibility Condition</b></summary>A rule stating that for a route to be considered a backup route, its RD must be less than the locally calculated FD, ensuring loop-free paths.<br /><br /></details>
+<details><summary><b>Feasible Successor</b></summary>A backup route that meets the Feasibility Condition, guaranteeing a loop-free alternative path.<br /><br /></details>
+<details><summary><b>EIGRP Topology Table</b></summary>A table on each EIGRP router that stores all advertised network prefixes within an autonomous system, along with neighbor metrics and hop counts, crucial for DUAL calculations.<br /><br /></details>
+<details><summary><b>EIGRP Neighbor Adjacency Table</b></summary>Tracks the status of neighboring routers and updates exchanged, crucial for maintaining accurate routing information.<br /><br /></details>
+<details><summary><b>Classic EIGRP Configuration Mode</b></summary>An older configuration mode where settings are configured both globally and under individual interface submodes, leading to potential complexity.<br /><br /></details>
+<details><summary><b>EIGRP Named Mode</b></summary>A newer, hierarchical configuration mode that centralizes all EIGRP settings, offering improved clarity, multi-address family support, and future-proofing.<br /><br /></details>
+<details><summary><b>EIGRP Network Statement</b></summary>A command used to define which interfaces participate in EIGRP, employing wildcard masks for flexibility in specifying network ranges.<br /><br /></details>
+<details><summary><b>Wide Metrics</b></summary>A metric system in EIGRP that supports higher-capacity interfaces, using a scaled formula and accommodating speeds up to 655 Tbps.<br /><br /></details>
+
+<h3 id="other-routing-concepts-in-the-context-of-eigrp">Other Routing Concepts in the Context of EIGRP</h3>
+
+<details><summary><b>Distance Vector Routing Protocol</b></summary>A routing protocol that determines the best path based on distance or metric information shared between routers.<br /><br /></details>
+<details><summary><b>VLSM</b></summary>Variable-Length Subnet Masking - Allows for the use of different subnet masks within the same network, enabling more efficient IP address allocation.<br /><br /></details>
+<details><summary><b>RIP</b></summary>Routing Information Protocol - Another distance vector routing protocol that, unlike EIGRP, relies on periodic updates and has limitations in hop count and convergence speed.<br /><br /></details>
+<details><summary><b>OSPF</b></summary>Open Shortest Path First - A link-state routing protocol that, unlike EIGRP, uses a more complex algorithm for route calculation and relies on periodic updates.<br /><br /></details>
+<details><summary><b>IS-IS</b></summary>Intermediate System-to-Intermediate System - Another link-state routing protocol similar to OSPF.<br /><br /></details>
+<details><summary><b>Autonomous System (AS)</b></summary>A collection of networks under a single administrative domain, using the same routing policies and metrics.<br /><br /></details>
+<details><summary><b>Protocol-Dependent Modules (PDMs)</b></summary>Allow EIGRP to support multiple network layer protocols, such as IPv4 and IPv6.<br /><br /></details>
+<details><summary><b>RIB</b></summary>Routing Information Base - A table that stores the best routes learned from all routing protocols, used by the router to make forwarding decisions.<br /><br /></details>
+<details><summary><b>RTP</b></summary>Reliable Transport Protocol - A protocol that ensures reliable, in-order delivery of EIGRP packets, using sequence numbers and acknowledgements.<br /><br /></details>
+<details><summary><b>ACK</b></summary>Acknowledgement - A packet sent by the receiving router to confirm receipt of an EIGRP packet with a non-zero sequence number.<br /><br /></details>
+<details><summary><b>Wildcard Mask</b></summary>Used in EIGRP network statements to specify a range of IP addresses, where 0 bits match any value and 1 bits require an exact match.<br /><br /></details>
+<details><summary><b>Classful Boundaries</b></summary>Traditional network boundaries defined by the class of an IP address (e.g., Class A, Class B, Class C), relevant for EIGRP network statements without explicit masks.<br /><br /></details>
+<details><summary><b>RID</b></summary>Router ID - A 32-bit number that uniquely identifies an EIGRP router, crucial for loop prevention and typically chosen dynamically from loopback or physical interface addresses.<br /><br /></details>
+<details><summary><b>Passive Interface</b></summary>An interface configured to not send or process EIGRP hello packets, preventing neighbor adjacencies on that segment while still advertising the network.<br /><br /></details>
+<details><summary><b>MD5</b></summary>Message Digest 5 - A cryptographic hash function used for EIGRP authentication to verify the legitimacy of neighboring routers and prevent unauthorized route injections.<br /><br /></details>
+<details><summary><b>HMAC-SHA-256</b></summary>Hashed Message Authentication Code-Secure Hash Algorithm-256 - A more secure authentication mechanism available in EIGRP named mode, using a stronger hashing algorithm.<br /><br /></details>
+<details><summary><b>K Values</b></summary>Parameters in the EIGRP metric calculation formula that determine the weight of different factors like bandwidth, delay, load, and reliability.<br /><br /></details>
+<details><summary><b>ECMP</b></summary>Equal-Cost Multipathing - The ability to install multiple routes with the same metric into the RIB, allowing traffic to be load-balanced across multiple paths.<br /><br /></details>
+<details><summary><b>Unequal-Cost Load Balancing</b></summary>Allows EIGRP to use both successor and feasible successors with different metrics for load balancing, based on a variance multiplier.<br /><br /></details>
+<details><summary><b>Variance Multiplier</b></summary>A value used in EIGRP to determine the threshold for including feasible successors in unequal-cost load balancing.<br /><br /></details>
+
+<h2 id="commands-1">Commands</h2>
+
+<details><summary>Displays either just the best route and the backup route, or every route received.</summary><code>Router# show ip eigrp topology [all-links]</code><br /><br /></details>
+<details><summary>Displays information about which interfaces are running EIGRP. The optional keywords provide more detailed information.</summary><code>Router# show ip eigrp interfaces [{interface-id [detail] | detail}]</code><br /><br /></details>
+<details><summary>Shows information about all the neighbors of a router running EIGRP, or a specific interface.</summary><code>Router# show ip eigrp neighbors [interface-id]</code><br /><br /></details>
+<details><summary>Displays the routes that EIGRP has installed into the Routing Information Base (RIB).</summary><code>Router# show ip route eigrp</code><br /><br /></details>
+<details><summary>Allows you to manually configure a router ID for an EIGRP process.</summary><code>Router(config-router)# eigrp router-id [router-id]</code><br /><br /></details>
+<details><summary>Used in classic EIGRP configuration to stop an interface from forming neighbor relationships.</summary><code>Router(config-router)# passive-interface [interface-id]</code><br /><br /></details>
+<details><summary>In named mode EIGRP configuration, configures the passive-interface state for either every interface, or a specific one.</summary><code>Router(config-router)# af-interface default</code> / <code>Router(config-router)# af-interface [interface-id]</code><br /><br /></details>
+<details><summary>Begins the process of configuring EIGRP authentication by creating a keychain.</summary><code>Router(config)# key chain [key-chain-name]</code><br /><br /></details>
+<details><summary>Sets the key sequence number for EIGRP authentication.</summary><code>Router(config-keychain)# key [key-number]</code><br /><br /></details>
+<details><summary>Sets the preshared password for EIGRP authentication.</summary><code>Router(config-keychain-key)# key-string [password]</code><br /><br /></details>
+<details><summary>Enables MD5 authentication on an interface in classic EIGRP configuration.</summary><code>Router(config-if)# ip authentication key-chain eigrp [as-number] [key-chain-name]</code><br /><br /></details>
+<details><summary>Specifies to use MD5 authentication on an interface for EIGRP in classic configuration.</summary><code>Router(config-if)# ip authentication mode eigrp [as-number] md5</code><br /><br /></details>
+<details><summary>Enables MD5 authentication on an interface in named EIGRP configuration.</summary><code>Router(config-if)# authentication key-chain eigrp [key-chain-name]</code><br /><br /></details>
+<details><summary>Specifies to use MD5 authentication on an interface for EIGRP in named configuration.</summary><code>Router(config-if)# authentication mode md5</code><br /><br /></details>
+<details><summary>Specifies to use HMAC-SHA-256 authentication on an interface for EIGRP in named configuration.</summary><code>Router(config-if)# authentication mode hmacsha-256 [password]</code><br /><br /></details>
+<details><summary>Used to verify the keychain settings for EIGRP authentication.</summary><code>Router# show key chain</code><br /><br /></details>
+<details><summary>Used to configure custom K values for EIGRP metric calculations. The K6 value is only used in named mode configuration.</summary><code>Router(config-router)# metric weights [TOS] [K1] [K2] [K3] [K4] [K5] [K6]</code><br /><br /></details>
+<details><summary>Configures the maximum number of routes that can be used for equal-cost multipathing.</summary><code>Router(config-router)# maximum-paths [no.]</code><br /><br /></details>
+<details><summary>Configures a specific delay value for an interface.</summary><code>Router(config-if)# delay [tens-of-microseconds]</code><br /><br /></details>
+<details><summary>Initializes an EIGRP routing process and specifies the autonomous system number.</summary><code>Router(config)# router eigrp [as-number]</code><br /><br /></details>
+<details><summary>Specifies the network interfaces or ranges of addresses that EIGRP should run on.</summary><code>Router(config-router)# network [ip-address] [mask]</code><br /><br /></details>
+
+<h2 id="qna">QnA</h2>
+
+<details><summary><b>What is EIGRP?</b></summary>EIGRP stands for <b>Enhanced Interior Gateway Routing Protocol</b>. It is a Cisco proprietary enhanced <b>distance vector routing protocol</b>.<br /><br /></details>
+<details><summary><b>What are some other routing protocols mentioned in the source?</b></summary>Other routing protocols mentioned include <b>RIP</b> (<code>Routing Information Protocol</code>), <b>OSPF</b> (<code>Open Shortest Path First</code>), and <b>IS-IS</b> (<code>Intermediate System-to-Intermediate System</code>).<br /><br /></details>
+<details><summary><b>What are the two configuration modes available in EIGRP?</b></summary>EIGRP offers two configuration modes: <b>Classic mode</b> and <b>Named mode</b>.<br /><br /></details>
+<details><summary><b>What command is used to see which interfaces on a router are running EIGRP?</b></summary>The command <code>show ip eigrp interfaces [{interface-id [detail] | detail}]</code> will show you the interfaces running EIGRP.<br /><br /></details>
+<details><summary><b>What is the Feasibility Condition in EIGRP, and why is it important?</b></summary>The Feasibility Condition states that a route can only be considered a backup route (<b>Feasible Successor</b>) if its <b>Reported Distance</b> (RD) is less than the locally calculated <b>Feasible Distance</b> (FD). This condition is crucial in preventing <b>routing loops</b>, as it guarantees that the backup path is loop-free.<br /><br /></details>
+<details><summary><b>What are the benefits of using EIGRP Named Mode over Classic Mode?</b></summary>EIGRP Named Mode offers several advantages over Classic Mode, including:<ul><li><b>Centralized Configuration:</b> All EIGRP configurations are done in one place, simplifying management and troubleshooting.</li><li><b>Future-Proofing:</b> Named Mode supports current and future EIGRP features, ensuring compatibility with advancements.</li><li><b>Multi-Address Family Support:</b> Named Mode can handle multiple address families, including <code>IPv4</code> and <code>IPv6</code>, as well as <b>VRF</b> (Virtual Routing and Forwarding) instances.</li><li><b>Enhanced Clarity:</b> Commands in Named Mode have clearer scopes, reducing ambiguity and potential configuration errors.</li></ul><br /><br /></details>
+<details><summary><b>What is the purpose of the EIGRP network statement, and how does it use wildcard masks?</b></summary>The EIGRP network statement defines which interfaces on a router participate in the EIGRP routing process. It uses wildcard masks to allow for flexibility in specifying network ranges. In a wildcard mask, a <b>"0"</b> bit indicates that the corresponding bit in the IP address must match exactly, while a <b>"1"</b> bit means that the corresponding bit can be either a <b>"0"</b> or a <b>"1"</b>. This allows you to specify single hosts, subnets, or entire classful networks.<br /><br /></details>
+<details><summary><b>Explain how EIGRP forms neighbor adjacencies and the role of the different packet types in this process.</b></summary>EIGRP establishes neighbor relationships before exchanging routing updates. Here's how it works:<ul><li><b>Hello Packets:</b> Routers send out multicast Hello packets to discover and maintain neighbor adjacencies on directly connected networks. These packets contain information like the EIGRP AS number, K values, and authentication parameters.</li><li><b>Neighbor Adjacency Table:</b> Upon receiving a Hello packet, a router checks if the parameters match its own. If they do, it adds the neighbor to its neighbor adjacency table.</li><li><b>Initial Exchange of Routing Tables:</b> Once an adjacency is formed, the neighbors exchange their entire routing tables using EIGRP Update packets. This ensures that both routers have a complete view of the network topology.</li><li><b>Incremental Updates:</b> After the initial exchange, EIGRP only sends incremental updates when changes occur in the network topology. This reduces bandwidth consumption compared to protocols that rely on periodic updates.</li><li><b>Query and Reply Packets:</b> When a router loses a route to a destination, it sends out multicast Query packets to its neighbors to find an alternate path. Neighbors respond with unicast Reply packets indicating if they have an alternate path.</li><li><b>Reliable Transport Protocol (RTP):</b> EIGRP utilizes RTP to ensure reliable, in-order delivery of packets. This mechanism uses sequence numbers and acknowledgements (ACKs) to guarantee that packets are received and processed correctly.</li></ul><br /><br /></details>
+<details><summary><b>Compare and contrast EIGRP classic metrics and wide metrics, addressing their formulas, limitations, and compatibility considerations.</b></summary>EIGRP uses metrics to calculate the best path to a destination network. It offers two metric styles: classic and wide metrics.<br /><b>Classic Metrics:</b><ul><li><b>Formula:</b> The classic metric formula is based on bandwidth and delay, with the default calculation using only the bandwidth of the slowest link and the cumulative delay of all links in the path. The formula is scaled by 256 (derived from its predecessor, IGRP).</li><li><b>Limitations:</b> Classic metrics face scalability issues with higher-capacity interfaces (faster than 10 Gbps) because the formula doesn't adequately differentiate between speeds beyond this point.</li><li><b>Compatibility:</b> Classic metrics are only used in classic EIGRP configuration mode.</li></ul><br /><b>Wide Metrics:</b><ul><li><b>Formula:</b> Wide metrics address the limitations of classic metrics by introducing a scaled formula that supports higher-speed interfaces. This formula incorporates a 65,536 scaling factor and measures delay in picoseconds, accommodating speeds up to 655 Tbps.</li><li><b>Benefits:</b> Wide metrics offer improved accuracy and granularity in calculating metrics for high-bandwidth links.</li><li><b>Compatibility:</b> Wide metrics are exclusive to EIGRP named mode configuration.</li></ul><br /><b>Backward Compatibility:</b> While the two metric styles operate differently, they were designed with backward compatibility in mind. EIGRP wide metrics can interoperate with classic metrics by setting specific K values (K1-K5) to match the classic metric calculation. However, mixing metric styles can lead to a loss of precision in route selection, so maintaining consistency in metric style across the network is recommended.<br /><br /></details>
+
+<h2 id="links">Links</h2>
+<h3 id="network-technologies">Network Technologies</h3>
+
+<ul>
+  <li><a href="https://notes.ryancranie.com/Notes/Network%20Technologies/Packet%20Forwarding">Packet Forwarding</a></li>
+  <li><a href="https://notes.ryancranie.com/Notes/Network%20Technologies/IPv6">IPv6</a></li>
+</ul>
+
+<h3 id="revision-history">Revision History</h3>
+<p>001: 2024-10-08 - Initialized EIGRP.md</p>
+
+<hr />
+<p><b><a href="https://notes.ryancranie.com/Contents/Network%20Technologies%20Contents">Network Technologies Contents</a><br /><a href="https://notes.ryancranie.com">Home Page</a><br /></b><a href="https://www.ryancranie.com">Ryan Cranie</a></p>

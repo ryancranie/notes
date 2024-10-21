@@ -533,6 +533,36 @@ The variance multiplier is a whole number, and any remainders should always roun
 
 ## Glossary
 
+<button onclick="toggleGlossary()">Toggle Glossary</button>
+<div id="glossary">
+    <h2>Glossary</h2>
+    <h3>EIGRP Specific Terms</h3>
+    <details class="toggle-details">
+        <summary><b>EIGRP</b></summary>Enhanced Interior Gateway Routing Protocol - A Cisco proprietary enhanced distance vector routing protocol used to determine the best path for data to travel across a network.<br><br>
+    </details>
+    <details class="toggle-details">
+        <summary><b>DUAL</b></summary>Diffusing Update Algorithm - An algorithm used in EIGRP to calculate loop-free backup routes, enabling fast convergence.<br><br>
+    </details>
+    <!-- Add more terms here -->
+</div>
+
+## Commands
+
+<button onclick="toggleCommands()">Toggle Commands</button>
+<div id="commands">
+    <h2>Commands</h2>
+    <details class="toggle-details">
+        <summary>Displays either just the best route and the backup route, or every route received.</summary><code>Router# show ip eigrp topology [all-links]</code><br><br>
+    </details>
+    <details class="toggle-details">
+        <summary>Displays information about which interfaces are running EIGRP.</summary><code>Router# show ip eigrp interfaces [{interface-id [detail] | detail}]</code><br><br>
+    </details>
+    <!-- Add more commands here -->
+</div>
+
+
+## Glossary
+
 ### EIGRP Specific Terms
 
 <details><summary><b>EIGRP</b></summary>Enhanced Interior Gateway Routing Protocol - A Cisco proprietary enhanced distance vector routing protocol used to determine the best path for data to travel across a network.<br><br></details>
